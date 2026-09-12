@@ -88,14 +88,6 @@
           "body": "Generation Z is rapidly shaping the economic future of the world. As these “digital natives” enter the workforce, their spending power becomes more evident. To capture this market, I ran desktop research on gen-z browsing behavior."
         },
         {
-          "type": "gallery",
-          "images": [
-            "",
-            "",
-            ""
-          ]
-        },
-        {
           "type": "colors",
           "label": "A dance with colors",
           "groups": [
@@ -120,13 +112,6 @@
         {
           "type": "text",
           "body": "The palette is vibrant and optimistic — built for movement and change, something gen-z lives in abundance. Unlike millennial pink, it doesn’t get gender-specific, which matters as culture becomes more progressive and inclusive."
-        },
-        {
-          "type": "gallery",
-          "images": [
-            "",
-            ""
-          ]
         }
       ],
       "url": "https://stillhere.day",
@@ -142,33 +127,26 @@
       ]
     },
     {
-      "heading": "Add a <b>headline</b> for this project",
-      "challenge": "What problem were you solving? Describe the brief and the constraint here.",
-      "summary": "One or two sentences on what this website is and who it’s for. Replace me.",
-      "client": "Client name\nCity",
-      "time": "e.g. 3 weeks — 2024",
+      "heading": "Designing and building a single-page luxury fashion drop site",
+      "challenge": "A single-shirt drop needs to feel like an event, not a product page. The brief was to make one shirt feel worth the wait — full-screen presentation, real texture and detail, sound, motion — and since there's a new drop every season, it also had to run without a developer in the loop. Updating stock, images, or copy couldn't mean opening a code editor.",
+      "summary": "SANTAI is a luxury fashion label built around a seasonal drop model — one exclusive shirt released per season. I designed and built the entire site as a single immersive page, with a password-protected CMS built in, so the brand can launch new drops and update pricing, images, and sizing without touching code. Here's how it came together.",
+      "client": "Self-initiated — SANTAI",
+      "time": "Ongoing",
       "sections": [
         {
           "type": "heading",
-          "kicker": "section",
-          "title": "Add a section title"
+          "kicker": "the brief",
+          "title": "One Shirt, One Season"
         },
         {
           "type": "text",
-          "body": "Write the story here. Duplicate this block for more paragraphs, or add other section types."
-        },
-        {
-          "type": "gallery",
-          "images": [
-            "",
-            ""
-          ]
+          "body": "Built as a single HTML file backed by Supabase for data and storage: a full-screen shirt display with 360° drag-to-rotate and front/back swap, a hold-to-reveal detail panel with looping audio, swipe navigation between drops, and a password-protected CMS covering everything from the logo and background to each article's copy, images, and availability. Client-side image compression and localStorage caching keep it fast without a heavy stack."
         }
       ],
       "url": "https://santaiaja.com",
-      "role": "Your role",
+      "role": "Designer & Full-Stack Developer",
       "thumb": "",
-      "cat": "Website design",
+      "cat": "Website Design & Development",
       "cover": "",
       "title": "santaiaja.com",
       "id": "santai",
@@ -177,34 +155,26 @@
       ]
     },
     {
-      "heading": "Add a <b>headline</b> for this store",
-      "challenge": "The commercial or UX problem you set out to solve.",
-      "summary": "The store, who it serves, and the platform (e.g. Shopify). Replace me.",
-      "client": "quietundernone",
-      "time": "e.g. ongoing — 2024",
+      "heading": "Design and Shopify development for a two-market fashion brand",
+      "challenge": "Running two markets means running two sets of expectations: different payment methods, different shipping partners, different currencies, but one brand. The build had to keep both storefronts feeling like a single label while giving the team enough flexibility in Shopify to manage editorial content and pricing without needing a developer for every change.",
+      "summary": "quietundernone.com is a fashion brand selling across Indonesian and international markets. I've handled design and Shopify development for them — from custom collection templates to local payment and shipping integrations — as they've grown into a two-storefront operation. Here's a look at that work.",
+      "client": "quietundernone.com",
+      "time": "Ongoing",
       "sections": [
         {
           "type": "heading",
-          "kicker": "section",
-          "title": "Add a section title"
+          "kicker": "the build",
+          "title": "Two Storefronts, One Brand"
         },
         {
           "type": "text",
-          "body": "Write the story here."
-        },
-        {
-          "type": "gallery",
-          "images": [
-            "",
-            "",
-            ""
-          ]
+          "body": "I built custom Shopify collection page templates powered by metafields, so editorial content can be swapped in without touching theme code. On the backend, I'm migrating payment gateways from Midtrans to Xendit and working toward unifying the Indonesian and international stores under Shopify Markets, so the team can manage one catalog instead of two."
         }
       ],
       "url": "https://quietundernone.com",
-      "role": "Your role",
+      "role": "Designer & Shopify Developer",
       "thumb": "",
-      "cat": "E-commerce",
+      "cat": "E-commerce Development",
       "cover": "",
       "title": "quietundernone.com",
       "id": "quiet",
