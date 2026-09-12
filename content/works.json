@@ -369,13 +369,20 @@
         {
           "type": "text",
           "body": "Built as a single HTML file backed by Supabase for data and storage: a full-screen shirt display with 360° drag-to-rotate and front/back swap, a hold-to-reveal detail panel with looping audio, swipe navigation between drops, and a password-protected CMS covering everything from the logo and background to each article's copy, images, and availability. Client-side image compression and localStorage caching keep it fast without a heavy stack."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            "/content/images/santai-gallery-1-deer-sun.png",
+            "/content/images/santai-gallery-2-howdeer.png"
+          ]
         }
       ],
       "url": "https://santaiaja.com",
       "role": "Designer & Full-Stack Developer",
-      "thumb": "",
+      "thumb": "/content/images/santai-cover-hero.png",
       "cat": "Website Design & Development",
-      "cover": "",
+      "cover": "/content/images/santai-cover-hero.png",
       "title": "santaiaja.com",
       "id": "santai",
       "cats": [
