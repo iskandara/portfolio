@@ -296,11 +296,20 @@
         {
           "type": "text",
           "body": "For anyone deciding whether to hire me, here's the useful part. This wasn't a standard store. It's a booking system living inside Shopify, with dates, deposits, and local payment all working together. I can take a business model that doesn't fit the platform out of the box and make the platform serve it, cleanly enough that customers just see a site that works."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            "/content/images/klana-gallery-1-surftrip.png",
+            "/content/images/klana-gallery-2-opentrip.png"
+          ]
         }
       ],
       "url": "https://klana.co.id",
       "role": "Web Designer & Shopify Developer",
+      "thumb": "/content/images/klana-cover-hero.png",
       "cat": "E-commerce & Booking Development",
+      "cover": "/content/images/klana-cover-hero.png",
       "title": "klana.co.id",
       "id": "klana",
       "cats": [
