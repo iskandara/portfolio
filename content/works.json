@@ -189,11 +189,23 @@
         {
           "type": "text",
           "body": "That's the note I'd want a client to sit with. Give me something conceptual, even something that resists being a normal website, and I can work with you to shape it, design it, and build it into something real that people actually use. Not every brief is a shop or a landing page. Some are ideas that need a collaborator to make them work on the web, and that's work I'm built for."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            "/content/images/letthisbook-gallery-1-artist-in-a.png",
+            "/content/images/letthisbook-gallery-2-character.png",
+            "/content/images/letthisbook-gallery-3-menu.png",
+            "/content/images/letthisbook-gallery-4-prayer.png",
+            "/content/images/letthisbook-gallery-5-book-closeup.png"
+          ]
         }
       ],
       "url": "https://letthisbookbeyourpublicspace.com",
       "role": "Web Designer & Developer — shaping, design, and build with Jody Agus",
+      "thumb": "/content/images/letthisbook-cover-hero.png",
       "cat": "Web Design & Development",
+      "cover": "/content/images/letthisbook-cover-hero.png",
       "title": "letthisbookbeyourpublicspace.com",
       "id": "publicspace",
       "cats": [
