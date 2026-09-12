@@ -82,13 +82,23 @@
         {
           "type": "text",
           "body": "That's the part I'd want a client to sit with. I can take something from a single thought on a park bench all the way to a live, installable product, by myself. Hand me a problem and I can own the whole thing: the research, the design, the code, the words, and the launch."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            "/content/images/stillhere-gallery-1-forest.png",
+            "/content/images/stillhere-gallery-2-months.png",
+            "/content/images/stillhere-gallery-3-calendar.png",
+            "/content/images/stillhere-gallery-5-ecosystem.png",
+            "/content/images/stillhere-gallery-4-homestead.png"
+          ]
         }
       ],
       "url": "https://stillhere.day",
       "role": "Solo. Research, design, build, copy, and launch.",
-      "thumb": "",
+      "thumb": "/content/images/stillhere-cover-hero.png",
       "cat": "Design & build",
-      "cover": "",
+      "cover": "/content/images/stillhere-cover-hero.png",
       "title": "stillhere.day",
       "id": "stillhere",
       "cats": [
