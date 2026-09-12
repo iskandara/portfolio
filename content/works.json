@@ -1,22 +1,11 @@
 {
   "works": [
     {
-      "id": "stillhere",
-      "title": "stillhere.day",
-      "cat": "Design & build",
-      "cats": [
-        "design",
-        "development"
-      ],
-      "url": "https://stillhere.day",
-      "thumb": "",
       "heading": "Creating a <b>digital radio</b> system and landing page",
-      "summary": "stillhere.day is a website used as a marketing platform for an upcoming web series about a boy who wants to revolutionize old radio stations into digital radio. Read it through to see how it ends.",
       "challenge": "The website needed a redesign to better connect with its audience — a more intuitive information architecture and a coherent visual language that matches the target market.",
-      "role": "Web Developer\nConsultant",
+      "summary": "stillhere.day is a website used as a marketing platform for an upcoming web series about a boy who wants to revolutionize old radio stations into digital radio. Read it through to see how it ends.",
       "client": "Vindes Corp\nJakarta",
       "time": "2 weeks — 2024",
-      "cover": "",
       "sections": [
         {
           "type": "banner",
@@ -139,24 +128,25 @@
             ""
           ]
         }
+      ],
+      "url": "https://stillhere.day",
+      "role": "Web Developer\nConsultant",
+      "thumb": "",
+      "cat": "Design & build",
+      "cover": "",
+      "title": "stillhere.day",
+      "id": "stillhere",
+      "cats": [
+        "design",
+        "development"
       ]
     },
     {
-      "id": "santai",
-      "title": "santaiaja.com",
-      "cat": "Website design",
-      "cats": [
-        "design"
-      ],
-      "url": "https://santaiaja.com",
-      "thumb": "",
       "heading": "Add a <b>headline</b> for this project",
-      "summary": "One or two sentences on what this website is and who it’s for. Replace me.",
       "challenge": "What problem were you solving? Describe the brief and the constraint here.",
-      "role": "Your role",
+      "summary": "One or two sentences on what this website is and who it’s for. Replace me.",
       "client": "Client name\nCity",
       "time": "e.g. 3 weeks — 2024",
-      "cover": "",
       "sections": [
         {
           "type": "heading",
@@ -174,25 +164,24 @@
             ""
           ]
         }
+      ],
+      "url": "https://santaiaja.com",
+      "role": "Your role",
+      "thumb": "",
+      "cat": "Website design",
+      "cover": "",
+      "title": "santaiaja.com",
+      "id": "santai",
+      "cats": [
+        "design"
       ]
     },
     {
-      "id": "quiet",
-      "title": "quietundernone.com",
-      "cat": "E-commerce",
-      "cats": [
-        "ecommerce",
-        "development"
-      ],
-      "url": "https://quietundernone.com",
-      "thumb": "",
       "heading": "Add a <b>headline</b> for this store",
-      "summary": "The store, who it serves, and the platform (e.g. Shopify). Replace me.",
       "challenge": "The commercial or UX problem you set out to solve.",
-      "role": "Your role",
+      "summary": "The store, who it serves, and the platform (e.g. Shopify). Replace me.",
       "client": "quietundernone",
       "time": "e.g. ongoing — 2024",
-      "cover": "",
       "sections": [
         {
           "type": "heading",
@@ -211,24 +200,25 @@
             ""
           ]
         }
+      ],
+      "url": "https://quietundernone.com",
+      "role": "Your role",
+      "thumb": "",
+      "cat": "E-commerce",
+      "cover": "",
+      "title": "quietundernone.com",
+      "id": "quiet",
+      "cats": [
+        "ecommerce",
+        "development"
       ]
     },
     {
-      "id": "youthtopia",
-      "title": "Youthtopia",
-      "cat": "Product research",
-      "cats": [
-        "research"
-      ],
-      "url": "",
-      "thumb": "",
       "heading": "Website research for <b>Youthtopia</b>",
-      "summary": "What the research set out to answer and who it was for. Replace me.",
       "challenge": "The question behind the study and why it mattered.",
-      "role": "Product Researcher",
+      "summary": "What the research set out to answer and who it was for. Replace me.",
       "client": "Youthtopia",
       "time": "e.g. 4 weeks — 2024",
-      "cover": "",
       "sections": [
         {
           "type": "heading",
@@ -243,6 +233,226 @@
           "type": "note",
           "body": "A highlighted takeaway works well for research — the one thing that changed because of the study."
         }
+      ],
+      "url": "",
+      "role": "Product Researcher",
+      "thumb": "",
+      "cat": "Product research",
+      "cover": "",
+      "title": "Youthtopia",
+      "id": "youthtopia",
+      "cats": [
+        "research"
+      ]
+    },
+    {
+      "heading": "Creating a website and content system for a national cycling federation",
+      "challenge": "A national federation has a lot to keep online and a small team to keep it there. Race schedules change, news comes in weekly, new regulations get published, riders need to register for licenses, and all of it has to work in both Indonesian and English. They needed one site that could hold all of that and still look the part for a national sport, plus a back end the staff could run without a developer on call.",
+      "summary": "The Indonesian Cycling Federation (ICF) is the national governing body for cycle racing in Indonesia. It needed one place online for everything it runs: races, news, rider licenses, regulations, the gallery, and its own history. I built the site as a React front end backed by Strapi, so the team can publish and update all of it without touching code. Here's how it came together.",
+      "client": "Indonesian Cycling Federation (ISSI), Jakarta",
+      "time": "TBD — confirm number of weeks, 2023",
+      "sections": [
+        {
+          "type": "banner",
+          "title": "Satu Kayuh untuk Indonesia"
+        },
+        {
+          "type": "heading",
+          "kicker": "meeting #1",
+          "title": "First Cup of Coffee"
+        },
+        {
+          "type": "text",
+          "body": "Good projects tend to start over coffee, and this one did too. We sat down with the ISSI team and mapped out everything the federation needed online, and who it was really for."
+        },
+        {
+          "type": "quote",
+          "body": "\"We're the national body, so the site has to carry that weight. But we're also updating things constantly, races, news, licenses, and we can't wait on a developer every time. Make it look serious, and make it ours to run.\"\n— Client"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "label": "What are we building?",
+          "items": [
+            "A public website (news, events, disciplines, gallery, history)",
+            "A content system the team manages themselves (Strapi)",
+            "Rider license registration and regulations, in two languages"
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "label": "What are the goals?",
+          "items": [
+            "A credible home for the national federation",
+            "A back end the staff can update without code",
+            "Content that works in both Indonesian and English"
+          ]
+        },
+        {
+          "type": "note",
+          "body": "First meeting done, scope clear. The hard part was never any single page. It was that the federation publishes all the time and the team is small, so the site had to be built around how they actually work. Before drawing a single screen, I spent time on that, and on how other national federations organize the same kinds of content. Stay with me, this is where it gets useful."
+        },
+        {
+          "type": "heading",
+          "kicker": "research #1",
+          "title": "Initial Design"
+        },
+        {
+          "type": "text",
+          "body": "A federation site lives or dies on findability. There's a lot here, and people arrive with very different goals: a rider wants a license, a fan wants results, an organizer wants regulations. So before wireframing, I mapped every content type and ran a card sort to check that the menu matched where people expected things to be, not just how the org is structured internally."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "label": "What we wanted to discover:",
+          "items": [
+            "Where riders go to register for a license",
+            "How people expect to find race schedules and results",
+            "Where they look for regulations",
+            "How fans browse news and the gallery",
+            "Where the federation's history and \"about\" belong",
+            "What the staff need to publish and update most often"
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Cards used in the sort: main menu, sub-menu, and content types."
+        },
+        {
+          "type": "note",
+          "body": "[N] people took part, a mix of riders and federation staff, run through an online card-sorting tool so it was quick to gather. I can't share the full results here, but it did two things: it reshaped the public menu, and it told me how to structure Strapi so the team publishes the way they already think, instead of learning a system built for a developer."
+        },
+        {
+          "type": "heading",
+          "kicker": "research #2",
+          "title": "The End Product"
+        },
+        {
+          "type": "text",
+          "body": "ISSI's audience is broad. Competitive riders chasing licenses and results, casual cyclists reading the news, event organizers, and the staff running the whole thing day to day. The site had to feel official enough to represent the sport nationally, without turning into a stiff government page nobody wants to visit."
+        },
+        {
+          "type": "text",
+          "body": "The look leans dark and high-contrast, with red accents and full-bleed race photography doing most of the work. It reads as serious and current, and it keeps the riders and the racing up front, which is the whole point of a federation site."
+        },
+        {
+          "type": "note",
+          "body": "What we shipped is a React site backed by Strapi that the ISSI team runs on their own. News, events, disciplines, gallery, and regulations all publish from the CMS in both languages, and the race hub and live indicator keep the front page current during events. I built it, but the point was to hand it over. The federation runs it now without me."
+        }
+      ],
+      "url": "https://icf.id",
+      "role": "Researcher & Web Developer (React + Strapi)",
+      "cat": "Web Platform & CMS",
+      "title": "icf.id",
+      "id": "icf",
+      "cats": [
+        "research",
+        "development"
+      ]
+    },
+    {
+      "heading": "Creating a digital radio station and landing page",
+      "challenge": "Antasiar had a strong identity but no home online. The job was to turn a loud, retro brand into a site people could actually use: press play and listen, find the shows, meet the hosts, grab merch. All of that without sanding off the personality that makes it feel like Antasiar. It also had to ship fast and run on WordPress so the team could keep it updated themselves.",
+      "summary": "Antasiar is an online radio brand built around a station that was big in the 80s and had gone quiet by the 90s. In 2024 it came back, and this site is where it lives: a live player, the shows, the voices behind the mic, and the merch. I designed and built the whole thing in WordPress. Here's how it came together.",
+      "client": "Vindes Corp, Jakarta",
+      "time": "2 weeks, 2024",
+      "sections": [
+        {
+          "type": "banner",
+          "title": "Gelombang Semangat, Setiap Saat"
+        },
+        {
+          "type": "heading",
+          "kicker": "meeting #1",
+          "title": "First Cup of Coffee"
+        },
+        {
+          "type": "text",
+          "body": "Good projects tend to start over coffee, and ours was no different. We sat down, ordered, and talked through what Antasiar actually needed to be online."
+        },
+        {
+          "type": "quote",
+          "body": "\"We've already done the market research. What I want is a site that sounds like us: loud, a little nostalgic, fun to click around, and I want it live soon.\"\n— Client"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "label": "What are we building?",
+          "items": [
+            "A landing page",
+            "A live streaming player (the radio itself)"
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "label": "What are the goals?",
+          "items": [
+            "A site that tells people who Antasiar is",
+            "Analytics, so the team can see who's actually listening"
+          ]
+        },
+        {
+          "type": "note",
+          "body": "First meeting done, direction set. Most of it was about the audience: who tunes into an indie-leaning online radio, and how a site pulls them in and keeps them there. Before I touched a single layout, I wanted to test my assumptions instead of guessing. Stay with me, this is the part I like."
+        },
+        {
+          "type": "heading",
+          "kicker": "research #1",
+          "title": "Initial Design"
+        },
+        {
+          "type": "text",
+          "body": "The brand is loud, but the site still has to be easy to move around. So before wireframing, I ran a card sort to see where people expect to find things. The point was to build the menu around their mental model, not ours."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "label": "What we wanted to discover:",
+          "items": [
+            "Where people look first for the live player",
+            "How they expect to browse the shows",
+            "Where they'd go to read Antasiar's story",
+            "Where they'd look for the hosts (the juru siar)",
+            "Where they'd expect merch to live",
+            "What would actually make them follow on Spotify, Instagram, or YouTube"
+          ]
+        },
+        {
+          "type": "image",
+          "caption": "Cards used in the sort: main menu, sub-menu, and features."
+        },
+        {
+          "type": "note",
+          "body": "[N] people took part, run through an online card-sorting tool so gathering it was quick. I can't share the full breakdown here, but it settled a couple of real debates, mainly the menu order and where the player should sit on the page."
+        },
+        {
+          "type": "heading",
+          "kicker": "research #2",
+          "title": "The End Product"
+        },
+        {
+          "type": "text",
+          "body": "Antasiar's audience skews young, and that shaped most of the visual calls. Gen-z listeners are used to sites that feel alive and react when you touch them, so a flat, safe layout would have read as off-brand before anyone pressed play."
+        },
+        {
+          "type": "text",
+          "body": "The palette leans warm and loud on purpose. Reds against a cream base, with sharp accent blocks that carry energy without feeling corporate. It reads as playful and current, and it doesn't lock into any one gender, which fits where the brand and its audience are heading."
+        },
+        {
+          "type": "note",
+          "body": "What we shipped is a WordPress site the Vindes team can run on their own. Live player up top, the shows laid out clearly, Iqbaal front and center as the face of it, merch one click away, and every social handle wired in. Designed, built, and live in two weeks."
+        }
+      ],
+      "url": "https://antasiaradio.com",
+      "role": "Researcher & WordPress Developer",
+      "cat": "Radio Station Website",
+      "title": "antasiaradio.com",
+      "id": "antasiar",
+      "cats": [
+        "design",
+        "development"
       ]
     }
   ]
