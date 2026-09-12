@@ -1,121 +1,91 @@
 {
   "works": [
     {
-      "heading": "Creating a <b>digital radio</b> system and landing page",
-      "challenge": "The website needed a redesign to better connect with its audience — a more intuitive information architecture and a coherent visual language that matches the target market.",
-      "summary": "stillhere.day is a website used as a marketing platform for an upcoming web series about a boy who wants to revolutionize old radio stations into digital radio. Read it through to see how it ends.",
-      "client": "Vindes Corp\nJakarta",
-      "time": "2 weeks — 2024",
+      "heading": "Designing and building Still Here, a habit-reduction app",
+      "challenge": "Most habit apps are built around a perfect streak, and they reset you to zero the second you slip. If you're reducing a habit instead of quitting it cold, that's basically a machine for feeling like a failure. I wanted the opposite: something that keeps every good day you've earned, forgives the days you don't, and never once shows you a red mark. And because it was mine, it had to be a real product, not a demo. Design, front end, backend, auth, domain, copy, and launch, all of it.",
+      "summary": "Still Here is a habit app I designed and built on my own, start to finish. Instead of streaks and red X's, it turns any habit you're cutting back on into a small pixel-art island that grows a little every honest day. It's live at stillhere.day, free, no ads. This one's personal, so here's the whole thinking behind it.",
+      "client": "Personal product",
+      "time": "Launched 2026 — React PWA, Appwrite, Vercel",
       "sections": [
         {
           "type": "banner",
           "image": "",
-          "title": "Gelombang Semangat, Setiap Saat"
+          "title": "A forest that grows as you keep your oath."
         },
         {
           "type": "heading",
           "kicker": "meeting #1",
-          "title": "First Cup of Coffee"
+          "title": "Where it started"
         },
         {
           "type": "text",
-          "body": "Lots of good things start with a cup of coffee, right? Our first chat happened at Kroma Coffee."
+          "body": "There was no client and no kickoff for this one. It started on a road trip to Halls Gap. Fresh air, a clean river, birds on the benches, and the first thing my brain offered up was \"what a perfect spot to smoke.\" The only smoke around was coming from the meat shop. Everyone else was reading, eating ice cream, sipping coffee. For the first time I felt embarrassed by the thought. That day I made a small promise: enjoy the good things without a cigarette in my hand. Still Here is that promise turned into an app."
         },
         {
           "type": "quote",
-          "body": "We’ve done market research before, and I want this website to really hit that market aesthetic. Vibrant color, interactive — and we need it fast."
+          "body": "\"What a perfect spot to smoke.\"\n— The thought that started the whole thing."
         },
         {
           "type": "list",
-          "label": "// What are we building?",
+          "label": "What I wanted to build:",
           "ordered": true,
           "items": [
-            "Landing page",
-            "Radio streaming platform"
+            "A tracker for reducing a habit, not just quitting it",
+            "Something that grows when you do well, instead of punishing you when you don't"
           ]
         },
         {
           "type": "list",
-          "label": "// What are the goals?",
+          "label": "What I refused to add:",
           "ordered": true,
           "items": [
-            "An informative website",
-            "Website analytics data"
+            "Streaks that reset to zero",
+            "Red marks, shame, ads, or a subscription"
           ]
         },
         {
           "type": "note",
-          "body": "First meeting done, goals set. We talked a lot about the target market and how the platform could reach them. Before wireframing, I chose to do some research — bear with me, it’s going to be exciting."
+          "body": "The promise was the easy part. The real question was how to build a habit app that doesn't quietly make you feel worse every time you open it. Everything after this was about answering that."
         },
         {
           "type": "heading",
           "kicker": "research #1",
-          "title": "Initial Design"
+          "title": "The design"
         },
         {
           "type": "text",
-          "body": "To increase findability of the key information, I chose a closed card-sorting method. The content and sub-menus were pre-defined from the current site, and I wanted to know where users expected to find them."
+          "body": "The whole product rests on one bet: make progress something you tend, not a number you have to protect. So every honest day plants something on your island, and it grows from bare soil to a seed, a sapling, a grove, and finally a haven full of animals at dusk. A second layer grows next to it, where little builders raise a home for each good day, from a bedroll up to a warm homestead with a fire going. Slip up and nothing gets torn down. The builders just rest by the fire until you're back."
         },
         {
           "type": "list",
-          "label": "What we wanted to discover",
+          "label": "A few things I wanted to get right:",
           "ordered": true,
           "items": [
-            "The benefit of subscribing",
-            "The features users can use",
-            "Where to learn public speaking",
-            "Where to watch a video about the world",
-            "Where to post a story on the blog",
-            "Info about competitions"
+            "Blank days stay foggy, never red. A miss is missing data, not a punishment.",
+            "The app talks in your tone. You choose Gentle, Plain, or Honest, and the messages shift to match.",
+            "Rewards you can't rush. Companions and rare visitors (a butterfly, a rabbit, and if you keep at it, a unicorn or a little dragon) show up on their own as the forest matures."
           ]
         },
         {
-          "type": "image",
-          "image": "",
-          "caption": "Pre-defined cards for the sorting session — main menu, sub-menu, features"
-        },
-        {
           "type": "text",
-          "body": "We had 28 respondents. Using an online card-sorting tool, insight-gathering was fast. Due to an NDA, I can’t show the full result here."
+          "body": "The pixel art and the cozy tone aren't just decoration, they're the actual argument. A place that feels alive is easier to come back to than a chart that's judging you."
         },
         {
           "type": "heading",
           "kicker": "research #2",
-          "title": "The End Product"
+          "title": "What shipped"
         },
         {
           "type": "text",
-          "body": "Generation Z is rapidly shaping the economic future of the world. As these “digital natives” enter the workforce, their spending power becomes more evident. To capture this market, I ran desktop research on gen-z browsing behavior."
-        },
-        {
-          "type": "colors",
-          "label": "A dance with colors",
-          "groups": [
-            {
-              "name": "Existing",
-              "swatches": [
-                "#2f6fb0",
-                "#f4a13c",
-                "#4aa06a"
-              ]
-            },
-            {
-              "name": "Proposed",
-              "swatches": [
-                "#12329a",
-                "#ffd21f",
-                "#8ad39a"
-              ]
-            }
-          ]
+          "body": "Still Here is live at stillhere.day. It installs like a normal app since it's a PWA, runs from a single tap, and stays free with no ads and no subscription. Under the cozy surface it's a full build: the forest and homestead systems, the honest calendar, the tone engine, accounts and auth, the domain and email setup, and every word of copy. I did the thinking behind it, designed it, wrote it, built the front and back end, and shipped it."
         },
         {
           "type": "text",
-          "body": "The palette is vibrant and optimistic — built for movement and change, something gen-z lives in abundance. Unlike millennial pink, it doesn’t get gender-specific, which matters as culture becomes more progressive and inclusive."
+          "body": "That's the part I'd want a client to sit with. I can take something from a single thought on a park bench all the way to a live, installable product, by myself. Hand me a problem and I can own the whole thing: the research, the design, the code, the words, and the launch."
         }
       ],
       "url": "https://stillhere.day",
-      "role": "Web Developer\nConsultant",
+      "role": "Solo. Research, design, build, copy, and launch.",
       "thumb": "",
       "cat": "Design & build",
       "cover": "",
