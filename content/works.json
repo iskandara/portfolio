@@ -332,13 +332,21 @@
         {
           "type": "text",
           "body": "I built custom Shopify collection page templates powered by metafields, so editorial content can be swapped in without touching theme code. On the backend, I'm migrating payment gateways from Midtrans to Xendit and working toward unifying the Indonesian and international stores under Shopify Markets, so the team can manage one catalog instead of two."
+        },
+        {
+          "type": "gallery",
+          "images": [
+            "/content/images/quietundernone-gallery-1-discover.png",
+            "/content/images/quietundernone-gallery-2-dapperdon.png",
+            "/content/images/quietundernone-gallery-3-product.png"
+          ]
         }
       ],
       "url": "https://quietundernone.com",
       "role": "Designer & Shopify Developer",
-      "thumb": "",
+      "thumb": "/content/images/quietundernone-cover-hero.png",
       "cat": "E-commerce Development",
-      "cover": "",
+      "cover": "/content/images/quietundernone-cover-hero.png",
       "title": "quietundernone.com",
       "id": "quiet",
       "cats": [
