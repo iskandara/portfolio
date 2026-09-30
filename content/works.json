@@ -517,7 +517,9 @@
       ],
       "url": "https://antasiaradio.com",
       "role": "Researcher & WordPress Developer",
+      "thumb": "/content/images/desktop.png",
       "cat": "Radio Station Website",
+      "cover": "/content/images/desktop-copy.png",
       "title": "antasiaradio.com",
       "id": "antasiar",
       "cats": [
