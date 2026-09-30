@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: iskandara/portfolio
   branch: main            # change to "master" if that's your default branch
+  # Optional: nicer "Sign in with GitHub" button via a free Cloudflare Worker
+  # (https://github.com/sveltia/sveltia-cms-auth). Without it, sign in with a
+  # GitHub Personal Access Token on the /admin login screen - no setup needed.
+  # base_url: https://YOUR-AUTH-WORKER.workers.dev
 
 media_folder: "content/images"     # where uploaded images are committed
 public_folder: "/content/images"   # how the site references them
