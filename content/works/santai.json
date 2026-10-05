@@ -1,0 +1,36 @@
+{
+  "order": 5,
+  "id": "santai",
+  "title": "santaiaja.com",
+  "cat": "Website Design & Development",
+  "cats": [
+    "design"
+  ],
+  "url": "https://santaiaja.com",
+  "thumb": "/content/images/santai-cover-hero.png",
+  "heading": "Designing and building a single-page luxury fashion drop site",
+  "summary": "SANTAI is a luxury fashion label built around a seasonal drop model — one exclusive shirt released per season. I designed and built the entire site as a single immersive page, with a password-protected CMS built in, so the brand can launch new drops and update pricing, images, and sizing without touching code. Here's how it came together.",
+  "challenge": "A single-shirt drop needs to feel like an event, not a product page. The brief was to make one shirt feel worth the wait — full-screen presentation, real texture and detail, sound, motion — and since there's a new drop every season, it also had to run without a developer in the loop. Updating stock, images, or copy couldn't mean opening a code editor.",
+  "role": "Designer & Full-Stack Developer",
+  "client": "Self-initiated — SANTAI",
+  "time": "Ongoing",
+  "cover": "/content/images/santai-cover-hero.png",
+  "sections": [
+    {
+      "type": "heading",
+      "title": "One Shirt, One Season",
+      "kicker": "the brief"
+    },
+    {
+      "type": "text",
+      "body": "Built as a single HTML file backed by Supabase for data and storage: a full-screen shirt display with 360° drag-to-rotate and front/back swap, a hold-to-reveal detail panel with looping audio, swipe navigation between drops, and a password-protected CMS covering everything from the logo and background to each article's copy, images, and availability. Client-side image compression and localStorage caching keep it fast without a heavy stack."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        "/content/images/santai-gallery-1-deer-sun.png",
+        "/content/images/santai-gallery-2-howdeer.png"
+      ]
+    }
+  ]
+}

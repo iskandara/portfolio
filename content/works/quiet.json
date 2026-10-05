@@ -1,0 +1,38 @@
+{
+  "order": 4,
+  "id": "quiet",
+  "title": "quietundernone.com",
+  "cat": "E-commerce Development",
+  "cats": [
+    "ecommerce",
+    "development"
+  ],
+  "url": "https://quietundernone.com",
+  "thumb": "/content/images/quietundernone-cover-hero.png",
+  "heading": "Design and Shopify development for a two-market fashion brand",
+  "summary": "quietundernone.com is a fashion brand selling across Indonesian and international markets. I've handled design and Shopify development for them — from custom collection templates to local payment and shipping integrations — as they've grown into a two-storefront operation. Here's a look at that work.",
+  "challenge": "Running two markets means running two sets of expectations: different payment methods, different shipping partners, different currencies, but one brand. The build had to keep both storefronts feeling like a single label while giving the team enough flexibility in Shopify to manage editorial content and pricing without needing a developer for every change.",
+  "role": "Designer & Shopify Developer",
+  "client": "quietundernone.com",
+  "time": "Ongoing",
+  "cover": "/content/images/quietundernone-cover-hero.png",
+  "sections": [
+    {
+      "type": "heading",
+      "title": "Two Storefronts, One Brand",
+      "kicker": "the build"
+    },
+    {
+      "type": "text",
+      "body": "I built custom Shopify collection page templates powered by metafields, so editorial content can be swapped in without touching theme code. On the backend, I'm migrating payment gateways from Midtrans to Xendit and working toward unifying the Indonesian and international stores under Shopify Markets, so the team can manage one catalog instead of two."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        "/content/images/quietundernone-gallery-1-discover.png",
+        "/content/images/quietundernone-gallery-2-dapperdon.png",
+        "/content/images/quietundernone-gallery-3-product.png"
+      ]
+    }
+  ]
+}

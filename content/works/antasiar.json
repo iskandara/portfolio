@@ -1,0 +1,109 @@
+{
+  "order": 7,
+  "id": "antasiar",
+  "title": "antasiaradio.com",
+  "cat": "Radio Station Website",
+  "cats": [
+    "design",
+    "development"
+  ],
+  "url": "https://antasiaradio.com",
+  "thumb": "/content/images/desktop.png",
+  "heading": "Creating a digital radio station and landing page",
+  "summary": "Antasiar is an online radio brand built around a station that was big in the 80s and had gone quiet by the 90s. In 2024 it came back, and this site is where it lives: a live player, the shows, the voices behind the mic, and the merch. I designed and built the whole thing in WordPress. Here's how it came together.",
+  "challenge": "Antasiar had a strong identity but no home online. The job was to turn a loud, retro brand into a site people could actually use: press play and listen, find the shows, meet the hosts, grab merch. All of that without sanding off the personality that makes it feel like Antasiar. It also had to ship fast and run on WordPress so the team could keep it updated themselves.",
+  "role": "Researcher & WordPress Developer",
+  "client": "Vindes Corp, Jakarta",
+  "time": "2 weeks, 2024",
+  "cover": "/content/images/desktop-copy.png",
+  "sections": [
+    {
+      "type": "banner",
+      "image": "",
+      "title": "Gelombang Semangat, Setiap Saat"
+    },
+    {
+      "type": "heading",
+      "title": "First Cup of Coffee",
+      "kicker": "meeting #1"
+    },
+    {
+      "type": "text",
+      "body": "Good projects tend to start over coffee, and ours was no different. We sat down, ordered, and talked through what Antasiar actually needed to be online."
+    },
+    {
+      "type": "quote",
+      "body": "\"We've already done the market research. What I want is a site that sounds like us: loud, a little nostalgic, fun to click around, and I want it live soon.\"\n— Client"
+    },
+    {
+      "type": "list",
+      "label": "What are we building?",
+      "ordered": true,
+      "items": [
+        "A landing page",
+        "A live streaming player (the radio itself)"
+      ]
+    },
+    {
+      "type": "list",
+      "label": "What are the goals?",
+      "ordered": true,
+      "items": [
+        "A site that tells people who Antasiar is",
+        "Analytics, so the team can see who's actually listening"
+      ]
+    },
+    {
+      "type": "note",
+      "body": "First meeting done, direction set. Most of it was about the audience: who tunes into an indie-leaning online radio, and how a site pulls them in and keeps them there. Before I touched a single layout, I wanted to test my assumptions instead of guessing. Stay with me, this is the part I like."
+    },
+    {
+      "type": "heading",
+      "title": "Initial Design",
+      "kicker": "research #1"
+    },
+    {
+      "type": "text",
+      "body": "The brand is loud, but the site still has to be easy to move around. So before wireframing, I ran a card sort to see where people expect to find things. The point was to build the menu around their mental model, not ours."
+    },
+    {
+      "type": "list",
+      "label": "What we wanted to discover:",
+      "ordered": true,
+      "items": [
+        "Where people look first for the live player",
+        "How they expect to browse the shows",
+        "Where they'd go to read Antasiar's story",
+        "Where they'd look for the hosts (the juru siar)",
+        "Where they'd expect merch to live",
+        "What would actually make them follow on Spotify, Instagram, or YouTube"
+      ]
+    },
+    {
+      "type": "image",
+      "image": "",
+      "caption": "Cards used in the sort: main menu, sub-menu, and features."
+    },
+    {
+      "type": "note",
+      "body": "[N] people took part, run through an online card-sorting tool so gathering it was quick. I can't share the full breakdown here, but it settled a couple of real debates, mainly the menu order and where the player should sit on the page."
+    },
+    {
+      "type": "heading",
+      "title": "The End Product",
+      "kicker": "research #2"
+    },
+    {
+      "type": "text",
+      "body": "Antasiar's audience skews young, and that shaped most of the visual calls. Gen-z listeners are used to sites that feel alive and react when you touch them, so a flat, safe layout would have read as off-brand before anyone pressed play."
+    },
+    {
+      "type": "text",
+      "body": "The palette leans warm and loud on purpose. Reds against a cream base, with sharp accent blocks that carry energy without feeling corporate. It reads as playful and current, and it doesn't lock into any one gender, which fits where the brand and its audience are heading."
+    },
+    {
+      "type": "note",
+      "body": "What we shipped is a WordPress site the Vindes team can run on their own. Live player up top, the shows laid out clearly, Iqbaal front and center as the face of it, merch one click away, and every social handle wired in. Designed, built, and live in two weeks."
+    }
+  ]
+}

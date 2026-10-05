@@ -1,0 +1,106 @@
+{
+  "order": 3,
+  "id": "klana",
+  "title": "klana.co.id",
+  "cat": "E-commerce & Booking Development",
+  "cats": [
+    "ecommerce",
+    "development"
+  ],
+  "url": "https://klana.co.id",
+  "thumb": "/content/images/klana-cover-hero.png",
+  "heading": "Building a booking store for a travel agency",
+  "summary": "Klana is a Jakarta travel agency that runs curated trips: open trips, treks, culinary experiences, and its own \"blind trip\" where the destination is a surprise. My client needed a site where people could browse those trips and actually book and pay, not just read a brochure. I built it on Shopify and bent it to fit how trips work, with departure dates, deposit options, and open-trip scheduling. It's live and taking bookings at klana.co.id. Here's how it works underneath.",
+  "challenge": "Selling a trip isn't like selling a t-shirt. A product has a size and a price. A trip has departure dates, a deposit or a full payment, a capacity, and a schedule that repeats. Shopify is built for physical products, so the real work was making it behave like a booking system without losing the smooth checkout Shopify is good at. On top of that, Klana's whole appeal is feeling adventurous and personal, so the site had to carry that mood and still handle the unglamorous mechanics of taking someone's money for a specific date.",
+  "role": "Web Designer & Shopify Developer",
+  "client": "Klana, Jakarta",
+  "time": "TBD — confirm number of weeks · Built with Shopify, plus a local payment app (confirm which)",
+  "cover": "/content/images/klana-cover-hero.png",
+  "sections": [
+    {
+      "type": "banner",
+      "image": "",
+      "title": "Experience the magic of the unknown."
+    },
+    {
+      "type": "heading",
+      "title": "First Cup of Coffee",
+      "kicker": "meeting #1"
+    },
+    {
+      "type": "text",
+      "body": "Klana came in with trips already running and a clear personality, but no proper way to sell online. They wanted people to be able to find a trip, pick a date, and pay, all in one place, without it turning into a back-and-forth over chat every time."
+    },
+    {
+      "type": "quote",
+      "body": "\"We run real trips with real dates and limited spots. The site can't just be a catalogue, people need to book and pay on it. But it still has to feel like Klana, like an adventure, not a booking form.\"\n— Klana"
+    },
+    {
+      "type": "list",
+      "label": "What are we building?",
+      "ordered": true,
+      "items": [
+        "A Shopify store where people browse and book trips",
+        "Date-based booking with deposit or full-payment options",
+        "A site that feels like the trips, not a spreadsheet"
+      ]
+    },
+    {
+      "type": "list",
+      "label": "What are the goals?",
+      "ordered": true,
+      "items": [
+        "Let customers book and pay online, end to end",
+        "Handle open trips, upcoming trips, and trip categories cleanly",
+        "Keep Klana's adventurous, personal tone throughout"
+      ]
+    },
+    {
+      "type": "note",
+      "body": "The interesting problem here was fitting a booking model into a shop platform. Before building anything, I mapped how Klana's trips actually work, the dates, the deposits, the repeat departures, because that structure had to drive the whole store, not the other way around."
+    },
+    {
+      "type": "heading",
+      "title": "The build",
+      "kicker": "research #1"
+    },
+    {
+      "type": "text",
+      "body": "Most of the work was making Shopify think in trips instead of products. Each trip carries its own set of departure dates, a full-payment or deposit choice, and a price, and the store is organized so people can browse by what they want: special trips, upcoming trips, and categories like outdoor, water, road trip, and eco."
+    },
+    {
+      "type": "list",
+      "label": "The parts that took the most thought:",
+      "ordered": true,
+      "items": [
+        "Trips as bookable products. Departure dates, deposit vs full payment, and capacity, all handled through the product and checkout so a \"trip\" behaves like a booking, not a one-off item.",
+        "Local payment. I integrated a local payment gateway through third-party apps, so customers pay the way they already pay here, including the deposit option for bigger trips.",
+        "Browsing that matches how people choose. Sorting trips into special, upcoming, and clear categories, so someone can come in wanting \"a water adventure\" and land on the right thing fast."
+      ]
+    },
+    {
+      "type": "note",
+      "body": "The deposit-versus-full-payment piece matters more than it looks. A big trip is a real spend, and letting people commit with a deposit lowers the barrier to booking. That's a business decision the store had to support, not just a checkout setting."
+    },
+    {
+      "type": "heading",
+      "title": "What's live",
+      "kicker": "research #2"
+    },
+    {
+      "type": "text",
+      "body": "klana.co.id is live and taking bookings. People browse trips by category, pick a departure date, choose to pay a deposit or in full, and check out through local payment. It handles open trips, upcoming departures, and Klana's signature blind trip, and it carries the brand's adventurous tone the whole way through, from the \"magic of the unknown\" hero down to the trip pages."
+    },
+    {
+      "type": "text",
+      "body": "For anyone deciding whether to hire me, here's the useful part. This wasn't a standard store. It's a booking system living inside Shopify, with dates, deposits, and local payment all working together. I can take a business model that doesn't fit the platform out of the box and make the platform serve it, cleanly enough that customers just see a site that works."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        "/content/images/klana-gallery-1-surftrip.png",
+        "/content/images/klana-gallery-2-opentrip.png"
+      ]
+    }
+  ]
+}

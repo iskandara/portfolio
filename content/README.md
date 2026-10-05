@@ -1,3 +1,6 @@
+> **Note:** each project now lives in its own file in `content/works/<id>.json` (edit them in the CMS at `/admin/`).
+> `content/works.json` is generated from those files by `node scripts/build-works.mjs` on every deploy - don't edit it by hand.
+
 # Content (your CMS)
 
 All Work-page content lives in **works.json**. Edit that file, save, reload — the

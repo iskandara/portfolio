@@ -1,0 +1,109 @@
+{
+  "order": 2,
+  "id": "publicspace",
+  "title": "letthisbookbeyourpublicspace.com",
+  "cat": "Web Design & Development",
+  "cats": [
+    "design",
+    "development"
+  ],
+  "url": "https://letthisbookbeyourpublicspace.com",
+  "thumb": "/content/images/letthisbook-cover-hero.png",
+  "heading": "Turning a printed book into a playable public-space project",
+  "summary": "Let This Book Be Your Public Space is Jody Agus's book about public space in Jakarta, a city where there's very little of it. It's part game, part toolkit, part poetic ritual: instead of being read, it wants to be used. I worked with Jody to shape, design, and build the website that turns the printed book into something interactive, where people can play the book online and share what they did with its assignments. It was made for Jody's exhibition at the Locarno Film Festival's BaseCamp program.",
+  "challenge": "The book was never meant to sit still. It asks people to go out and do things: small actions, creative instructions, soft disruptions in the forgotten parts of their city. A printed copy can hold those assignments, but it can't hold what happens after someone actually does one. The challenge was to build the digital half of the book without flattening it into a normal website. It had to keep the book's quiet, playful, slightly strange feeling, let people play through it online, and give them a way to share what they made or noticed, so the project becomes something a whole city can add to, not just read.",
+  "role": "Web Designer & Developer — shaping, design, and build with Jody Agus",
+  "client": "Jody Agus (Author)",
+  "time": "TBD — confirm number of weeks · Made for Locarno Film Festival's BaseCamp program, 2025",
+  "cover": "/content/images/letthisbook-cover-hero.png",
+  "sections": [
+    {
+      "type": "banner",
+      "image": "",
+      "title": "A book that wants to be used, not read."
+    },
+    {
+      "type": "heading",
+      "title": "First Cup of Coffee",
+      "kicker": "meeting #1"
+    },
+    {
+      "type": "text",
+      "body": "This one started as a conversation between me and Jody about a book that refused to behave like a book. He'd made something you're supposed to enter, wander through, and gently abandon, built for a city where public space is scarce but imagination isn't. My part was figuring out how the web could carry that same spirit instead of turning it into a product page."
+    },
+    {
+      "type": "quote",
+      "body": "\"The book doesn't want to be read. It wants to be used. I need the website to feel the same way, like a space you step into, not a thing you scroll.\"\n— Jody Agus"
+    },
+    {
+      "type": "list",
+      "label": "What are we building?",
+      "ordered": true,
+      "items": [
+        "A digital version of the book people can play through online",
+        "A way for people to share their responses to the book's assignments",
+        "A site that holds the book's tone, not just its text"
+      ]
+    },
+    {
+      "type": "list",
+      "label": "What are the goals?",
+      "ordered": true,
+      "items": [
+        "Extend the printed book into something interactive",
+        "Let readers become participants, and see each other's activities",
+        "Give the Locarno exhibition a living, online companion"
+      ]
+    },
+    {
+      "type": "note",
+      "body": "The trap with a project like this is building a clean, normal website that quietly kills the whole idea. Jody's book is strange on purpose. So before anything else, we spent time on tone: how the site should feel to move through, and how playing the book online could feel as open-ended as doing it in the street."
+    },
+    {
+      "type": "heading",
+      "title": "Shaping it with Jody",
+      "kicker": "research #1"
+    },
+    {
+      "type": "text",
+      "body": "Because the book is the concept, most of the work was translation: taking something made of paper, characters, and quests, and deciding what each part becomes on a screen. I worked closely with Jody on that, so the site reads as an extension of his book rather than my interpretation of it."
+    },
+    {
+      "type": "list",
+      "label": "The parts that took the most thought:",
+      "ordered": true,
+      "items": [
+        "Playing the book online. The characters each offer a lens on public space, and each comes with quests, small actions and creative instructions. The site had to make those playable, not just readable.",
+        "Sharing back. The book asks you to do things in the real world, so people needed a way to post what they did, turning solo assignments into something a community builds together.",
+        "Holding the tone. Poetic, a little unfinished, meant to be wandered and abandoned. Every design and build decision came back to protecting that feeling."
+      ]
+    },
+    {
+      "type": "note",
+      "body": "This wasn't a case of a client handing over a brief and stepping back. It was shaping an artist's idea into a working thing alongside him, which is a different skill than just building to spec, and honestly the part I like most."
+    },
+    {
+      "type": "heading",
+      "title": "What's live",
+      "kicker": "research #2"
+    },
+    {
+      "type": "text",
+      "body": "What we made is the book's second half. People can move through it online, play the characters and their quests, and share what they did with the assignments, so the project keeps growing past the printed copy. It went out into the world through Jody's exhibition at Locarno's BaseCamp program in 2025, and online it stays open for anyone in Jakarta, or anywhere, to add to."
+    },
+    {
+      "type": "text",
+      "body": "That's the note I'd want a client to sit with. Give me something conceptual, even something that resists being a normal website, and I can work with you to shape it, design it, and build it into something real that people actually use. Not every brief is a shop or a landing page. Some are ideas that need a collaborator to make them work on the web, and that's work I'm built for."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        "/content/images/letthisbook-gallery-1-artist-in-a.png",
+        "/content/images/letthisbook-gallery-2-character.png",
+        "/content/images/letthisbook-gallery-3-menu.png",
+        "/content/images/letthisbook-gallery-4-prayer.png",
+        "/content/images/letthisbook-gallery-5-book-closeup.png"
+      ]
+    }
+  ]
+}
