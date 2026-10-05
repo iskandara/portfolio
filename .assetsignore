@@ -1,0 +1,5 @@
+# Files that are in the repo but should not be served on the website
+wrangler.jsonc
+.assetsignore
+scripts
+README.md
