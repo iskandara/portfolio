@@ -1,11 +1,22 @@
 {
   "works": [
     {
+      "id": "stillhere",
+      "title": "stillhere.day",
+      "cat": "Design & build",
+      "cats": [
+        "design",
+        "development"
+      ],
+      "url": "https://stillhere.day",
+      "thumb": "/content/images/stillhere-cover-hero.png",
       "heading": "Designing and building Still Here, a habit-reduction app",
-      "challenge": "Most habit apps are built around a perfect streak, and they reset you to zero the second you slip. If you're reducing a habit instead of quitting it cold, that's basically a machine for feeling like a failure. I wanted the opposite: something that keeps every good day you've earned, forgives the days you don't, and never once shows you a red mark. And because it was mine, it had to be a real product, not a demo. Design, front end, backend, auth, domain, copy, and launch, all of it.",
       "summary": "Still Here is a habit app I designed and built on my own, start to finish. Instead of streaks and red X's, it turns any habit you're cutting back on into a small pixel-art island that grows a little every honest day. It's live at stillhere.day, free, no ads. This one's personal, so here's the whole thinking behind it.",
+      "challenge": "Most habit apps are built around a perfect streak, and they reset you to zero the second you slip. If you're reducing a habit instead of quitting it cold, that's basically a machine for feeling like a failure. I wanted the opposite: something that keeps every good day you've earned, forgives the days you don't, and never once shows you a red mark. And because it was mine, it had to be a real product, not a demo. Design, front end, backend, auth, domain, copy, and launch, all of it.",
+      "role": "Solo. Research, design, build, copy, and launch.",
       "client": "Personal product",
       "time": "Launched 2026 — React PWA, Appwrite, Vercel",
+      "cover": "/content/images/stillhere-cover-hero.png",
       "sections": [
         {
           "type": "banner",
@@ -14,8 +25,8 @@
         },
         {
           "type": "heading",
-          "kicker": "meeting #1",
-          "title": "Where it started"
+          "title": "Where it started",
+          "kicker": "meeting #1"
         },
         {
           "type": "text",
@@ -49,8 +60,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #1",
-          "title": "The design"
+          "title": "The design",
+          "kicker": "research #1"
         },
         {
           "type": "text",
@@ -72,8 +83,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #2",
-          "title": "What shipped"
+          "title": "What shipped",
+          "kicker": "research #2"
         },
         {
           "type": "text",
@@ -93,34 +104,35 @@
             "/content/images/stillhere-gallery-4-homestead.png"
           ]
         }
-      ],
-      "url": "https://stillhere.day",
-      "role": "Solo. Research, design, build, copy, and launch.",
-      "thumb": "/content/images/stillhere-cover-hero.png",
-      "cat": "Design & build",
-      "cover": "/content/images/stillhere-cover-hero.png",
-      "title": "stillhere.day",
-      "id": "stillhere",
-      "cats": [
-        "design",
-        "development"
       ]
     },
     {
+      "id": "publicspace",
+      "title": "letthisbookbeyourpublicspace.com",
+      "cat": "Web Design & Development",
+      "cats": [
+        "design",
+        "development"
+      ],
+      "url": "https://letthisbookbeyourpublicspace.com",
+      "thumb": "/content/images/letthisbook-cover-hero.png",
       "heading": "Turning a printed book into a playable public-space project",
-      "challenge": "The book was never meant to sit still. It asks people to go out and do things: small actions, creative instructions, soft disruptions in the forgotten parts of their city. A printed copy can hold those assignments, but it can't hold what happens after someone actually does one. The challenge was to build the digital half of the book without flattening it into a normal website. It had to keep the book's quiet, playful, slightly strange feeling, let people play through it online, and give them a way to share what they made or noticed, so the project becomes something a whole city can add to, not just read.",
       "summary": "Let This Book Be Your Public Space is Jody Agus's book about public space in Jakarta, a city where there's very little of it. It's part game, part toolkit, part poetic ritual: instead of being read, it wants to be used. I worked with Jody to shape, design, and build the website that turns the printed book into something interactive, where people can play the book online and share what they did with its assignments. It was made for Jody's exhibition at the Locarno Film Festival's BaseCamp program.",
+      "challenge": "The book was never meant to sit still. It asks people to go out and do things: small actions, creative instructions, soft disruptions in the forgotten parts of their city. A printed copy can hold those assignments, but it can't hold what happens after someone actually does one. The challenge was to build the digital half of the book without flattening it into a normal website. It had to keep the book's quiet, playful, slightly strange feeling, let people play through it online, and give them a way to share what they made or noticed, so the project becomes something a whole city can add to, not just read.",
+      "role": "Web Designer & Developer — shaping, design, and build with Jody Agus",
       "client": "Jody Agus (Author)",
       "time": "TBD — confirm number of weeks · Made for Locarno Film Festival's BaseCamp program, 2025",
+      "cover": "/content/images/letthisbook-cover-hero.png",
       "sections": [
         {
           "type": "banner",
+          "image": "",
           "title": "A book that wants to be used, not read."
         },
         {
           "type": "heading",
-          "kicker": "meeting #1",
-          "title": "First Cup of Coffee"
+          "title": "First Cup of Coffee",
+          "kicker": "meeting #1"
         },
         {
           "type": "text",
@@ -132,8 +144,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are we building?",
+          "ordered": true,
           "items": [
             "A digital version of the book people can play through online",
             "A way for people to share their responses to the book's assignments",
@@ -142,8 +154,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are the goals?",
+          "ordered": true,
           "items": [
             "Extend the printed book into something interactive",
             "Let readers become participants, and see each other's activities",
@@ -156,8 +168,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #1",
-          "title": "Shaping it with Jody"
+          "title": "Shaping it with Jody",
+          "kicker": "research #1"
         },
         {
           "type": "text",
@@ -165,8 +177,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "The parts that took the most thought:",
+          "ordered": true,
           "items": [
             "Playing the book online. The characters each offer a lens on public space, and each comes with quests, small actions and creative instructions. The site had to make those playable, not just readable.",
             "Sharing back. The book asks you to do things in the real world, so people needed a way to post what they did, turning solo assignments into something a community builds together.",
@@ -179,8 +191,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #2",
-          "title": "What's live"
+          "title": "What's live",
+          "kicker": "research #2"
         },
         {
           "type": "text",
@@ -200,34 +212,35 @@
             "/content/images/letthisbook-gallery-5-book-closeup.png"
           ]
         }
-      ],
-      "url": "https://letthisbookbeyourpublicspace.com",
-      "role": "Web Designer & Developer — shaping, design, and build with Jody Agus",
-      "thumb": "/content/images/letthisbook-cover-hero.png",
-      "cat": "Web Design & Development",
-      "cover": "/content/images/letthisbook-cover-hero.png",
-      "title": "letthisbookbeyourpublicspace.com",
-      "id": "publicspace",
-      "cats": [
-        "design",
-        "development"
       ]
     },
     {
+      "id": "klana",
+      "title": "klana.co.id",
+      "cat": "E-commerce & Booking Development",
+      "cats": [
+        "ecommerce",
+        "development"
+      ],
+      "url": "https://klana.co.id",
+      "thumb": "/content/images/klana-cover-hero.png",
       "heading": "Building a booking store for a travel agency",
-      "challenge": "Selling a trip isn't like selling a t-shirt. A product has a size and a price. A trip has departure dates, a deposit or a full payment, a capacity, and a schedule that repeats. Shopify is built for physical products, so the real work was making it behave like a booking system without losing the smooth checkout Shopify is good at. On top of that, Klana's whole appeal is feeling adventurous and personal, so the site had to carry that mood and still handle the unglamorous mechanics of taking someone's money for a specific date.",
       "summary": "Klana is a Jakarta travel agency that runs curated trips: open trips, treks, culinary experiences, and its own \"blind trip\" where the destination is a surprise. My client needed a site where people could browse those trips and actually book and pay, not just read a brochure. I built it on Shopify and bent it to fit how trips work, with departure dates, deposit options, and open-trip scheduling. It's live and taking bookings at klana.co.id. Here's how it works underneath.",
+      "challenge": "Selling a trip isn't like selling a t-shirt. A product has a size and a price. A trip has departure dates, a deposit or a full payment, a capacity, and a schedule that repeats. Shopify is built for physical products, so the real work was making it behave like a booking system without losing the smooth checkout Shopify is good at. On top of that, Klana's whole appeal is feeling adventurous and personal, so the site had to carry that mood and still handle the unglamorous mechanics of taking someone's money for a specific date.",
+      "role": "Web Designer & Shopify Developer",
       "client": "Klana, Jakarta",
       "time": "TBD — confirm number of weeks · Built with Shopify, plus a local payment app (confirm which)",
+      "cover": "/content/images/klana-cover-hero.png",
       "sections": [
         {
           "type": "banner",
+          "image": "",
           "title": "Experience the magic of the unknown."
         },
         {
           "type": "heading",
-          "kicker": "meeting #1",
-          "title": "First Cup of Coffee"
+          "title": "First Cup of Coffee",
+          "kicker": "meeting #1"
         },
         {
           "type": "text",
@@ -239,8 +252,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are we building?",
+          "ordered": true,
           "items": [
             "A Shopify store where people browse and book trips",
             "Date-based booking with deposit or full-payment options",
@@ -249,8 +262,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are the goals?",
+          "ordered": true,
           "items": [
             "Let customers book and pay online, end to end",
             "Handle open trips, upcoming trips, and trip categories cleanly",
@@ -263,8 +276,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #1",
-          "title": "The build"
+          "title": "The build",
+          "kicker": "research #1"
         },
         {
           "type": "text",
@@ -272,8 +285,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "The parts that took the most thought:",
+          "ordered": true,
           "items": [
             "Trips as bookable products. Departure dates, deposit vs full payment, and capacity, all handled through the product and checkout so a \"trip\" behaves like a booking, not a one-off item.",
             "Local payment. I integrated a local payment gateway through third-party apps, so customers pay the way they already pay here, including the deposit option for bigger trips.",
@@ -286,8 +299,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #2",
-          "title": "What's live"
+          "title": "What's live",
+          "kicker": "research #2"
         },
         {
           "type": "text",
@@ -304,30 +317,30 @@
             "/content/images/klana-gallery-2-opentrip.png"
           ]
         }
-      ],
-      "url": "https://klana.co.id",
-      "role": "Web Designer & Shopify Developer",
-      "thumb": "/content/images/klana-cover-hero.png",
-      "cat": "E-commerce & Booking Development",
-      "cover": "/content/images/klana-cover-hero.png",
-      "title": "klana.co.id",
-      "id": "klana",
-      "cats": [
-        "ecommerce",
-        "development"
       ]
     },
     {
+      "id": "quiet",
+      "title": "quietundernone.com",
+      "cat": "E-commerce Development",
+      "cats": [
+        "ecommerce",
+        "development"
+      ],
+      "url": "https://quietundernone.com",
+      "thumb": "/content/images/quietundernone-cover-hero.png",
       "heading": "Design and Shopify development for a two-market fashion brand",
-      "challenge": "Running two markets means running two sets of expectations: different payment methods, different shipping partners, different currencies, but one brand. The build had to keep both storefronts feeling like a single label while giving the team enough flexibility in Shopify to manage editorial content and pricing without needing a developer for every change.",
       "summary": "quietundernone.com is a fashion brand selling across Indonesian and international markets. I've handled design and Shopify development for them — from custom collection templates to local payment and shipping integrations — as they've grown into a two-storefront operation. Here's a look at that work.",
+      "challenge": "Running two markets means running two sets of expectations: different payment methods, different shipping partners, different currencies, but one brand. The build had to keep both storefronts feeling like a single label while giving the team enough flexibility in Shopify to manage editorial content and pricing without needing a developer for every change.",
+      "role": "Designer & Shopify Developer",
       "client": "quietundernone.com",
       "time": "Ongoing",
+      "cover": "/content/images/quietundernone-cover-hero.png",
       "sections": [
         {
           "type": "heading",
-          "kicker": "the build",
-          "title": "Two Storefronts, One Brand"
+          "title": "Two Storefronts, One Brand",
+          "kicker": "the build"
         },
         {
           "type": "text",
@@ -341,30 +354,29 @@
             "/content/images/quietundernone-gallery-3-product.png"
           ]
         }
-      ],
-      "url": "https://quietundernone.com",
-      "role": "Designer & Shopify Developer",
-      "thumb": "/content/images/quietundernone-cover-hero.png",
-      "cat": "E-commerce Development",
-      "cover": "/content/images/quietundernone-cover-hero.png",
-      "title": "quietundernone.com",
-      "id": "quiet",
-      "cats": [
-        "ecommerce",
-        "development"
       ]
     },
     {
+      "id": "santai",
+      "title": "santaiaja.com",
+      "cat": "Website Design & Development",
+      "cats": [
+        "design"
+      ],
+      "url": "https://santaiaja.com",
+      "thumb": "/content/images/santai-cover-hero.png",
       "heading": "Designing and building a single-page luxury fashion drop site",
-      "challenge": "A single-shirt drop needs to feel like an event, not a product page. The brief was to make one shirt feel worth the wait — full-screen presentation, real texture and detail, sound, motion — and since there's a new drop every season, it also had to run without a developer in the loop. Updating stock, images, or copy couldn't mean opening a code editor.",
       "summary": "SANTAI is a luxury fashion label built around a seasonal drop model — one exclusive shirt released per season. I designed and built the entire site as a single immersive page, with a password-protected CMS built in, so the brand can launch new drops and update pricing, images, and sizing without touching code. Here's how it came together.",
+      "challenge": "A single-shirt drop needs to feel like an event, not a product page. The brief was to make one shirt feel worth the wait — full-screen presentation, real texture and detail, sound, motion — and since there's a new drop every season, it also had to run without a developer in the loop. Updating stock, images, or copy couldn't mean opening a code editor.",
+      "role": "Designer & Full-Stack Developer",
       "client": "Self-initiated — SANTAI",
       "time": "Ongoing",
+      "cover": "/content/images/santai-cover-hero.png",
       "sections": [
         {
           "type": "heading",
-          "kicker": "the brief",
-          "title": "One Shirt, One Season"
+          "title": "One Shirt, One Season",
+          "kicker": "the brief"
         },
         {
           "type": "text",
@@ -377,65 +389,167 @@
             "/content/images/santai-gallery-2-howdeer.png"
           ]
         }
-      ],
-      "url": "https://santaiaja.com",
-      "role": "Designer & Full-Stack Developer",
-      "thumb": "/content/images/santai-cover-hero.png",
-      "cat": "Website Design & Development",
-      "cover": "/content/images/santai-cover-hero.png",
-      "title": "santaiaja.com",
-      "id": "santai",
-      "cats": [
-        "design"
       ]
     },
     {
-      "heading": "Website research for <b>Youthtopia</b>",
-      "challenge": "The question behind the study and why it mattered.",
-      "summary": "What the research set out to answer and who it was for. Replace me.",
-      "client": "Youthtopia",
-      "time": "e.g. 4 weeks — 2024",
+      "id": "youthtopia",
+      "title": "Youthtopia",
+      "cat": "Product research",
+      "cats": [
+        "research"
+      ],
+      "url": "https://www.youthtopia.world/",
+      "thumb": "",
+      "heading": "Transforming an eco-learning website through research and wireframing",
+      "summary": "Youthtopia Bali is an eco-community that teaches young people how to become changemakers for the environment. Their website held a lot of good material, but it didn't work as a place to learn. I led the research and wireframing to turn it into a learning platform where members can take courses, build a profile, and stay involved. Here's how the research shaped it.",
+      "challenge": "The website had to be redesigned to connect with its audience: a more intuitive information architecture and a visual language that speaks to the young people Youthtopia wants to reach. It also had to support a new business model (free courses with limits, plus a monthly subscription) without making learning feel like a sales funnel.",
+      "role": "Research, Wireframe, Consultant",
+      "client": "Youthtopia Bali",
+      "time": "5 weeks, 2021",
+      "cover": "",
       "sections": [
         {
           "type": "heading",
-          "kicker": "method",
-          "title": "Add a section title"
+          "title": "Brand & Strategy Kickoff",
+          "kicker": "meeting #1"
         },
         {
           "type": "text",
-          "body": "Describe the method, the sample, and the key insight."
+          "body": "Have you ever met someone with a huge spirit and a clear vision, so much that you can feel it even before you meet them? That's how it felt to meet Melati, founder of Youthtopia, an eco-community based in Bali. She wants Youthtopia to become the #1 go-to platform for learning how to become a changemaker for the environment."
+        },
+        {
+          "type": "quote",
+          "body": "\"I want the platform to be more engaging to our visitors, especially Gen-Z, because the next generation will play a big role in preserving our mother earth. By registering for a course, I want to raise awareness about the current condition of our environment, and what we can do to save it. I also want to know the lowest price they'd be willing to pay for a course.\""
+        },
+        {
+          "type": "list",
+          "label": "What are we building?",
+          "ordered": true,
+          "items": [
+            "A learning platform for young changemakers (limited free package and monthly subscription)",
+            "An interactive community with strong user profiles"
+          ]
+        },
+        {
+          "type": "list",
+          "label": "What are the goals?",
+          "ordered": true,
+          "items": [
+            "Increase the number of signed-up users",
+            "An easy-to-use website",
+            "A clear website feature list"
+          ]
         },
         {
           "type": "note",
-          "body": "A highlighted takeaway works well for research — the one thing that changed because of the study."
+          "body": "First meeting done, goals set. We spent most of it on the target market and how the platform could reach them. Before jumping into wireframes, I chose to do some research first. Bear with me, it's going to be exciting."
+        },
+        {
+          "type": "heading",
+          "title": "Reorganizing the content with card sorting",
+          "kicker": "research #1"
+        },
+        {
+          "type": "text",
+          "body": "To make key information easier to find, I chose a closed card-sorting method. The content and sub-menus already existed on the current website, so the question wasn't what to add. It was where people expected to find things, so nothing would get lost in the new structure."
+        },
+        {
+          "type": "list",
+          "label": "What we wanted to discover",
+          "ordered": true,
+          "items": [
+            "Where users check the benefits of subscribing to Youthtopia",
+            "Where users learn about all the features and what they can do on the website",
+            "Where users go to learn public speaking through an online course",
+            "Where users watch a video about what happened around the Youthtopia world (YouTube talks)",
+            "Where users post a story about climate change in a blog",
+            "Where users find information about a competition"
+          ]
+        },
+        {
+          "type": "image",
+          "image": "",
+          "caption": "The pre-defined cards for the session: main menu (layer 1), sub-menu (layer 2), and website features (layer 3)."
+        },
+        {
+          "type": "text",
+          "body": "28 people took part. I used an online card-sorting tool and asked Youthtopia to send the survey to respondents who matched our criteria. Because the audience was tech-savvy, gathering the insight was fast, and I could move straight into analysis. Due to an NDA, I can't show the card-sorting results publicly."
+        },
+        {
+          "type": "heading",
+          "title": "Gen-Z behavior towards website browsing, and how to capture a generation",
+          "kicker": "research #2"
+        },
+        {
+          "type": "text",
+          "body": "Generation Z is rapidly shaping the economic future of the world. As these \"digital natives\" enter the workforce, their spending power is quickly becoming more evident.\n\nTo capture the target market and make the most of the website, I needed to understand how this audience behaves. The current site had no trackers, so there was no usage data to lean on. Since this was a fresh start, my last research for this project was desk research on how Gen-Z browses the web.\n\nHere's a snapshot of my research report. Gen-Z wants three things:"
+        },
+        {
+          "type": "list",
+          "label": "",
+          "ordered": true,
+          "items": [
+            "An immersive and intuitive experience. They expect content that feels personalized, so the platform should recommend courses and blog posts based on what each user cares about.",
+            "Fewer barriers to content. Long sign-up walls, intrusive pop-ups, and slow pages push them away, so content should be reachable in as few steps as possible.",
+            "A high level of functionality. Poor performance frustrates them quickly, so the site needs fast loading, mobile optimization, and no-fuss navigation."
+          ]
+        },
+        {
+          "type": "heading",
+          "title": "A dance with colors",
+          "kicker": "existing vs proposed"
+        },
+        {
+          "type": "text",
+          "body": "First came millennial pink, then Gen-Z yellow. The proposed palette moves away from the existing muted tones toward something brighter and more optimistic. Yellow reads as vibrant and full of energy, which fits an audience that's hopeful about changing things. It also isn't tied to any gender, which matters to a generation that's more progressive and inclusive."
+        },
+        {
+          "type": "heading",
+          "title": "Wireframing",
+          "kicker": ""
+        },
+        {
+          "type": "text",
+          "body": "With the structure from card sorting and the behavior insights from desk research, I moved into wireframes. Every screen came back to the same three questions: can a first-time visitor find a course quickly, does the subscription feel worth it, and does the community feel alive enough to come back to."
+        },
+        {
+          "type": "image",
+          "image": "",
+          "caption": "Low-fidelity wireframes and user flows for the new learning platform."
+        },
+        {
+          "type": "text",
+          "body": "The result was a clear blueprint Youthtopia could build on: a menu organized around how their audience actually thinks, a visual direction aimed squarely at Gen-Z, and a learning platform that supports both free learners and subscribers. For a client, that's the value of starting with research. Five weeks of evidence meant every design decision had a reason behind it, instead of a guess."
         }
-      ],
-      "url": "",
-      "role": "Product Researcher",
-      "thumb": "",
-      "cat": "Product research",
-      "cover": "",
-      "title": "Youthtopia",
-      "id": "youthtopia",
-      "cats": [
-        "research"
       ]
     },
     {
+      "id": "antasiar",
+      "title": "antasiaradio.com",
+      "cat": "Radio Station Website",
+      "cats": [
+        "design",
+        "development"
+      ],
+      "url": "https://antasiaradio.com",
+      "thumb": "/content/images/desktop.png",
       "heading": "Creating a digital radio station and landing page",
-      "challenge": "Antasiar had a strong identity but no home online. The job was to turn a loud, retro brand into a site people could actually use: press play and listen, find the shows, meet the hosts, grab merch. All of that without sanding off the personality that makes it feel like Antasiar. It also had to ship fast and run on WordPress so the team could keep it updated themselves.",
       "summary": "Antasiar is an online radio brand built around a station that was big in the 80s and had gone quiet by the 90s. In 2024 it came back, and this site is where it lives: a live player, the shows, the voices behind the mic, and the merch. I designed and built the whole thing in WordPress. Here's how it came together.",
+      "challenge": "Antasiar had a strong identity but no home online. The job was to turn a loud, retro brand into a site people could actually use: press play and listen, find the shows, meet the hosts, grab merch. All of that without sanding off the personality that makes it feel like Antasiar. It also had to ship fast and run on WordPress so the team could keep it updated themselves.",
+      "role": "Researcher & WordPress Developer",
       "client": "Vindes Corp, Jakarta",
       "time": "2 weeks, 2024",
+      "cover": "/content/images/desktop-copy.png",
       "sections": [
         {
           "type": "banner",
+          "image": "",
           "title": "Gelombang Semangat, Setiap Saat"
         },
         {
           "type": "heading",
-          "kicker": "meeting #1",
-          "title": "First Cup of Coffee"
+          "title": "First Cup of Coffee",
+          "kicker": "meeting #1"
         },
         {
           "type": "text",
@@ -447,8 +561,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are we building?",
+          "ordered": true,
           "items": [
             "A landing page",
             "A live streaming player (the radio itself)"
@@ -456,8 +570,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are the goals?",
+          "ordered": true,
           "items": [
             "A site that tells people who Antasiar is",
             "Analytics, so the team can see who's actually listening"
@@ -469,8 +583,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #1",
-          "title": "Initial Design"
+          "title": "Initial Design",
+          "kicker": "research #1"
         },
         {
           "type": "text",
@@ -478,8 +592,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What we wanted to discover:",
+          "ordered": true,
           "items": [
             "Where people look first for the live player",
             "How they expect to browse the shows",
@@ -491,6 +605,7 @@
         },
         {
           "type": "image",
+          "image": "",
           "caption": "Cards used in the sort: main menu, sub-menu, and features."
         },
         {
@@ -499,8 +614,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #2",
-          "title": "The End Product"
+          "title": "The End Product",
+          "kicker": "research #2"
         },
         {
           "type": "text",
@@ -514,34 +629,35 @@
           "type": "note",
           "body": "What we shipped is a WordPress site the Vindes team can run on their own. Live player up top, the shows laid out clearly, Iqbaal front and center as the face of it, merch one click away, and every social handle wired in. Designed, built, and live in two weeks."
         }
-      ],
-      "url": "https://antasiaradio.com",
-      "role": "Researcher & WordPress Developer",
-      "thumb": "/content/images/desktop.png",
-      "cat": "Radio Station Website",
-      "cover": "/content/images/desktop-copy.png",
-      "title": "antasiaradio.com",
-      "id": "antasiar",
-      "cats": [
-        "design",
-        "development"
       ]
     },
     {
+      "id": "icf",
+      "title": "icf.id",
+      "cat": "Web Platform & CMS",
+      "cats": [
+        "research",
+        "development"
+      ],
+      "url": "https://icf.id",
+      "thumb": "",
       "heading": "Creating a website and content system for a national cycling federation",
-      "challenge": "A national federation has a lot to keep online and a small team to keep it there. Race schedules change, news comes in weekly, new regulations get published, riders need to register for licenses, and all of it has to work in both Indonesian and English. They needed one site that could hold all of that and still look the part for a national sport, plus a back end the staff could run without a developer on call.",
       "summary": "The Indonesian Cycling Federation (ICF) is the national governing body for cycle racing in Indonesia. It needed one place online for everything it runs: races, news, rider licenses, regulations, the gallery, and its own history. I built the site as a React front end backed by Strapi, so the team can publish and update all of it without touching code. Here's how it came together.",
+      "challenge": "A national federation has a lot to keep online and a small team to keep it there. Race schedules change, news comes in weekly, new regulations get published, riders need to register for licenses, and all of it has to work in both Indonesian and English. They needed one site that could hold all of that and still look the part for a national sport, plus a back end the staff could run without a developer on call.",
+      "role": "Researcher & Web Developer (React + Strapi)",
       "client": "Indonesian Cycling Federation (ISSI), Jakarta",
       "time": "TBD — confirm number of weeks, 2023",
+      "cover": "",
       "sections": [
         {
           "type": "banner",
+          "image": "",
           "title": "Satu Kayuh untuk Indonesia"
         },
         {
           "type": "heading",
-          "kicker": "meeting #1",
-          "title": "First Cup of Coffee"
+          "title": "First Cup of Coffee",
+          "kicker": "meeting #1"
         },
         {
           "type": "text",
@@ -553,8 +669,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are we building?",
+          "ordered": true,
           "items": [
             "A public website (news, events, disciplines, gallery, history)",
             "A content system the team manages themselves (Strapi)",
@@ -563,8 +679,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What are the goals?",
+          "ordered": true,
           "items": [
             "A credible home for the national federation",
             "A back end the staff can update without code",
@@ -577,8 +693,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #1",
-          "title": "Initial Design"
+          "title": "Initial Design",
+          "kicker": "research #1"
         },
         {
           "type": "text",
@@ -586,8 +702,8 @@
         },
         {
           "type": "list",
-          "ordered": true,
           "label": "What we wanted to discover:",
+          "ordered": true,
           "items": [
             "Where riders go to register for a license",
             "How people expect to find race schedules and results",
@@ -599,6 +715,7 @@
         },
         {
           "type": "image",
+          "image": "",
           "caption": "Cards used in the sort: main menu, sub-menu, and content types."
         },
         {
@@ -607,8 +724,8 @@
         },
         {
           "type": "heading",
-          "kicker": "research #2",
-          "title": "The End Product"
+          "title": "The End Product",
+          "kicker": "research #2"
         },
         {
           "type": "text",
@@ -622,15 +739,6 @@
           "type": "note",
           "body": "What we shipped is a React site backed by Strapi that the ISSI team runs on their own. News, events, disciplines, gallery, and regulations all publish from the CMS in both languages, and the race hub and live indicator keep the front page current during events. I built it, but the point was to hand it over. The federation runs it now without me."
         }
-      ],
-      "url": "https://icf.id",
-      "role": "Researcher & Web Developer (React + Strapi)",
-      "cat": "Web Platform & CMS",
-      "title": "icf.id",
-      "id": "icf",
-      "cats": [
-        "research",
-        "development"
       ]
     }
   ]
