@@ -1,0 +1,107 @@
+{
+  "order": 1,
+  "id": "stillhere",
+  "title": "stillhere.day",
+  "cat": "Design & build",
+  "cats": [
+    "design",
+    "development"
+  ],
+  "url": "https://stillhere.day",
+  "thumb": "/content/images/stillhere-cover-hero.png",
+  "heading": "Designing and building Still Here, a habit-reduction app",
+  "summary": "Still Here is a habit app I designed and built on my own, start to finish. Instead of streaks and red X's, it turns any habit you're cutting back on into a small pixel-art island that grows a little every honest day. It's live at stillhere.day, free, no ads. This one's personal, so here's the whole thinking behind it.",
+  "challenge": "Most habit apps are built around a perfect streak, and they reset you to zero the second you slip. If you're reducing a habit instead of quitting it cold, that's basically a machine for feeling like a failure. I wanted the opposite: something that keeps every good day you've earned, forgives the days you don't, and never once shows you a red mark. And because it was mine, it had to be a real product, not a demo. Design, front end, backend, auth, domain, copy, and launch, all of it.",
+  "role": "Solo. Research, design, build, copy, and launch.",
+  "client": "Personal product",
+  "time": "Launched 2026 — React PWA, Appwrite, Vercel",
+  "cover": "/content/images/stillhere-cover-hero.png",
+  "sections": [
+    {
+      "type": "banner",
+      "image": "",
+      "title": "A forest that grows as you keep your oath."
+    },
+    {
+      "type": "heading",
+      "title": "Where it started",
+      "kicker": "meeting #1"
+    },
+    {
+      "type": "text",
+      "body": "There was no client and no kickoff for this one. It started on a road trip to Halls Gap. Fresh air, a clean river, birds on the benches, and the first thing my brain offered up was \"what a perfect spot to smoke.\" The only smoke around was coming from the meat shop. Everyone else was reading, eating ice cream, sipping coffee. For the first time I felt embarrassed by the thought. That day I made a small promise: enjoy the good things without a cigarette in my hand. Still Here is that promise turned into an app."
+    },
+    {
+      "type": "quote",
+      "body": "\"What a perfect spot to smoke.\"\n— The thought that started the whole thing."
+    },
+    {
+      "type": "list",
+      "label": "What I wanted to build:",
+      "ordered": true,
+      "items": [
+        "A tracker for reducing a habit, not just quitting it",
+        "Something that grows when you do well, instead of punishing you when you don't"
+      ]
+    },
+    {
+      "type": "list",
+      "label": "What I refused to add:",
+      "ordered": true,
+      "items": [
+        "Streaks that reset to zero",
+        "Red marks, shame, ads, or a subscription"
+      ]
+    },
+    {
+      "type": "note",
+      "body": "The promise was the easy part. The real question was how to build a habit app that doesn't quietly make you feel worse every time you open it. Everything after this was about answering that."
+    },
+    {
+      "type": "heading",
+      "title": "The design",
+      "kicker": "research #1"
+    },
+    {
+      "type": "text",
+      "body": "The whole product rests on one bet: make progress something you tend, not a number you have to protect. So every honest day plants something on your island, and it grows from bare soil to a seed, a sapling, a grove, and finally a haven full of animals at dusk. A second layer grows next to it, where little builders raise a home for each good day, from a bedroll up to a warm homestead with a fire going. Slip up and nothing gets torn down. The builders just rest by the fire until you're back."
+    },
+    {
+      "type": "list",
+      "label": "A few things I wanted to get right:",
+      "ordered": true,
+      "items": [
+        "Blank days stay foggy, never red. A miss is missing data, not a punishment.",
+        "The app talks in your tone. You choose Gentle, Plain, or Honest, and the messages shift to match.",
+        "Rewards you can't rush. Companions and rare visitors (a butterfly, a rabbit, and if you keep at it, a unicorn or a little dragon) show up on their own as the forest matures."
+      ]
+    },
+    {
+      "type": "text",
+      "body": "The pixel art and the cozy tone aren't just decoration, they're the actual argument. A place that feels alive is easier to come back to than a chart that's judging you."
+    },
+    {
+      "type": "heading",
+      "title": "What shipped",
+      "kicker": "research #2"
+    },
+    {
+      "type": "text",
+      "body": "Still Here is live at stillhere.day. It installs like a normal app since it's a PWA, runs from a single tap, and stays free with no ads and no subscription. Under the cozy surface it's a full build: the forest and homestead systems, the honest calendar, the tone engine, accounts and auth, the domain and email setup, and every word of copy. I did the thinking behind it, designed it, wrote it, built the front and back end, and shipped it."
+    },
+    {
+      "type": "text",
+      "body": "That's the part I'd want a client to sit with. I can take something from a single thought on a park bench all the way to a live, installable product, by myself. Hand me a problem and I can own the whole thing: the research, the design, the code, the words, and the launch."
+    },
+    {
+      "type": "gallery",
+      "images": [
+        "/content/images/stillhere-gallery-1-forest.png",
+        "/content/images/stillhere-gallery-2-months.png",
+        "/content/images/stillhere-gallery-3-calendar.png",
+        "/content/images/stillhere-gallery-5-ecosystem.png",
+        "/content/images/stillhere-gallery-4-homestead.png"
+      ]
+    }
+  ]
+}

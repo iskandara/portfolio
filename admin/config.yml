@@ -13,93 +13,114 @@ public_folder: "/content/images"   # how the site references them
 # Tip: for local testing run `npx decap-server` and set local_backend: true
 # local_backend: true
 
+site_url: https://portfolio.iskandara.workers.dev   # change to your custom domain later
+display_url: https://portfolio.iskandara.workers.dev
+
+# Hide the side-by-side preview. Use the "Preview" button in the editor instead,
+# which opens the project on your live site in a new tab.
+editor:
+  preview: false
+
 collections:
-  - name: "work"
-    label: "Work"
-    files:
-      - name: "works"
-        label: "All projects"
-        file: "content/works.json"
-        description: "Add, edit, reorder or delete projects and their story sections."
-        fields:
-          - name: "works"
-            label: "Projects"
-            label_singular: "Project"
-            widget: "list"
-            summary: "{{fields.title}}"
+  - name: "works"
+    label: "Projects"
+    label_singular: "Project"
+    icon: work
+    description: "Your portfolio projects. Click one to edit it, or press New Project."
+    folder: "content/works"
+    extension: "json"
+    format: "json"
+    create: true
+    delete: true
+    slug: "{{id}}"
+    identifier_field: id
+    summary: "{{title}} - {{cat}}"
+    thumbnail: thumb
+    preview_path: "/#work/{{slug}}"
+    sortable_fields:
+      fields: [order, title]
+      default: { field: order, direction: Ascending }
+    view_filters:
+      - { label: "Design", field: cats, pattern: "design" }
+      - { label: "Development", field: cats, pattern: "development" }
+      - { label: "E-commerce", field: cats, pattern: "ecommerce" }
+      - { label: "Research", field: cats, pattern: "research" }
+    editor:
+      preview: false
+    fields:
+      - { name: order, label: "Order on site (1 = first)", widget: number, value_type: int, min: 1, default: 99 }
+      - { name: id, label: "ID (URL slug, no spaces)", widget: string }
+      - { name: title, label: "Title", widget: string }
+      - { name: cat, label: "Card label (e.g. Website design)", widget: string }
+      - { name: cats, label: "Filter tags", widget: select, multiple: true,
+          options: [design, development, ecommerce, research] }
+      - { name: url, label: "Website URL", widget: string, required: false }
+      - { name: thumb, label: "Card image", widget: image, required: false }
+      - { name: heading, label: "Case-study title (use <b> for bold)", widget: string }
+      - { name: summary, label: "Summary", widget: text }
+      - { name: challenge, label: "The Challenge", widget: text }
+      - { name: role, label: "My Role", widget: string }
+      - { name: client, label: "Client", widget: string }
+      - { name: time, label: "Project Time", widget: string }
+      - { name: cover, label: "Cover image", widget: image, required: false }
+      - name: sections
+        label: "Story sections"
+        label_singular: "Section"
+        widget: list
+        types:
+          - label: "Banner"
+            name: banner
+            widget: object
             fields:
-              - { name: id, label: "ID (URL slug, no spaces)", widget: string }
-              - { name: title, label: "Title", widget: string }
-              - { name: cat, label: "Card label (e.g. Website design)", widget: string }
-              - { name: cats, label: "Filter tags", widget: select, multiple: true,
-                  options: [design, development, ecommerce, research] }
-              - { name: url, label: "Website URL", widget: string, required: false }
-              - { name: thumb, label: "Card image", widget: image, required: false }
-              - { name: heading, label: "Case-study title (use <b> for bold)", widget: string }
-              - { name: summary, label: "Summary", widget: text }
-              - { name: challenge, label: "The Challenge", widget: text }
-              - { name: role, label: "My Role", widget: string }
-              - { name: client, label: "Client", widget: string }
-              - { name: time, label: "Project Time", widget: string }
-              - { name: cover, label: "Cover image", widget: image, required: false }
-              - name: sections
-                label: "Story sections"
-                label_singular: "Section"
+              - { name: image, label: Image, widget: image, required: false }
+              - { name: title, label: Title, widget: string }
+          - label: "Heading"
+            name: heading
+            widget: object
+            fields:
+              - { name: kicker, label: "Kicker (e.g. meeting #1)", widget: string, required: false }
+              - { name: title, label: Title, widget: string }
+          - label: "Text"
+            name: text
+            widget: object
+            fields:
+              - { name: body, label: Body, widget: text }
+          - label: "Quote"
+            name: quote
+            widget: object
+            fields:
+              - { name: body, label: Quote, widget: text }
+          - label: "List"
+            name: list
+            widget: object
+            fields:
+              - { name: label, label: Label, widget: string, required: false }
+              - { name: ordered, label: "Numbered?", widget: boolean, default: true }
+              - { name: items, label: Items, widget: list, field: { name: item, label: Item, widget: string } }
+          - label: "Note (highlighted box)"
+            name: note
+            widget: object
+            fields:
+              - { name: body, label: Body, widget: text }
+          - label: "Image"
+            name: image
+            widget: object
+            fields:
+              - { name: image, label: Image, widget: image, required: false }
+              - { name: caption, label: Caption, widget: string, required: false }
+          - label: "Gallery"
+            name: gallery
+            widget: object
+            fields:
+              - { name: images, label: Images, widget: list, field: { name: image, label: Image, widget: image } }
+          - label: "Colors"
+            name: colors
+            widget: object
+            fields:
+              - { name: label, label: Label, widget: string, required: false }
+              - name: groups
+                label: Groups
                 widget: list
-                types:
-                  - label: "Banner"
-                    name: banner
-                    widget: object
-                    fields:
-                      - { name: image, label: Image, widget: image, required: false }
-                      - { name: title, label: Title, widget: string }
-                  - label: "Heading"
-                    name: heading
-                    widget: object
-                    fields:
-                      - { name: kicker, label: "Kicker (e.g. meeting #1)", widget: string, required: false }
-                      - { name: title, label: Title, widget: string }
-                  - label: "Text"
-                    name: text
-                    widget: object
-                    fields:
-                      - { name: body, label: Body, widget: text }
-                  - label: "Quote"
-                    name: quote
-                    widget: object
-                    fields:
-                      - { name: body, label: Quote, widget: text }
-                  - label: "List"
-                    name: list
-                    widget: object
-                    fields:
-                      - { name: label, label: Label, widget: string, required: false }
-                      - { name: ordered, label: "Numbered?", widget: boolean, default: true }
-                      - { name: items, label: Items, widget: list, field: { name: item, label: Item, widget: string } }
-                  - label: "Note (highlighted box)"
-                    name: note
-                    widget: object
-                    fields:
-                      - { name: body, label: Body, widget: text }
-                  - label: "Image"
-                    name: image
-                    widget: object
-                    fields:
-                      - { name: image, label: Image, widget: image, required: false }
-                      - { name: caption, label: Caption, widget: string, required: false }
-                  - label: "Gallery"
-                    name: gallery
-                    widget: object
-                    fields:
-                      - { name: images, label: Images, widget: list, field: { name: image, label: Image, widget: image } }
-                  - label: "Colors"
-                    name: colors
-                    widget: object
-                    fields:
-                      - { name: label, label: Label, widget: string, required: false }
-                      - name: groups
-                        label: Groups
-                        widget: list
-                        fields:
-                          - { name: name, label: Name, widget: string }
-                          - { name: swatches, label: Swatches (hex), widget: list, field: { name: hex, label: Hex, widget: string } }
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: swatches, label: Swatches (hex), widget: list, field: { name: hex, label: Hex, widget: string } }

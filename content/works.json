@@ -1,6 +1,7 @@
 {
   "works": [
     {
+      "order": 1,
       "id": "stillhere",
       "title": "stillhere.day",
       "cat": "Design & build",
@@ -107,6 +108,7 @@
       ]
     },
     {
+      "order": 2,
       "id": "publicspace",
       "title": "letthisbookbeyourpublicspace.com",
       "cat": "Web Design & Development",
@@ -215,6 +217,7 @@
       ]
     },
     {
+      "order": 3,
       "id": "klana",
       "title": "klana.co.id",
       "cat": "E-commerce & Booking Development",
@@ -320,6 +323,7 @@
       ]
     },
     {
+      "order": 4,
       "id": "quiet",
       "title": "quietundernone.com",
       "cat": "E-commerce Development",
@@ -357,6 +361,7 @@
       ]
     },
     {
+      "order": 5,
       "id": "santai",
       "title": "santaiaja.com",
       "cat": "Website Design & Development",
@@ -392,6 +397,7 @@
       ]
     },
     {
+      "order": 6,
       "id": "youthtopia",
       "title": "Youthtopia",
       "cat": "Product research",
@@ -524,6 +530,7 @@
       ]
     },
     {
+      "order": 7,
       "id": "antasiar",
       "title": "antasiaradio.com",
       "cat": "Radio Station Website",
@@ -632,6 +639,7 @@
       ]
     },
     {
+      "order": 8,
       "id": "icf",
       "title": "icf.id",
       "cat": "Web Platform & CMS",

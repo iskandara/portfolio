@@ -1,0 +1,133 @@
+{
+  "order": 6,
+  "id": "youthtopia",
+  "title": "Youthtopia",
+  "cat": "Product research",
+  "cats": [
+    "research"
+  ],
+  "url": "https://www.youthtopia.world/",
+  "thumb": "",
+  "heading": "Transforming an eco-learning website through research and wireframing",
+  "summary": "Youthtopia Bali is an eco-community that teaches young people how to become changemakers for the environment. Their website held a lot of good material, but it didn't work as a place to learn. I led the research and wireframing to turn it into a learning platform where members can take courses, build a profile, and stay involved. Here's how the research shaped it.",
+  "challenge": "The website had to be redesigned to connect with its audience: a more intuitive information architecture and a visual language that speaks to the young people Youthtopia wants to reach. It also had to support a new business model (free courses with limits, plus a monthly subscription) without making learning feel like a sales funnel.",
+  "role": "Research, Wireframe, Consultant",
+  "client": "Youthtopia Bali",
+  "time": "5 weeks, 2021",
+  "cover": "",
+  "sections": [
+    {
+      "type": "heading",
+      "title": "Brand & Strategy Kickoff",
+      "kicker": "meeting #1"
+    },
+    {
+      "type": "text",
+      "body": "Have you ever met someone with a huge spirit and a clear vision, so much that you can feel it even before you meet them? That's how it felt to meet Melati, founder of Youthtopia, an eco-community based in Bali. She wants Youthtopia to become the #1 go-to platform for learning how to become a changemaker for the environment."
+    },
+    {
+      "type": "quote",
+      "body": "\"I want the platform to be more engaging to our visitors, especially Gen-Z, because the next generation will play a big role in preserving our mother earth. By registering for a course, I want to raise awareness about the current condition of our environment, and what we can do to save it. I also want to know the lowest price they'd be willing to pay for a course.\""
+    },
+    {
+      "type": "list",
+      "label": "What are we building?",
+      "ordered": true,
+      "items": [
+        "A learning platform for young changemakers (limited free package and monthly subscription)",
+        "An interactive community with strong user profiles"
+      ]
+    },
+    {
+      "type": "list",
+      "label": "What are the goals?",
+      "ordered": true,
+      "items": [
+        "Increase the number of signed-up users",
+        "An easy-to-use website",
+        "A clear website feature list"
+      ]
+    },
+    {
+      "type": "note",
+      "body": "First meeting done, goals set. We spent most of it on the target market and how the platform could reach them. Before jumping into wireframes, I chose to do some research first. Bear with me, it's going to be exciting."
+    },
+    {
+      "type": "heading",
+      "title": "Reorganizing the content with card sorting",
+      "kicker": "research #1"
+    },
+    {
+      "type": "text",
+      "body": "To make key information easier to find, I chose a closed card-sorting method. The content and sub-menus already existed on the current website, so the question wasn't what to add. It was where people expected to find things, so nothing would get lost in the new structure."
+    },
+    {
+      "type": "list",
+      "label": "What we wanted to discover",
+      "ordered": true,
+      "items": [
+        "Where users check the benefits of subscribing to Youthtopia",
+        "Where users learn about all the features and what they can do on the website",
+        "Where users go to learn public speaking through an online course",
+        "Where users watch a video about what happened around the Youthtopia world (YouTube talks)",
+        "Where users post a story about climate change in a blog",
+        "Where users find information about a competition"
+      ]
+    },
+    {
+      "type": "image",
+      "image": "",
+      "caption": "The pre-defined cards for the session: main menu (layer 1), sub-menu (layer 2), and website features (layer 3)."
+    },
+    {
+      "type": "text",
+      "body": "28 people took part. I used an online card-sorting tool and asked Youthtopia to send the survey to respondents who matched our criteria. Because the audience was tech-savvy, gathering the insight was fast, and I could move straight into analysis. Due to an NDA, I can't show the card-sorting results publicly."
+    },
+    {
+      "type": "heading",
+      "title": "Gen-Z behavior towards website browsing, and how to capture a generation",
+      "kicker": "research #2"
+    },
+    {
+      "type": "text",
+      "body": "Generation Z is rapidly shaping the economic future of the world. As these \"digital natives\" enter the workforce, their spending power is quickly becoming more evident.\n\nTo capture the target market and make the most of the website, I needed to understand how this audience behaves. The current site had no trackers, so there was no usage data to lean on. Since this was a fresh start, my last research for this project was desk research on how Gen-Z browses the web.\n\nHere's a snapshot of my research report. Gen-Z wants three things:"
+    },
+    {
+      "type": "list",
+      "label": "",
+      "ordered": true,
+      "items": [
+        "An immersive and intuitive experience. They expect content that feels personalized, so the platform should recommend courses and blog posts based on what each user cares about.",
+        "Fewer barriers to content. Long sign-up walls, intrusive pop-ups, and slow pages push them away, so content should be reachable in as few steps as possible.",
+        "A high level of functionality. Poor performance frustrates them quickly, so the site needs fast loading, mobile optimization, and no-fuss navigation."
+      ]
+    },
+    {
+      "type": "heading",
+      "title": "A dance with colors",
+      "kicker": "existing vs proposed"
+    },
+    {
+      "type": "text",
+      "body": "First came millennial pink, then Gen-Z yellow. The proposed palette moves away from the existing muted tones toward something brighter and more optimistic. Yellow reads as vibrant and full of energy, which fits an audience that's hopeful about changing things. It also isn't tied to any gender, which matters to a generation that's more progressive and inclusive."
+    },
+    {
+      "type": "heading",
+      "title": "Wireframing",
+      "kicker": ""
+    },
+    {
+      "type": "text",
+      "body": "With the structure from card sorting and the behavior insights from desk research, I moved into wireframes. Every screen came back to the same three questions: can a first-time visitor find a course quickly, does the subscription feel worth it, and does the community feel alive enough to come back to."
+    },
+    {
+      "type": "image",
+      "image": "",
+      "caption": "Low-fidelity wireframes and user flows for the new learning platform."
+    },
+    {
+      "type": "text",
+      "body": "The result was a clear blueprint Youthtopia could build on: a menu organized around how their audience actually thinks, a visual direction aimed squarely at Gen-Z, and a learning platform that supports both free learners and subscribers. For a client, that's the value of starting with research. Five weeks of evidence meant every design decision had a reason behind it, instead of a guess."
+    }
+  ]
+}
