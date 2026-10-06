@@ -8,7 +8,7 @@
     "development"
   ],
   "url": "https://icf.id",
-  "thumb": "",
+  "thumb": "/content/images/Home.jpg",
   "heading": "Creating a website and content system for a national cycling federation",
   "summary": "The Indonesian Cycling Federation (ICF) is the national governing body for cycle racing in Indonesia. It needed one place online for everything it runs: races, news, rider licenses, regulations, the gallery, and its own history. I built the site as a React front end backed by Strapi, so the team can publish and update all of it without touching code. Here's how it came together.",
   "challenge": "A national federation has a lot to keep online and a small team to keep it there. Race schedules change, news comes in weekly, new regulations get published, riders need to register for licenses, and all of it has to work in both Indonesian and English. They needed one site that could hold all of that and still look the part for a national sport, plus a back end the staff could run without a developer on call.",
@@ -17,11 +17,6 @@
   "time": "TBD — confirm number of weeks, 2023",
   "cover": "",
   "sections": [
-    {
-      "type": "banner",
-      "image": "",
-      "title": "Satu Kayuh untuk Indonesia"
-    },
     {
       "type": "heading",
       "title": "First Cup of Coffee",
