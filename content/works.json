@@ -10,14 +10,14 @@
         "development"
       ],
       "url": "https://stillhere.day",
-      "thumb": "/content/images/stillhere-cover-hero.png",
+      "thumb": "/content/images/stillhere-cover-hero.webp",
       "heading": "Designing and building Still Here, a habit-reduction app",
       "summary": "Still Here is a habit app I designed and built on my own, start to finish. Instead of streaks and red X's, it turns any habit you're cutting back on into a small pixel-art island that grows a little every honest day. It's live at stillhere.day, free, no ads. This one's personal, so here's the whole thinking behind it.",
       "challenge": "Most habit apps are built around a perfect streak, and they reset you to zero the second you slip. If you're reducing a habit instead of quitting it cold, that's basically a machine for feeling like a failure. I wanted the opposite: something that keeps every good day you've earned, forgives the days you don't, and never once shows you a red mark. And because it was mine, it had to be a real product, not a demo. Design, front end, backend, auth, domain, copy, and launch, all of it.",
       "role": "Solo. Research, design, build, copy, and launch.",
       "client": "Personal product",
       "time": "Launched 2026 — React PWA, Appwrite, Vercel",
-      "cover": "/content/images/stillhere-cover-hero.png",
+      "cover": "/content/images/stillhere-cover-hero.webp",
       "sections": [
         {
           "type": "banner",
@@ -98,11 +98,11 @@
         {
           "type": "gallery",
           "images": [
-            "/content/images/stillhere-gallery-1-forest.png",
-            "/content/images/stillhere-gallery-2-months.png",
-            "/content/images/stillhere-gallery-3-calendar.png",
-            "/content/images/stillhere-gallery-5-ecosystem.png",
-            "/content/images/stillhere-gallery-4-homestead.png"
+            "/content/images/stillhere-gallery-1-forest.webp",
+            "/content/images/stillhere-gallery-2-months.webp",
+            "/content/images/stillhere-gallery-3-calendar.webp",
+            "/content/images/stillhere-gallery-5-ecosystem.webp",
+            "/content/images/stillhere-gallery-4-homestead.webp"
           ]
         }
       ]
@@ -117,14 +117,14 @@
         "development"
       ],
       "url": "https://letthisbookbeyourpublicspace.com",
-      "thumb": "/content/images/letthisbook-cover-hero.png",
+      "thumb": "/content/images/letthisbook-cover-hero.webp",
       "heading": "Turning a printed book into a playable public-space project",
       "summary": "Let This Book Be Your Public Space is Jody Agus's book about public space in Jakarta, a city where there's very little of it. It's part game, part toolkit, part poetic ritual: instead of being read, it wants to be used. I worked with Jody to shape, design, and build the website that turns the printed book into something interactive, where people can play the book online and share what they did with its assignments. It was made for Jody's exhibition at the Locarno Film Festival's BaseCamp program.",
       "challenge": "The book was never meant to sit still. It asks people to go out and do things: small actions, creative instructions, soft disruptions in the forgotten parts of their city. A printed copy can hold those assignments, but it can't hold what happens after someone actually does one. The challenge was to build the digital half of the book without flattening it into a normal website. It had to keep the book's quiet, playful, slightly strange feeling, let people play through it online, and give them a way to share what they made or noticed, so the project becomes something a whole city can add to, not just read.",
       "role": "Web Designer & Developer — shaping, design, and build with Jody Agus",
       "client": "Jody Agus (Author)",
       "time": "TBD — confirm number of weeks · Made for Locarno Film Festival's BaseCamp program, 2025",
-      "cover": "/content/images/letthisbook-cover-hero.png",
+      "cover": "/content/images/letthisbook-cover-hero.webp",
       "sections": [
         {
           "type": "banner",
@@ -207,11 +207,11 @@
         {
           "type": "gallery",
           "images": [
-            "/content/images/letthisbook-gallery-1-artist-in-a.png",
-            "/content/images/letthisbook-gallery-2-character.png",
-            "/content/images/letthisbook-gallery-3-menu.png",
-            "/content/images/letthisbook-gallery-4-prayer.png",
-            "/content/images/letthisbook-gallery-5-book-closeup.png"
+            "/content/images/letthisbook-gallery-1-artist-in-a.webp",
+            "/content/images/letthisbook-gallery-2-character.webp",
+            "/content/images/letthisbook-gallery-3-menu.webp",
+            "/content/images/letthisbook-gallery-4-prayer.webp",
+            "/content/images/letthisbook-gallery-5-book-closeup.webp"
           ]
         }
       ]
@@ -226,14 +226,14 @@
         "development"
       ],
       "url": "https://klana.co.id",
-      "thumb": "/content/images/klana-cover-hero.png",
+      "thumb": "/content/images/klana-cover-hero.webp",
       "heading": "Building a booking store for a travel agency",
       "summary": "Klana is a Jakarta travel agency that runs curated trips: open trips, treks, culinary experiences, and its own \"blind trip\" where the destination is a surprise. My client needed a site where people could browse those trips and actually book and pay, not just read a brochure. I built it on Shopify and bent it to fit how trips work, with departure dates, deposit options, and open-trip scheduling. It's live and taking bookings at klana.co.id. Here's how it works underneath.",
       "challenge": "Selling a trip isn't like selling a t-shirt. A product has a size and a price. A trip has departure dates, a deposit or a full payment, a capacity, and a schedule that repeats. Shopify is built for physical products, so the real work was making it behave like a booking system without losing the smooth checkout Shopify is good at. On top of that, Klana's whole appeal is feeling adventurous and personal, so the site had to carry that mood and still handle the unglamorous mechanics of taking someone's money for a specific date.",
       "role": "Web Designer & Shopify Developer",
       "client": "Klana, Jakarta",
       "time": "TBD — confirm number of weeks · Built with Shopify, plus a local payment app (confirm which)",
-      "cover": "/content/images/klana-cover-hero.png",
+      "cover": "/content/images/klana-cover-hero.webp",
       "sections": [
         {
           "type": "banner",
@@ -316,8 +316,8 @@
         {
           "type": "gallery",
           "images": [
-            "/content/images/klana-gallery-1-surftrip.png",
-            "/content/images/klana-gallery-2-opentrip.png"
+            "/content/images/klana-gallery-1-surftrip.webp",
+            "/content/images/klana-gallery-2-opentrip.webp"
           ]
         }
       ]
@@ -332,14 +332,14 @@
         "development"
       ],
       "url": "https://quietundernone.com",
-      "thumb": "/content/images/quietundernone-cover-hero.png",
+      "thumb": "/content/images/quietundernone-cover-hero.webp",
       "heading": "Design and Shopify development for a two-market fashion brand",
       "summary": "quietundernone.com is a fashion brand selling across Indonesian and international markets. I've handled design and Shopify development for them — from custom collection templates to local payment and shipping integrations — as they've grown into a two-storefront operation. Here's a look at that work.",
       "challenge": "Running two markets means running two sets of expectations: different payment methods, different shipping partners, different currencies, but one brand. The build had to keep both storefronts feeling like a single label while giving the team enough flexibility in Shopify to manage editorial content and pricing without needing a developer for every change.",
       "role": "Designer & Shopify Developer",
       "client": "quietundernone.com",
       "time": "Ongoing",
-      "cover": "/content/images/quietundernone-cover-hero.png",
+      "cover": "/content/images/quietundernone-cover-hero.webp",
       "sections": [
         {
           "type": "heading",
@@ -353,9 +353,9 @@
         {
           "type": "gallery",
           "images": [
-            "/content/images/quietundernone-gallery-1-discover.png",
-            "/content/images/quietundernone-gallery-2-dapperdon.png",
-            "/content/images/quietundernone-gallery-3-product.png"
+            "/content/images/quietundernone-gallery-1-discover.webp",
+            "/content/images/quietundernone-gallery-2-dapperdon.webp",
+            "/content/images/quietundernone-gallery-3-product.webp"
           ]
         }
       ]
@@ -369,14 +369,14 @@
         "design"
       ],
       "url": "https://santaiaja.com",
-      "thumb": "/content/images/santai-cover-hero.png",
+      "thumb": "/content/images/santai-cover-hero.webp",
       "heading": "Designing and building a single-page luxury fashion drop site",
       "summary": "SANTAI is a luxury fashion label built around a seasonal drop model — one exclusive shirt released per season. I designed and built the entire site as a single immersive page, with a password-protected CMS built in, so the brand can launch new drops and update pricing, images, and sizing without touching code. Here's how it came together.",
       "challenge": "A single-shirt drop needs to feel like an event, not a product page. The brief was to make one shirt feel worth the wait — full-screen presentation, real texture and detail, sound, motion — and since there's a new drop every season, it also had to run without a developer in the loop. Updating stock, images, or copy couldn't mean opening a code editor.",
       "role": "Designer & Full-Stack Developer",
       "client": "Self-initiated — SANTAI",
       "time": "Ongoing",
-      "cover": "/content/images/santai-cover-hero.png",
+      "cover": "/content/images/santai-cover-hero.webp",
       "sections": [
         {
           "type": "heading",
@@ -390,8 +390,8 @@
         {
           "type": "gallery",
           "images": [
-            "/content/images/santai-gallery-1-deer-sun.png",
-            "/content/images/santai-gallery-2-howdeer.png"
+            "/content/images/santai-gallery-1-deer-sun.webp",
+            "/content/images/santai-gallery-2-howdeer.webp"
           ]
         }
       ]
@@ -521,7 +521,7 @@
         {
           "type": "image",
           "image": "",
-          "caption": "Low-fidelity wireframes and user flows for the new learning platform."
+          "caption": "Low-fidelity wireframes and user flows for the new learning platform"
         },
         {
           "type": "text",
@@ -539,14 +539,14 @@
         "development"
       ],
       "url": "https://antasiaradio.com",
-      "thumb": "/content/images/desktop.png",
+      "thumb": "/content/images/desktop.webp",
       "heading": "Creating a digital radio station and landing page",
       "summary": "Antasiar is an online radio brand built around a station that was big in the 80s and had gone quiet by the 90s. In 2024 it came back, and this site is where it lives: a live player, the shows, the voices behind the mic, and the merch. I designed and built the whole thing in WordPress. Here's how it came together.",
       "challenge": "Antasiar had a strong identity but no home online. The job was to turn a loud, retro brand into a site people could actually use: press play and listen, find the shows, meet the hosts, grab merch. All of that without sanding off the personality that makes it feel like Antasiar. It also had to ship fast and run on WordPress so the team could keep it updated themselves.",
       "role": "Researcher & WordPress Developer",
       "client": "Vindes Corp, Jakarta",
       "time": "2 weeks, 2024",
-      "cover": "/content/images/desktop-copy.png",
+      "cover": "/content/images/desktop-copy.webp",
       "sections": [
         {
           "type": "banner",
@@ -648,20 +648,15 @@
         "development"
       ],
       "url": "https://icf.id",
-      "thumb": "",
+      "thumb": "/content/images/Home.jpg",
       "heading": "Creating a website and content system for a national cycling federation",
       "summary": "The Indonesian Cycling Federation (ICF) is the national governing body for cycle racing in Indonesia. It needed one place online for everything it runs: races, news, rider licenses, regulations, the gallery, and its own history. I built the site as a React front end backed by Strapi, so the team can publish and update all of it without touching code. Here's how it came together.",
       "challenge": "A national federation has a lot to keep online and a small team to keep it there. Race schedules change, news comes in weekly, new regulations get published, riders need to register for licenses, and all of it has to work in both Indonesian and English. They needed one site that could hold all of that and still look the part for a national sport, plus a back end the staff could run without a developer on call.",
       "role": "Researcher & Web Developer (React + Strapi)",
       "client": "Indonesian Cycling Federation (ISSI), Jakarta",
       "time": "TBD — confirm number of weeks, 2023",
-      "cover": "",
+      "cover": "/content/images/Home.jpg",
       "sections": [
-        {
-          "type": "banner",
-          "image": "",
-          "title": "Satu Kayuh untuk Indonesia"
-        },
         {
           "type": "heading",
           "title": "First Cup of Coffee",
@@ -723,7 +718,7 @@
         },
         {
           "type": "image",
-          "image": "",
+          "image": "/content/images/Home.jpg",
           "caption": "Cards used in the sort: main menu, sub-menu, and content types."
         },
         {
