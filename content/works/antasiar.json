@@ -8,14 +8,14 @@
     "development"
   ],
   "url": "https://antasiaradio.com",
-  "thumb": "/content/images/desktop.png",
+  "thumb": "/content/images/desktop.webp",
   "heading": "Creating a digital radio station and landing page",
   "summary": "Antasiar is an online radio brand built around a station that was big in the 80s and had gone quiet by the 90s. In 2024 it came back, and this site is where it lives: a live player, the shows, the voices behind the mic, and the merch. I designed and built the whole thing in WordPress. Here's how it came together.",
   "challenge": "Antasiar had a strong identity but no home online. The job was to turn a loud, retro brand into a site people could actually use: press play and listen, find the shows, meet the hosts, grab merch. All of that without sanding off the personality that makes it feel like Antasiar. It also had to ship fast and run on WordPress so the team could keep it updated themselves.",
   "role": "Researcher & WordPress Developer",
   "client": "Vindes Corp, Jakarta",
   "time": "2 weeks, 2024",
-  "cover": "/content/images/desktop-copy.png",
+  "cover": "/content/images/desktop-copy.webp",
   "sections": [
     {
       "type": "banner",

@@ -8,14 +8,14 @@
     "development"
   ],
   "url": "https://klana.co.id",
-  "thumb": "/content/images/klana-cover-hero.png",
+  "thumb": "/content/images/klana-cover-hero.webp",
   "heading": "Building a booking store for a travel agency",
   "summary": "Klana is a Jakarta travel agency that runs curated trips: open trips, treks, culinary experiences, and its own \"blind trip\" where the destination is a surprise. My client needed a site where people could browse those trips and actually book and pay, not just read a brochure. I built it on Shopify and bent it to fit how trips work, with departure dates, deposit options, and open-trip scheduling. It's live and taking bookings at klana.co.id. Here's how it works underneath.",
   "challenge": "Selling a trip isn't like selling a t-shirt. A product has a size and a price. A trip has departure dates, a deposit or a full payment, a capacity, and a schedule that repeats. Shopify is built for physical products, so the real work was making it behave like a booking system without losing the smooth checkout Shopify is good at. On top of that, Klana's whole appeal is feeling adventurous and personal, so the site had to carry that mood and still handle the unglamorous mechanics of taking someone's money for a specific date.",
   "role": "Web Designer & Shopify Developer",
   "client": "Klana, Jakarta",
   "time": "TBD — confirm number of weeks · Built with Shopify, plus a local payment app (confirm which)",
-  "cover": "/content/images/klana-cover-hero.png",
+  "cover": "/content/images/klana-cover-hero.webp",
   "sections": [
     {
       "type": "banner",
@@ -98,8 +98,8 @@
     {
       "type": "gallery",
       "images": [
-        "/content/images/klana-gallery-1-surftrip.png",
-        "/content/images/klana-gallery-2-opentrip.png"
+        "/content/images/klana-gallery-1-surftrip.webp",
+        "/content/images/klana-gallery-2-opentrip.webp"
       ]
     }
   ]

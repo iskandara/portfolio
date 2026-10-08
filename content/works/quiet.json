@@ -8,14 +8,14 @@
     "development"
   ],
   "url": "https://quietundernone.com",
-  "thumb": "/content/images/quietundernone-cover-hero.png",
+  "thumb": "/content/images/quietundernone-cover-hero.webp",
   "heading": "Design and Shopify development for a two-market fashion brand",
   "summary": "quietundernone.com is a fashion brand selling across Indonesian and international markets. I've handled design and Shopify development for them — from custom collection templates to local payment and shipping integrations — as they've grown into a two-storefront operation. Here's a look at that work.",
   "challenge": "Running two markets means running two sets of expectations: different payment methods, different shipping partners, different currencies, but one brand. The build had to keep both storefronts feeling like a single label while giving the team enough flexibility in Shopify to manage editorial content and pricing without needing a developer for every change.",
   "role": "Designer & Shopify Developer",
   "client": "quietundernone.com",
   "time": "Ongoing",
-  "cover": "/content/images/quietundernone-cover-hero.png",
+  "cover": "/content/images/quietundernone-cover-hero.webp",
   "sections": [
     {
       "type": "heading",
@@ -29,9 +29,9 @@
     {
       "type": "gallery",
       "images": [
-        "/content/images/quietundernone-gallery-1-discover.png",
-        "/content/images/quietundernone-gallery-2-dapperdon.png",
-        "/content/images/quietundernone-gallery-3-product.png"
+        "/content/images/quietundernone-gallery-1-discover.webp",
+        "/content/images/quietundernone-gallery-2-dapperdon.webp",
+        "/content/images/quietundernone-gallery-3-product.webp"
       ]
     }
   ]

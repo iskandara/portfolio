@@ -8,14 +8,14 @@
     "development"
   ],
   "url": "https://letthisbookbeyourpublicspace.com",
-  "thumb": "/content/images/letthisbook-cover-hero.png",
+  "thumb": "/content/images/letthisbook-cover-hero.webp",
   "heading": "Turning a printed book into a playable public-space project",
   "summary": "Let This Book Be Your Public Space is Jody Agus's book about public space in Jakarta, a city where there's very little of it. It's part game, part toolkit, part poetic ritual: instead of being read, it wants to be used. I worked with Jody to shape, design, and build the website that turns the printed book into something interactive, where people can play the book online and share what they did with its assignments. It was made for Jody's exhibition at the Locarno Film Festival's BaseCamp program.",
   "challenge": "The book was never meant to sit still. It asks people to go out and do things: small actions, creative instructions, soft disruptions in the forgotten parts of their city. A printed copy can hold those assignments, but it can't hold what happens after someone actually does one. The challenge was to build the digital half of the book without flattening it into a normal website. It had to keep the book's quiet, playful, slightly strange feeling, let people play through it online, and give them a way to share what they made or noticed, so the project becomes something a whole city can add to, not just read.",
   "role": "Web Designer & Developer — shaping, design, and build with Jody Agus",
   "client": "Jody Agus (Author)",
   "time": "TBD — confirm number of weeks · Made for Locarno Film Festival's BaseCamp program, 2025",
-  "cover": "/content/images/letthisbook-cover-hero.png",
+  "cover": "/content/images/letthisbook-cover-hero.webp",
   "sections": [
     {
       "type": "banner",
@@ -98,11 +98,11 @@
     {
       "type": "gallery",
       "images": [
-        "/content/images/letthisbook-gallery-1-artist-in-a.png",
-        "/content/images/letthisbook-gallery-2-character.png",
-        "/content/images/letthisbook-gallery-3-menu.png",
-        "/content/images/letthisbook-gallery-4-prayer.png",
-        "/content/images/letthisbook-gallery-5-book-closeup.png"
+        "/content/images/letthisbook-gallery-1-artist-in-a.webp",
+        "/content/images/letthisbook-gallery-2-character.webp",
+        "/content/images/letthisbook-gallery-3-menu.webp",
+        "/content/images/letthisbook-gallery-4-prayer.webp",
+        "/content/images/letthisbook-gallery-5-book-closeup.webp"
       ]
     }
   ]

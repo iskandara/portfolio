@@ -8,14 +8,14 @@
     "development"
   ],
   "url": "https://stillhere.day",
-  "thumb": "/content/images/stillhere-cover-hero.png",
+  "thumb": "/content/images/stillhere-cover-hero.webp",
   "heading": "Designing and building Still Here, a habit-reduction app",
   "summary": "Still Here is a habit app I designed and built on my own, start to finish. Instead of streaks and red X's, it turns any habit you're cutting back on into a small pixel-art island that grows a little every honest day. It's live at stillhere.day, free, no ads. This one's personal, so here's the whole thinking behind it.",
   "challenge": "Most habit apps are built around a perfect streak, and they reset you to zero the second you slip. If you're reducing a habit instead of quitting it cold, that's basically a machine for feeling like a failure. I wanted the opposite: something that keeps every good day you've earned, forgives the days you don't, and never once shows you a red mark. And because it was mine, it had to be a real product, not a demo. Design, front end, backend, auth, domain, copy, and launch, all of it.",
   "role": "Solo. Research, design, build, copy, and launch.",
   "client": "Personal product",
   "time": "Launched 2026 — React PWA, Appwrite, Vercel",
-  "cover": "/content/images/stillhere-cover-hero.png",
+  "cover": "/content/images/stillhere-cover-hero.webp",
   "sections": [
     {
       "type": "banner",
@@ -96,11 +96,11 @@
     {
       "type": "gallery",
       "images": [
-        "/content/images/stillhere-gallery-1-forest.png",
-        "/content/images/stillhere-gallery-2-months.png",
-        "/content/images/stillhere-gallery-3-calendar.png",
-        "/content/images/stillhere-gallery-5-ecosystem.png",
-        "/content/images/stillhere-gallery-4-homestead.png"
+        "/content/images/stillhere-gallery-1-forest.webp",
+        "/content/images/stillhere-gallery-2-months.webp",
+        "/content/images/stillhere-gallery-3-calendar.webp",
+        "/content/images/stillhere-gallery-5-ecosystem.webp",
+        "/content/images/stillhere-gallery-4-homestead.webp"
       ]
     }
   ]
