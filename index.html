@@ -4,15 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>aradnaksi — product researcher & web designer</title>
+<meta name="description" content="Aradnaksi is a product researcher and web designer. Six years across food delivery and fintech SaaS, turning user evidence into decisions that move conversion and retention.">
+<meta name="theme-color" content="#FFFDF4">
+<meta property="og:title" content="aradnaksi — product researcher & web designer">
+<meta property="og:description" content="Product research and web design: user evidence turned into decisions that move conversion and retention.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --sun:#FFC933;--sun-deep:#E39B00;--cream:#FFFDF4;--paper:#ffffff;
-    --ink:#141414;--ink-soft:#5a564c;--muted:#6e6859;--line:rgba(20,20,20,.10);
+    --ease:cubic-bezier(.16,1,.3,1);--ease-io:cubic-bezier(.76,0,.24,1);--ink:#141414;--ink-soft:#5a564c;--muted:#6e6859;--line:rgba(20,20,20,.10);
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  h1,h2,.case-title,.cs-h-title{text-wrap:balance}
+  .lead,.work-desc,.cs-text p,.stub-p,.work-sub{text-wrap:pretty}
   html,body{height:100%}
   html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   body{font-family:"Instrument Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);overflow:hidden}
@@ -22,14 +29,17 @@
 
   /* NAV */
   .nav-wrap{position:fixed;top:0;left:0;right:0;display:flex;justify-content:center;padding:20px 16px;z-index:80;pointer-events:none;transition:opacity .3s}
-  nav{pointer-events:auto;display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.8);
+  nav{position:relative;pointer-events:auto;display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.8);
     backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
     border:1px solid rgba(20,20,20,.08);border-radius:999px;padding:6px 8px 6px 10px;box-shadow:0 10px 26px -14px rgba(90,60,0,.4)}
   .brand{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--sun);display:grid;place-items:center;margin-right:6px;
     font-family:"Caveat",cursive;font-weight:700;font-size:18px;line-height:1;transform:rotate(-6deg);cursor:pointer;flex:none}
   nav a{text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;letter-spacing:-.01em;padding:7px 14px;border-radius:999px;transition:background .18s,color .18s;white-space:nowrap;cursor:pointer}
   nav a:hover{background:rgba(20,20,20,.06)}
-  nav a.active{background:var(--sun);color:var(--ink);font-weight:600}
+  nav a.active{background:transparent;color:var(--ink);font-weight:600}
+  .nav-pill{position:absolute;top:6px;bottom:6px;left:0;width:0;border-radius:999px;background:var(--sun);z-index:0;pointer-events:none}
+  .nav-pill.ready{transition:transform .55s var(--ease-io),width .55s var(--ease-io)}
+  nav a,nav .brand{position:relative;z-index:1}
   nav a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
   body.case-open .nav-wrap{opacity:0;pointer-events:none}
 
@@ -42,7 +52,9 @@
   .hero{max-width:1240px;margin:0 auto;min-height:100%;padding:132px 40px 56px;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
   .intro{max-width:600px}
   .howdy{font-family:"Caveat",cursive;font-weight:600;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--ink);margin:0 0 -.15em 2px;transform:rotate(-2deg);display:inline-block}
-  h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(3.6rem,12.5vw,10rem);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:.06em 0 0}
+  h1{white-space:nowrap;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(3.6rem,12.5vw,10rem);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:.06em 0 0}
+  .ch{display:inline-block;opacity:0;transform:translateY(.55em) rotate(7deg);transform-origin:0 100%;animation:chin .95s var(--ease) forwards;animation-delay:calc(.12s + var(--i)*.05s)}
+  @keyframes chin{to{opacity:1;transform:none}}
   .squiggle{display:block;width:min(88%,440px);height:26px;margin:6px 0 0 4px;color:var(--ink)}
   .squiggle path{stroke:currentColor;stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 1.1s .35s ease forwards}
   .lead{font-size:clamp(1.02rem,1.35vw,1.22rem);line-height:1.5;color:var(--ink-soft);max-width:46ch;margin:26px 0 0}
@@ -75,6 +87,15 @@
   .work{border:1px solid var(--line);border-radius:22px;background:var(--paper);transition:transform .22s,box-shadow .22s,border-color .22s}
   .work:hover{transform:translateY(-3px);box-shadow:0 22px 46px -22px rgba(90,60,0,.34);border-color:rgba(20,20,20,.18)}
   .work.hide{display:none}
+  .work{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease),box-shadow .22s,border-color .22s}
+  .work.in{opacity:1;transform:none}
+  .work.in:hover{transform:translateY(-3px)}
+  .work-no{font-family:"Caveat",cursive;font-weight:700;font-size:1.5rem;line-height:1;color:var(--ink-soft);margin-right:12px;flex:none}
+  .work .frame-body img{transition:transform .9s var(--ease)}
+  .work:hover .frame-body img{transform:scale(1.035)}
+  .cursor{position:fixed;left:0;top:0;z-index:120;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;font-weight:600;font-size:.9rem;letter-spacing:-.01em;pointer-events:none;transform:translate3d(-200px,-200px,0);scale:.4;opacity:0;transition:scale .35s var(--ease),opacity .2s;box-shadow:0 8px 24px -10px rgba(90,60,0,.45)}
+  .cursor.on{opacity:1;scale:1}
+  body.has-bubble .work-link{cursor:none}
   .work-link{display:block;width:100%;text-align:left;background:none;border:none;font:inherit;color:inherit;cursor:pointer;padding:24px 24px 26px}
   .work-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
   .work-title-row{display:flex;align-items:center;gap:12px;min-width:0}
@@ -93,11 +114,16 @@
   .load-note code{background:rgba(20,20,20,.06);padding:2px 6px;border-radius:6px;font-size:.9em}
 
   /* STUB PAGES */
+  .stub--chat{max-width:1000px}
+  .mailrow{display:flex;align-items:center;flex-wrap:nowrap;gap:0 18px}
+  @media (max-width:640px){.mailrow{flex-wrap:wrap}}
+  .copybtn{margin:22px 0 0;flex:none;font:inherit;font-size:.9rem;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:10px;padding:9px 15px;cursor:pointer;transition:background .16s,color .16s,border-color .16s}
+  .copybtn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
   .stub{min-height:100%;display:grid;place-content:center;justify-items:start;text-align:left;max-width:640px;margin:0 auto;padding:120px 40px}
   .stub-h{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2.8rem,7vw,5rem);letter-spacing:-.03em;line-height:.95;color:var(--ink);margin-top:2px}
   .stub-p{color:var(--ink-soft);font-size:1.12rem;line-height:1.55;margin-top:16px;max-width:48ch}
   .tag-soon{margin-top:22px;display:inline-block;background:var(--sun);color:var(--ink);font-weight:600;font-size:.9rem;padding:7px 15px;border-radius:8px;transform:rotate(-1.5deg)}
-  .mailbtn{margin-top:22px;display:inline-block;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(1.3rem,3.4vw,2rem);color:var(--ink);border-bottom:3px solid var(--sun);padding-bottom:2px;transition:border-color .2s}
+  .mailbtn{margin-top:22px;display:inline-block;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.03em;font-size:clamp(1.3rem,7vw,3.4rem);white-space:nowrap;color:var(--ink);border-bottom:3px solid var(--sun);padding-bottom:2px;transition:border-color .2s}
   .mailbtn:hover{border-color:var(--ink)}
   .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
   .socials a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem;border:1px solid var(--line);padding:9px 16px;border-radius:10px;transition:all .16s}
@@ -112,6 +138,7 @@
   .case-scroll{position:absolute;inset:0;overflow-y:auto;opacity:0;transition:opacity .28s ease}
   .case.open .case-scroll{opacity:1;transition:opacity .4s ease .16s}
   .case-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;background:rgba(255,253,244,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .case-progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--sun);transform-origin:0 50%;transform:scaleX(var(--p,0))}
   .case-back{font:inherit;font-weight:600;font-size:.95rem;background:none;border:none;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;transition:background .15s}
   .case-back:hover{background:rgba(20,20,20,.06)}
   .case-back svg{width:16px;height:16px}
@@ -198,6 +225,10 @@
     .track,.case,.case-scroll{transition:none}
     .squiggle path{animation:none;stroke-dashoffset:0}
     .reveal{animation:none;opacity:1;transform:none}
+    .ch{animation:none;opacity:1;transform:none}
+    .work{opacity:1;transform:none;transition:none}
+    .nav-pill.ready{transition:none}
+    .work .frame-body img{transition:none}
     .work{transition:none}
   }
 </style>
@@ -205,6 +236,7 @@
 <body>
   <div class="nav-wrap">
     <nav aria-label="Primary">
+      <span class="nav-pill" aria-hidden="true"></span>
       <span class="brand" data-go="about" role="button" aria-label="Home" tabindex="0">a</span>
       <a data-go="about" class="active">About me</a>
       <a data-go="work">Work</a>
@@ -221,7 +253,7 @@
         <div class="hero">
           <div class="intro">
             <p class="howdy reveal">howdy, i'm</p>
-            <h1 class="reveal r2">aradnaksi</h1>
+            <h1 id="heroName" aria-label="aradnaksi">aradnaksi</h1>
             <svg class="squiggle reveal r2" viewBox="0 0 440 26" aria-hidden="true"><path d="M4 17 C 60 6, 96 6, 150 14 S 250 24, 300 12 S 400 4, 436 15"/></svg>
             <p class="lead reveal r3">As a product researcher, I help product teams turn behavioral data and user evidence into decisions that move <b>conversion</b>, <b>retention</b>, and <b>GTV</b>. Six years across food delivery and fintech SaaS. As a web designer, I also<span class="wink">&hellip; design web.</span></p>
             <div class="meta reveal r4"><span class="avail"><span class="dot"></span>Open to work</span><a class="sayhi" data-go="chat">Say hi</a></div>
@@ -229,7 +261,7 @@
           <div class="stage">
             <div class="photo reveal r3">
               <span class="tape" aria-hidden="true"></span>
-              <div class="hero-frame"><img src="content/images/portrait.webp" alt="Portrait of Aradnaksi in a cap, in front of a green hedge"></div>
+              <div class="hero-frame"><img src="content/images/portrait.webp" fetchpriority="high" decoding="async" alt="Portrait of Aradnaksi in a cap, in front of a green hedge"></div>
               <div class="note" aria-hidden="true">that's me!
                 <svg viewBox="0 0 46 34"><path d="M40 4 C 30 2, 8 6, 5 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 26 L 2 16 M5 26 L 15 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
               </div>
@@ -267,11 +299,11 @@
 
       <!-- CHAT (placeholder) -->
       <section class="page" data-page="chat">
-        <div class="stub">
+        <div class="stub stub--chat">
           <p class="kicker">say hello</p>
           <h2 class="stub-h">Let&rsquo;s chat</h2>
           <p class="stub-p">Got a product to untangle or a site to build? I&rsquo;m around &mdash; drop me a line.</p>
-          <a class="mailbtn" href="mailto:iskandara@live.com">iskandara@live.com</a>
+          <div class="mailrow"><a class="mailbtn" href="mailto:iskandara@live.com">iskandara@live.com</a><button class="copybtn" id="copyMail" type="button">Copy email</button></div>
           <div class="socials"><a href="https://www.linkedin.com/in/iskandara/" target="_blank" rel="noopener">LinkedIn</a></div>
         </div>
       </section>
@@ -286,6 +318,7 @@
         <button class="case-back" data-close><svg viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to work</button>
         <span class="case-word">aradnaksi</span>
         <button class="case-close" data-close aria-label="Close">&#10005;</button>
+        <span class="case-progress" aria-hidden="true"></span>
       </div>
       <div class="case-inner" id="caseInner"></div>
     </div>
@@ -302,30 +335,37 @@ function stripProto(u){return (u||'').replace(/^https?:\/\//,'').replace(/\/$/,'
 function paras(t){return String(t||'').split(/\n\n+/).map(function(x){return '<p>'+x.replace(/\n/g,'<br>')+'</p>';}).join('');}
 function imgframe(src,cls){
   if(!src) return '';
-  return '<div class="cs-imgframe '+(cls||'')+'"><img src="'+src+'" alt=""></div>';
+  return '<div class="cs-imgframe '+(cls||'')+'"><img src="'+src+'" alt="" loading="lazy" decoding="async"></div>';
 }
 
 /* ---------- render a work card ---------- */
 function cardThumb(w){
-  if(w.thumb) return '<div class="frame"><div class="frame-body"><img src="'+w.thumb+'" alt="'+w.title+'"></div></div>';
+  if(w.thumb) return '<div class="frame"><div class="frame-body"><img src="'+w.thumb+'" alt="'+w.title+'" loading="lazy" decoding="async"></div></div>';
   return '<div class="frame frame--type"><div class="frame-body"><span class="frame-type">'+(w.url?stripProto(w.url):w.title)+'</span></div></div>';
 }
 function cardHTML(w){
   return '<article class="work" data-cat="'+w.cats.join(' ')+'" data-id="'+w.id+'">'
     +'<button class="work-link" type="button" data-open="'+w.id+'">'
-    +'<div class="work-head"><div class="work-title-row"><span class="work-title">'+w.title+'</span></div>'
+    +'<div class="work-head"><div class="work-title-row"><span class="work-no" aria-hidden="true">'+pad2(WORKS.indexOf(w)+1)+'</span><span class="work-title">'+w.title+'</span></div>'
     +'<div class="work-right"><span class="work-cat">'+w.cat+'</span></div></div>'
     +'<p class="work-desc">'+w.summary+'</p>'+cardThumb(w)+'<span class="work-more">Read the story</span></button></article>';
 }
+function pad2(n){return (n<10?'0':'')+n;}
 function renderCards(){
-  document.getElementById('workList').innerHTML = WORKS.map(cardHTML).join('');
+  var list=document.getElementById('workList');
+  list.innerHTML = WORKS.map(cardHTML).join('');
+  var cards=list.querySelectorAll('.work');
+  var still=window.matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window);
+  if(still){ cards.forEach(function(c){c.classList.add('in');}); return; }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });},{threshold:.08});
+  cards.forEach(function(c){io.observe(c);});
 }
 
 /* ---------- render one section ---------- */
 function renderSection(s){
   switch(s.type){
     case 'banner':
-      return '<section class="cs-banner">'+(s.image?'<img src="'+s.image+'" alt="">':'')+'<h2 class="cs-banner-title">'+(s.title||'')+'</h2></section>';
+      return '<section class="cs-banner">'+(s.image?'<img src="'+s.image+'" alt="" loading="lazy" decoding="async">':'')+'<h2 class="cs-banner-title">'+(s.title||'')+'</h2></section>';
     case 'heading':
       return '<div class="cs-block">'+(s.kicker?'<div class="cs-kicker">'+s.kicker+'</div>':'')+'<h3 class="cs-h-title">'+(s.title||'')+'</h3></div>';
     case 'text':
@@ -381,6 +421,21 @@ function renderCase(w){
 
   /* ----- swipe navigation ----- */
   var pages=['about','work','story','chat'];
+  var navEl=document.querySelector('nav'), pill=navEl.querySelector('.nav-pill');
+  function movePill(){
+    var a=navEl.querySelector('a.active'); if(!a) return;
+    pill.style.width=a.offsetWidth+'px';
+    pill.style.transform='translateX('+a.offsetLeft+'px)';
+  }
+  window.addEventListener('resize',movePill);
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){ movePill(); requestAnimationFrame(function(){ pill.classList.add('ready'); }); });
+
+  /* ----- hero name: letters rise in ----- */
+  (function(){
+    var h=document.getElementById('heroName'); if(!h||reduce) return;
+    var t=h.textContent; h.textContent='';
+    t.split('').forEach(function(c,i){ var sp=document.createElement('span'); sp.className='ch'; sp.setAttribute('aria-hidden','true'); sp.style.setProperty('--i',i); sp.textContent=c; h.appendChild(sp); });
+  })();
   var track=document.getElementById('track');
   var current=0;
   function go(name){
@@ -388,6 +443,7 @@ function renderCase(w){
     var i=pages.indexOf(name); if(i<0) i=0; current=i;
     track.style.transform='translateX(-'+(i*100)+'vw)';
     document.querySelectorAll('nav a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-go')===name);});
+    movePill();
     var pg=track.children[i]; if(pg) pg.scrollTop=0;
     if(history.replaceState) history.replaceState(null,'','#'+name);
   }
@@ -417,6 +473,8 @@ function renderCase(w){
   var overlay=document.getElementById('caseOverlay');
   var inner=document.getElementById('caseInner');
   var scroller=overlay.querySelector('.case-scroll');
+  var prog=overlay.querySelector('.case-progress');
+  scroller.addEventListener('scroll',function(){ var m=scroller.scrollHeight-scroller.clientHeight; prog.style.setProperty('--p',m>0?(scroller.scrollTop/m).toFixed(4):0); },{passive:true});
   window.openId=null;
 
   function boxTo(r){overlay.style.top=r.top+'px';overlay.style.left=r.left+'px';overlay.style.width=r.width+'px';overlay.style.height=r.height+'px';}
@@ -427,7 +485,7 @@ function renderCase(w){
     var card=document.querySelector('.work[data-id="'+id+'"]');
     var r=card?card.getBoundingClientRect():{top:window.innerHeight/2,left:window.innerWidth/2,width:2,height:2};
     inner.innerHTML=renderCase(w);
-    scroller.scrollTop=0;
+    scroller.scrollTop=0; prog.style.setProperty('--p',0);
     overlay.hidden=false; overlay.setAttribute('aria-hidden','false');
     overlay.classList.remove('open');
     boxTo(r);
@@ -472,6 +530,27 @@ function renderCase(w){
     .then(function(r){ if(!r.ok) throw new Error('http '+r.status); return r.json(); })
     .then(function(data){ WORKS=(data&&data.works)||[]; renderCards(); if(pendingId) openCase(pendingId,true); })
     .catch(function(){ document.getElementById('workList').innerHTML='<div class="load-note">Couldn\u2019t load <b>content/works.json</b>. If you opened this file directly from disk, run a small local server (e.g. <code>npx serve</code> or VS Code \u201cLive Server\u201d) so the browser can fetch it \u2014 once the site is hosted it loads automatically.</div>'; });
+
+  /* ----- "Read" bubble follows the cursor over project cards (mouse only) ----- */
+  if(!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var cur=document.createElement('div'); cur.className='cursor'; cur.setAttribute('aria-hidden','true'); cur.textContent='Read'; document.body.appendChild(cur);
+    document.body.classList.add('has-bubble');
+    var wl=document.getElementById('workList');
+    wl.addEventListener('pointermove',function(e){
+      if(!e.target.closest('.work-link')){ cur.classList.remove('on'); return; }
+      cur.style.transform='translate3d('+e.clientX+'px,'+e.clientY+'px,0)'; cur.classList.add('on');
+    });
+    wl.addEventListener('pointerleave',function(){ cur.classList.remove('on'); });
+  }
+
+  /* ----- copy email ----- */
+  var copyBtn=document.getElementById('copyMail');
+  if(copyBtn) copyBtn.addEventListener('click',function(){
+    var done=function(t){ copyBtn.textContent=t; setTimeout(function(){ copyBtn.textContent='Copy email'; },1800); };
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText('iskandara@live.com').then(function(){done('Copied');},function(){done('Copy failed');}); }
+    else done('Copy failed');
+  });
+  copyBtn&&copyBtn.setAttribute('aria-live','polite');
 
   /* ----- head follows the cursor ----- */
   var photo=document.querySelector('.photo img');
