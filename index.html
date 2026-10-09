@@ -70,8 +70,8 @@
   .sayhi:hover{opacity:.6}
   .stage{display:flex;justify-content:center;align-items:center;position:relative}
   .photo{position:relative;display:inline-block;width:min(100%,420px);transform:rotate(-2.2deg)}
-  .photo .hero-frame{position:relative;overflow:hidden;border-radius:22px;border:6px solid #fff;aspect-ratio:4/5;background:#2b3a22;perspective:850px;box-shadow:0 30px 60px -24px rgba(70,45,0,.55),0 6px 18px -10px rgba(70,45,0,.35)}
-  .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 60%;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotate(var(--rz,0deg)) scale(1.28);transform-origin:50% 62%;will-change:transform}
+  .photo .hero-frame{position:relative;overflow:hidden;border-radius:22px;border:6px solid #fff;aspect-ratio:4/5;background:#d9d9d4;box-shadow:0 30px 60px -24px rgba(70,45,0,.55),0 6px 18px -10px rgba(70,45,0,.35);touch-action:none}
+  .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;user-select:none;-webkit-user-drag:none}
   .tape{position:absolute;top:-14px;left:50%;translate:-50% 0;width:112px;height:30px;background:rgba(255,201,51,.85);border-radius:2px;transform:rotate(-3deg);box-shadow:0 2px 6px -2px rgba(90,60,0,.35);z-index:2}
   .note{position:absolute;top:-50px;right:-4%;font-family:"Caveat",cursive;font-weight:600;font-size:1.5rem;color:var(--ink);transform:rotate(5deg);line-height:1;text-align:center}
   .note svg{display:block;width:46px;height:34px;margin:2px auto 0;color:var(--ink)}
@@ -288,7 +288,7 @@
           <div class="stage">
             <div class="photo reveal r3">
               <span class="tape" aria-hidden="true"></span>
-              <div class="hero-frame"><img src="content/images/portrait.webp" fetchpriority="high" decoding="async" alt="Portrait of Aradnaksi in a cap, in front of a green hedge"></div>
+              <div class="hero-frame"><img id="gaze" src="content/gaze/center.webp" width="640" height="800" fetchpriority="high" decoding="async" draggable="false" alt="Portrait of Aradnaksi, whose head turns to look toward your cursor"></div>
               <div class="note" aria-hidden="true">that's me!
                 <svg viewBox="0 0 46 34"><path d="M40 4 C 30 2, 8 6, 5 26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M5 26 L 2 16 M5 26 L 15 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
               </div>
@@ -590,26 +590,43 @@ function renderCase(w){
   });
   copyBtn&&copyBtn.setAttribute('aria-live','polite');
 
-  /* ----- head follows the cursor ----- */
-  var photo=document.querySelector('.photo img');
-  var mx=innerWidth/2,my=innerHeight/2,has=false,rx=0,ry=0,rz=0;
-  addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;has=true;},{passive:true});
-  document.documentElement.addEventListener('pointerleave',function(){has=false;});
-  function frame(t){
-    var r=photo.parentNode.getBoundingClientRect(),tx=0,ty=0,tz=0;
-    if(has&&r.width){
-      var nx=Math.max(-1,Math.min(1,(mx-(r.left+r.width/2))/(innerWidth*0.45)));
-      var ny=Math.max(-1,Math.min(1,(my-(r.top+r.height*0.4))/(innerHeight*0.45)));
-      tx=-ny*14; ty=nx*22; tz=nx*3;
-    } else if(!reduce && t<6000){ ty=Math.sin(t/1000)*5; tx=Math.cos(t/1300)*3; }
-    if(reduce){tx=ty=tz=0;}
-    rx+=(tx-rx)*0.12; ry+=(ty-ry)*0.12; rz+=(tz-rz)*0.12;
-    photo.style.setProperty('--rx',rx.toFixed(2)+'deg');
-    photo.style.setProperty('--ry',ry.toFixed(2)+'deg');
-    photo.style.setProperty('--rz',rz.toFixed(2)+'deg');
-    requestAnimationFrame(frame);
+  /* ----- head follows the cursor: swap between photos taken at different gaze angles ----- */
+  /* bearing = where he looks on screen, in degrees: 0 = up, 90 = right, 180 = down, 270 = left */
+  var GAZE=[[305,'03'],[295,'04'],[285,'05'],[275,'06'],[262,'07'],[245,'08'],[225,'09'],[205,'10'],[190,'11'],[182,'12'],[172,'13'],[160,'14'],
+            [140,'16'],[125,'17'],[110,'18'],[100,'19'],[92,'20'],[80,'21'],[68,'22'],[55,'23'],[45,'24'],[38,'25'],[28,'26'],[18,'27'],
+            [5,'29'],[0,'30'],[352,'31'],[340,'32'],[325,'33']];
+  var gazeImg=document.getElementById('gaze');
+  var gazeSrc=function(n){ return 'content/gaze/'+n+'.webp'; };
+  if(gazeImg && !reduce){
+    var CENTER=gazeSrc('center'), cache=[], shown=CENTER, rafId=0, px=0, py=0, active=false, curIdx=-1;
+    /* preload every angle once the page has settled, so the swap is instant */
+    function preload(){ GAZE.forEach(function(g,i){ var im=new Image(); im.decoding='async'; im.src=gazeSrc(g[1]); cache[i]=im; if(im.decode) im.decode().catch(function(){}); }); }
+    if(document.readyState==='complete') setTimeout(preload,300); else addEventListener('load',function(){ setTimeout(preload,300); });
+    function angDist(a,b){ var d=Math.abs(a-b)%360; return d>180?360-d:d; }
+    function pick(){
+      rafId=0;
+      var r=gazeImg.parentNode.getBoundingClientRect(); if(!r.width) return;
+      var dx=px-(r.left+r.width/2), dy=py-(r.top+r.height*0.4), dist=Math.hypot(dx,dy);
+      var next=CENTER, idx=-1;
+      if(active && dist>r.width*0.32){
+        var bearing=(Math.atan2(dx,-dy)*180/Math.PI+360)%360, best=1e9;
+        GAZE.forEach(function(g,i){ var d=angDist(bearing,g[0]); if(d<best){best=d;idx=i;} });
+        /* hysteresis: keep the current photo unless the new one is clearly closer */
+        if(curIdx>-1 && idx!==curIdx && angDist(bearing,GAZE[curIdx][0])-best<2) idx=curIdx;
+        next=gazeSrc(GAZE[idx][1]);
+      }
+      curIdx=idx;
+      if(next!==shown){ shown=next; gazeImg.src=next; }
+    }
+    function queue(){ if(!rafId) rafId=requestAnimationFrame(pick); }
+    addEventListener('pointermove',function(e){ px=e.clientX; py=e.clientY; active=true; queue(); },{passive:true});
+    document.documentElement.addEventListener('pointerleave',function(){ active=false; queue(); });
+    /* touch: look toward the finger while it is down on the photo, back to centre on release */
+    var frame=gazeImg.parentNode;
+    frame.addEventListener('pointerdown',function(e){ if(e.pointerType==='touch'){ try{frame.setPointerCapture(e.pointerId);}catch(_){} px=e.clientX; py=e.clientY; active=true; queue(); } });
+    function touchEnd(e){ if(e.pointerType==='touch'){ active=false; queue(); } }
+    frame.addEventListener('pointerup',touchEnd); frame.addEventListener('pointercancel',touchEnd);
   }
-  requestAnimationFrame(frame);
 })();
 </script>
 
