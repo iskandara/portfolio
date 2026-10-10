@@ -266,6 +266,31 @@ function renderCase(w){
   function boxTo(r){overlay.style.top=r.top+'px';overlay.style.left=r.left+'px';overlay.style.width=r.width+'px';overlay.style.height=r.height+'px';}
   function fullBox(){overlay.style.top='0px';overlay.style.left='0px';overlay.style.width=window.innerWidth+'px';overlay.style.height=window.innerHeight+'px';}
 
+  /* ----- pixel-form: the case study opens as chunky blocks and sharpens into the real page ----- */
+  var pf=document.getElementById('pxf'), pfFlood=pf.querySelector('feFlood'), pfComp=pf.querySelector('feComposite'), pfMorph=pf.querySelector('feMorphology');
+  var pxRun=0;
+  function setBlock(size){
+    var h=size/2;
+    pfFlood.setAttribute('x',h-1); pfFlood.setAttribute('y',h-1);
+    pfComp.setAttribute('width',size); pfComp.setAttribute('height',size);
+    pfMorph.setAttribute('radius',h);
+    scroller.style.filter='url(#pxf)';
+  }
+  /* time-based: if a frame is slow (weak GPU), steps are skipped so the whole thing never takes longer than steps x gap */
+  function pixelSteps(steps,gap){
+    var run=++pxRun;
+    if(reduce){ scroller.style.filter=''; return; }
+    var t0=performance.now(), applied=-1;
+    (function frame(now){
+      if(run!==pxRun) return;
+      var i=Math.floor((now-t0)/gap);
+      if(i>=steps.length){ scroller.style.filter=''; return; }
+      if(i!==applied){ applied=i; setBlock(steps[i]); }
+      requestAnimationFrame(frame);
+    })(t0);
+  }
+  var FORM=[24,18,14,10,8,6,4,2], UNFORM=[4,8,14,22];
+
   window.openCase=function(id,instant){
     var w=WORKS.find(function(x){return x.id===id;}); if(!w) return;
     var card=document.querySelector('.work[data-id="'+id+'"]');
@@ -279,8 +304,9 @@ function renderCase(w){
     openId=id;
     if(history.replaceState) history.replaceState(null,'','#work/'+id);
     overlay.getBoundingClientRect();
-    if(instant||reduce){ fullBox(); overlay.classList.add('open'); return; }
-    requestAnimationFrame(function(){requestAnimationFrame(function(){ fullBox(); overlay.classList.add('open'); });});
+    if(instant||reduce){ fullBox(); overlay.classList.add('open'); pixelSteps(FORM,80); return; }
+    if(!reduce) setBlock(24);
+    requestAnimationFrame(function(){requestAnimationFrame(function(){ fullBox(); overlay.classList.add('open'); pixelSteps(FORM,80); });});
   };
   window.closeCase=function(instant){
     if(openId===null) return;
@@ -289,7 +315,8 @@ function renderCase(w){
     openId=null;
     if(history.replaceState) history.replaceState(null,'','#work');
     overlay.classList.remove('open');
-    function reset(){ overlay.hidden=true; overlay.setAttribute('aria-hidden','true'); overlay.removeAttribute('style'); document.body.classList.remove('case-open'); }
+    if(!instant) pixelSteps(UNFORM,70);
+    function reset(){ pxRun++; scroller.style.filter=''; overlay.hidden=true; overlay.setAttribute('aria-hidden','true'); overlay.removeAttribute('style'); document.body.classList.remove('case-open'); }
     if(instant||reduce){ reset(); return; }
     if(r) boxTo(r); else { overlay.style.width='0px'; overlay.style.height='0px'; }
     var done=false;
