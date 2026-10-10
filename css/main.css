@@ -179,7 +179,7 @@ body.has-bubble .work-link{cursor:none}
   transition:top .52s var(--ease-io),left .52s var(--ease-io),width .52s var(--ease-io),height .52s var(--ease-io)}
 .case[hidden]{display:none}
 .case.open{box-shadow:none}
-.case-scroll{position:absolute;inset:0;overflow-y:auto;opacity:0;transition:opacity .28s ease}
+.case-scroll{position:absolute;inset:0;overflow-y:auto;overflow-anchor:none;opacity:0;transition:opacity .28s ease}
 .case.open .case-scroll{opacity:1;transition:opacity .4s ease .16s}
 .case-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;background:var(--navy);color:var(--cream)}
 .case-back{font:500 .76rem var(--mono);letter-spacing:.08em;text-transform:uppercase;background:none;border:2px solid var(--cream);cursor:pointer;color:var(--cream);display:inline-flex;align-items:center;gap:8px;padding:8px 12px;transition:background-color .15s,color .15s}

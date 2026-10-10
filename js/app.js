@@ -304,6 +304,7 @@ function renderCase(w){
     openId=id;
     if(history.replaceState) history.replaceState(null,'','#work/'+id);
     overlay.getBoundingClientRect();
+    scroller.scrollTop=0; prog.style.setProperty('--p',0);   /* reset after the overlay is visible: a hidden element ignores scrollTop */
     if(instant||reduce){ fullBox(); overlay.classList.add('open'); pixelSteps(FORM,80); return; }
     if(!reduce) setBlock(24);
     requestAnimationFrame(function(){requestAnimationFrame(function(){ fullBox(); overlay.classList.add('open'); pixelSteps(FORM,80); });});
@@ -316,7 +317,7 @@ function renderCase(w){
     if(history.replaceState) history.replaceState(null,'','#work');
     overlay.classList.remove('open');
     if(!instant) pixelSteps(UNFORM,70);
-    function reset(){ pxRun++; scroller.style.filter=''; overlay.hidden=true; overlay.setAttribute('aria-hidden','true'); overlay.removeAttribute('style'); document.body.classList.remove('case-open'); }
+    function reset(){ pxRun++; scroller.style.filter=''; scroller.scrollTop=0; overlay.hidden=true; overlay.setAttribute('aria-hidden','true'); overlay.removeAttribute('style'); document.body.classList.remove('case-open'); }
     if(instant||reduce){ reset(); return; }
     if(r) boxTo(r); else { overlay.style.width='0px'; overlay.style.height='0px'; }
     var done=false;
