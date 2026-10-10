@@ -34,6 +34,17 @@
     </nav>
   </header>
 
+  <!-- pixelate filter: samples one dot per block-sized tile and grows it back to a block. js/app.js animates the block size. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="pxf" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feFlood x="11" y="11" width="2" height="2" flood-color="#000"/>
+      <feComposite width="24" height="24"/>
+      <feTile result="px-tiles"/>
+      <feComposite in="SourceGraphic" in2="px-tiles" operator="in"/>
+      <feMorphology operator="dilate" radius="12"/>
+    </filter>
+  </svg>
+
   <canvas id="trail" aria-hidden="true"></canvas>
   <svg id="gazeSvg" aria-hidden="true">
     <path id="gazePath" d=""/>
