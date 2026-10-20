@@ -3,10 +3,18 @@
   "timeline": [],
   "books": [],
   "movies": [],
-  "albums": [],
+  "albums": [
+    {
+      "title": "test",
+      "creator": "test",
+      "year": "test",
+      "note": "",
+      "cover": ""
+    }
+  ],
   "now": {
-    "reading": "",
-    "watching": "",
-    "listening": ""
+    "reading": "test",
+    "watching": "test",
+    "listening": "test"
   }
 }
