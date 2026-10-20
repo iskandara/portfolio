@@ -1,28 +1,12 @@
 {
-  "intro": "test",
+  "intro": "About me: Extended version",
   "timeline": [],
   "books": [],
-  "movies": [
-    {
-      "title": "test",
-      "creator": "test",
-      "year": "test",
-      "note": "test",
-      "cover": ""
-    }
-  ],
-  "albums": [
-    {
-      "title": "test",
-      "creator": "test",
-      "year": "test",
-      "note": "",
-      "cover": ""
-    }
-  ],
+  "movies": [],
+  "albums": [],
   "now": {
-    "reading": "test",
-    "watching": "test",
-    "listening": "test"
+    "reading": "Kitchen Confidential: Adventures in the Culinary Underbelly by Anthony Bourdain",
+    "watching": "Keep the meter running by Kareem Rahma on Youtube",
+    "listening": "Dopamine Chamber by Fontaines D.C"
   }
 }
