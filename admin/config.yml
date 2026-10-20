@@ -124,3 +124,77 @@ collections:
                 fields:
                   - { name: name, label: Name, widget: string }
                   - { name: swatches, label: Swatches (hex), widget: list, field: { name: hex, label: Hex, widget: string } }
+
+  - name: "story"
+    label: "Story page"
+    icon: auto_stories
+    description: "Your life story, the five books / films / albums that shaped you, and what you are into right now."
+    editor:
+      preview: false
+    files:
+      - name: "story"
+        label: "Story page"
+        file: "content/story.json"
+        format: "json"
+        fields:
+          - { name: intro, label: "Intro", widget: text, required: false, hint: "A short paragraph under the title. Leave a blank line between paragraphs." }
+          - name: timeline
+            label: "Timeline"
+            label_singular: "Milestone"
+            widget: list
+            required: false
+            summary: "{{fields.year}} - {{fields.title}}"
+            hint: "Your life story as milestones, oldest first. 5-8 works well."
+            fields:
+              - { name: year, label: "Year", widget: string, hint: "For example 2018, or 2018-2020" }
+              - { name: title, label: "Title", widget: string }
+              - { name: body, label: "What happened (1-3 sentences)", widget: text, required: false }
+          - name: books
+            label: "Books that shaped me"
+            label_singular: "Book"
+            widget: list
+            required: false
+            max: 5
+            summary: "{{fields.title}} - {{fields.creator}}"
+            hint: "Up to five. Cover images are shown as pixel art and show the real cover on hover or tap."
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - { name: creator, label: "Author", widget: string, required: false }
+              - { name: year, label: "Year", widget: string, required: false }
+              - { name: note, label: "Why it shaped me (1-2 sentences)", widget: text, required: false }
+              - { name: cover, label: "Cover image", widget: image, required: false, hint: "Small is fine (about 600px wide). Without one, a type-only tile is shown." }
+          - name: movies
+            label: "Films that shaped me"
+            label_singular: "Film"
+            widget: list
+            required: false
+            max: 5
+            summary: "{{fields.title}} - {{fields.creator}}"
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - { name: creator, label: "Director", widget: string, required: false }
+              - { name: year, label: "Year", widget: string, required: false }
+              - { name: note, label: "Why it shaped me (1-2 sentences)", widget: text, required: false }
+              - { name: cover, label: "Poster image", widget: image, required: false, hint: "Small is fine (about 600px wide). Without one, a type-only tile is shown." }
+          - name: albums
+            label: "Albums that shaped me"
+            label_singular: "Album"
+            widget: list
+            required: false
+            max: 5
+            summary: "{{fields.title}} - {{fields.creator}}"
+            fields:
+              - { name: title, label: "Album", widget: string }
+              - { name: creator, label: "Artist", widget: string, required: false }
+              - { name: year, label: "Year", widget: string, required: false }
+              - { name: note, label: "Why it shaped me (1-2 sentences)", widget: text, required: false }
+              - { name: cover, label: "Cover image", widget: image, required: false, hint: "Small is fine (about 600px wide). Without one, a type-only tile is shown." }
+          - name: now
+            label: "Now"
+            widget: object
+            required: false
+            hint: "What you are into at the moment. Easy to refresh."
+            fields:
+              - { name: reading, label: "Reading", widget: string, required: false }
+              - { name: watching, label: "Watching", widget: string, required: false }
+              - { name: listening, label: "Listening to", widget: string, required: false }
