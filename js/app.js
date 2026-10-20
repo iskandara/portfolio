@@ -152,7 +152,7 @@ function renderCase(w){
   function drawEdge(c){
     var wh=fit(c), w=wh[0], h=wh[1]; if(!w||!h) return;
     var ctx=c.getContext('2d'), cell=+c.dataset.cell||8, seed=+c.dataset.seed||0, up=c.dataset.mode==='up';
-    ctx.clearRect(0,0,w,h); ctx.fillStyle='#2A45FF';
+    ctx.clearRect(0,0,w,h); ctx.fillStyle=c.dataset.color||'#2A45FF';
     var cols=Math.ceil(w/cell), rows=Math.ceil(h/cell);
     for(var x=0;x<cols;x++){
       var p=.5+.5*(Math.sin(x*.13+seed)*.5+Math.sin(x*.047+seed*2.1)*.35+Math.sin(x*.31+seed*.7)*.15);
@@ -452,6 +452,103 @@ function renderCase(w){
     function touchEnd(e){ if(e.pointerType==='touch'){ active=false; queue(); } }
     scope.addEventListener('pointerup',touchEnd); scope.addEventListener('pointercancel',touchEnd);
   }
+
+  /* ==========================================================
+     STORY page: rendered from content/story.json (edited in the CMS).
+     Empty content keeps the "coming soon" placeholder from index.html.
+     ========================================================== */
+  function esc(t){ return String(t==null?'':t).replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function escParas(t){ return String(t||'').split(/\n\n+/).filter(Boolean).map(function(x){ return '<p>'+esc(x).replace(/\n/g,'<br>')+'</p>'; }).join(''); }
+  function list(a){ return Array.isArray(a)?a.filter(function(x){ return x && (x.title||x.year); }):[]; }
+
+  /* turn a cover into cobalt / navy / paper pixel art (same ordered dither as the portrait) */
+  var PAPER=[247,246,240], COB=[42,69,255], NAVY=[18,23,42];
+  function ditherCover(cv,img){
+    var W=cv.width, H=cv.height, off=document.createElement('canvas'); off.width=W; off.height=H;
+    var o=off.getContext('2d'), iw=img.naturalWidth, ih=img.naturalHeight; if(!iw||!ih) return;
+    var sc=Math.max(W/iw,H/ih), sw=W/sc, sh=H/sc;
+    o.drawImage(img,(iw-sw)/2,(ih-sh)/2,sw,sh,0,0,W,H);
+    var src; try{ src=o.getImageData(0,0,W,H); }catch(e){ return; }   /* tainted canvas: leave the real cover showing */
+    var px=src.data, n=W*H, lum=new Float32Array(n), hist=new Uint32Array(256), i;
+    for(i=0;i<n;i++){ var L=(.2126*px[i*4]+.7152*px[i*4+1]+.0722*px[i*4+2]); lum[i]=L; hist[L|0]++; }
+    var lo=0,hi=255,acc=0; for(i=0;i<256;i++){ acc+=hist[i]; if(acc>n*.03){ lo=i; break; } }
+    acc=0; for(i=255;i>=0;i--){ acc+=hist[i]; if(acc>n*.03){ hi=i; break; } }
+    var span=Math.max(24,hi-lo), out=cv.getContext('2d').createImageData(W,H), od=out.data;
+    for(var y=0;y<H;y++)for(var x=0;x<W;x++){
+      var k=y*W+x, d=1-Math.min(1,Math.max(0,(lum[k]-lo)/span));
+      var lvl=Math.floor(d*2+thr(x,y)); if(lvl>2) lvl=2;
+      var col=lvl===0?PAPER:(lvl===1?COB:NAVY);
+      od[k*4]=col[0]; od[k*4+1]=col[1]; od[k*4+2]=col[2]; od[k*4+3]=255;
+    }
+    cv.getContext('2d').putImageData(out,0,0);
+  }
+  function ditherAll(root){
+    var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ io.unobserve(e.target); run(e.target); } }); },{rootMargin:'200px'}):null;
+    function run(cover){
+      var img=cover.querySelector('img'), cv=cover.querySelector('canvas'); if(!img||!cv) return;
+      var go=function(){ ditherCover(cv,img); };
+      if(img.complete&&img.naturalWidth) go(); else { img.addEventListener('load',go,{once:true}); }
+    }
+    root.querySelectorAll('.cover:not(.cover--type)').forEach(function(c){ if(io) io.observe(c); else run(c); });
+  }
+  function pickHTML(it,i,shape){
+    var by=[it.creator,it.year].filter(Boolean).map(esc).join(' · ');
+    var cls='cover '+(shape==='sq'?'cover--sq':'cover--tall');
+    var cover = it.cover
+      ? '<button type="button" class="'+cls+'" aria-label="Show the real cover of '+esc(it.title)+'"><img src="'+esc(it.cover)+'" alt="Cover of '+esc(it.title)+(it.creator?' by '+esc(it.creator):'')+'" loading="lazy" decoding="async"><canvas width="'+(shape==='sq'?96:80)+'" height="'+(shape==='sq'?96:120)+'" aria-hidden="true"></canvas></button>'
+      : '<div class="'+cls+' cover--type"><span>'+esc(it.title)+'</span></div>';
+    return '<li class="pick in-step">'+cover+'<div class="pick-meta"><span class="pick-no">'+pad2(i+1)+'</span><h4>'+esc(it.title)+'</h4>'
+      +(by?'<p class="pick-by">'+by+'</p>':'')+(it.note?'<div class="pick-note">'+escParas(it.note)+'</div>':'')+'</div></li>';
+  }
+  function renderStory(d){
+    var root=document.getElementById('storyRoot'); if(!root||!d) return;
+    var tl=list(d.timeline), now=d.now||{}, hasNow=!!(now.reading||now.watching||now.listening);
+    var shelves=[['books','Books','The books that shaped me','tall'],['movies','Films','The films that shaped me','tall'],['albums','Albums','The albums that shaped me','sq']]
+      .map(function(m){ return {key:m[0],label:m[1],title:m[2],shape:m[3],items:list(d[m[0]]).slice(0,5)}; }).filter(function(m){ return m.items.length; });
+    if(!d.intro && !tl.length && !shelves.length && !hasNow) return;       /* nothing yet: keep the placeholder */
+
+    var html='<section class="story-top" data-band="tan"><div class="wrap"><p class="kick">[ The long version ]</p><h2 class="stub-h">Story</h2>'
+      +(d.intro?'<div class="intro-copy">'+escParas(d.intro)+'</div>':'');
+    if(tl.length){
+      html+='<h3 class="tl-h">The timeline</h3><ol class="tl">'+tl.map(function(t){
+        return '<li class="tl-item in-step"><span class="tl-year">'+esc(t.year)+'</span><div class="tl-body"><h4>'+esc(t.title)+'</h4>'+(t.body?'<div>'+escParas(t.body)+'</div>':'')+'</div></li>';
+      }).join('')+'</ol>';
+    }
+    html+='</div></section>';
+
+    var colors=['cobalt','navy','paper'], bandBg={tan:'var(--tan)',cobalt:'var(--cobalt)',navy:'var(--navy)',paper:'var(--paper)'}, bandHex={tan:'#DCD2BC',cobalt:'#2A45FF',navy:'#12172A',paper:'#F7F6F0'};
+    var prev='tan';
+    function edge(next){ return '<div class="band-edge" style="background:'+bandBg[prev]+'"><canvas class="edge" data-mode="up" data-cell="8" data-seed="'+(Math.random()*9).toFixed(1)+'" data-color="'+bandHex[next]+'" aria-hidden="true"></canvas></div>'; }
+    shelves.forEach(function(m,i){
+      var col=colors[i%colors.length];
+      html+=edge(col)+'<section class="band band--'+col+'" aria-label="'+esc(m.title)+'"><div class="wrap"><p class="kick">[ '+pad2(i+1)+' / '+esc(m.label)+' ]</p><h3 class="shelf-h">'+esc(m.title)+'</h3>'
+        +'<ul class="picks">'+m.items.map(function(it,j){ return pickHTML(it,j,m.shape); }).join('')+'</ul></div></section>';
+      prev=col;
+    });
+    if(hasNow){
+      html+=edge('tan')+'<section class="band band--tan"><div class="wrap"><p class="kick">[ Now ]</p><h3 class="shelf-h">What I’m into right now</h3><dl class="now">'
+        +[['Reading',now.reading],['Watching',now.watching],['Listening',now.listening]].filter(function(r){ return r[1]; }).map(function(r){ return '<div class="in-step"><dt>'+r[0]+'</dt><dd>'+esc(r[1])+'</dd></div>'; }).join('')
+        +'</dl></div></section>';
+      prev='tan';
+    }
+    html+='<div class="story-end"><div class="wrap"><a class="btn" data-go="chat" role="button" tabindex="0">Say hi &rarr;</a></div></div>';
+    root.innerHTML=html;
+
+    root.querySelectorAll('[data-go]').forEach(function(el){
+      el.addEventListener('click',function(e){ e.preventDefault(); go(el.getAttribute('data-go')); });
+      el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(el.getAttribute('data-go')); } });
+    });
+    root.querySelectorAll('button.cover').forEach(function(b){ b.addEventListener('click',function(){ b.classList.toggle('reveal'); }); });   /* touch: tap to show the real cover */
+    var steps=root.querySelectorAll('.in-step');
+    if(reduce||!('IntersectionObserver' in window)){ steps.forEach(function(el){ el.classList.add('in'); }); }
+    else{
+      var sio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); sio.unobserve(e.target); } }); },{threshold:.12});
+      steps.forEach(function(el,i){ el.style.transitionDelay=((i%5)*60)+'ms'; sio.observe(el); });
+    }
+    ditherAll(root);
+    drawEdges();
+  }
+  fetch('content/story.json',{cache:'no-store'}).then(function(r){ return r.ok?r.json():null; }).then(renderStory).catch(function(){});
 
   redrawAll();
 })();
