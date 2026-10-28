@@ -8,5 +8,25 @@
     "reading": "Kitchen Confidential: Adventures in the Culinary Underbelly by Anthony Bourdain",
     "watching": "Keep the meter running by Kareem Rahma on Youtube",
     "listening": "Dopamine Chamber by Fontaines D.C"
-  }
+  },
+  "building": [
+    {
+      "art": "island",
+      "title": "Still Here",
+      "url": "https://stillhere.day",
+      "status": "Live · still growing",
+      "tagline": "A habit app for cutting back on smoking.",
+      "body": "I'm building Still Here for myself first. I smoke, and I'm cutting back.\n\nMost habit apps reset you to zero the second you slip, which is a machine for feeling like a failure. This one keeps every good day you've earned, forgives the ones you don't, and never shows a red mark. Every honest day plants something on your own little pixel island. It's free, with no ads.",
+      "case": "stillhere"
+    },
+    {
+      "art": "tee",
+      "title": "SANTAI",
+      "url": "https://santaiaja.com",
+      "status": "Live · one shirt per season",
+      "tagline": "Memorabilia for my love of vintage and quirky T-shirts.",
+      "body": "SANTAI is where my passion for vintage and quirky tees lives. It's my memorabilia, and a home for one exclusive shirt released each season.\n\nI designed and built the whole site myself: a full-screen shirt you can drag to rotate, and a CMS so a new drop never needs a code editor.",
+      "case": "santai"
+    }
+  ]
 }

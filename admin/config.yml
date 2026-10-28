@@ -149,6 +149,22 @@ collections:
               - { name: year, label: "Year", widget: string, hint: "For example 2018, or 2018-2020" }
               - { name: title, label: "Title", widget: string }
               - { name: body, label: "What happened (1-3 sentences)", widget: text, required: false }
+          - name: building
+            label: "Currently building"
+            label_singular: "Project"
+            widget: list
+            required: false
+            max: 4
+            summary: "{{fields.title}}"
+            hint: "Projects you are working on right now. Shown right after the intro."
+            fields:
+              - { name: title, label: "Name", widget: string }
+              - { name: url, label: "Website URL", widget: string, required: false }
+              - { name: status, label: "Status chip", widget: string, required: false, hint: "For example: Live - still growing" }
+              - { name: tagline, label: "One-line description", widget: string, required: false }
+              - { name: body, label: "Story", widget: text, required: false, hint: "Leave a blank line between paragraphs." }
+              - { name: art, label: "Pixel scene", widget: select, options: [{ label: "Pixel island (grows when clicked)", value: island }, { label: "Pixel T-shirt (changes when clicked)", value: tee }, { label: "None", value: none }], default: none, required: false }
+              - { name: case, label: "Case study ID", widget: string, required: false, hint: "The ID of a project on the Work page, for example stillhere. Adds a Read the case study link." }
           - name: books
             label: "Books that shaped me"
             label_singular: "Book"

@@ -500,12 +500,131 @@ function renderCase(w){
     return '<li class="pick in-step">'+cover+'<div class="pick-meta"><span class="pick-no">'+pad2(i+1)+'</span><h4>'+esc(it.title)+'</h4>'
       +(by?'<p class="pick-by">'+by+'</p>':'')+(it.note?'<div class="pick-note">'+escParas(it.note)+'</div>':'')+'</div></li>';
   }
+  /* ---------- pixel scenes for "currently building" ---------- */
+  var PC={navy:'#12172A',cob:'#2A45FF',cream:'#F7F6F0',orange:'#FF5B1F',tan:'#DCD2BC',tan2:'#C7B993'};
+
+  /* Still Here: an island that grows a little with every honest day you plant */
+  function mountIsland(card){
+    var cv=card.querySelector('canvas'), btn=card.querySelector('[data-act]'), out=card.querySelector('.build-count'); if(!cv||!btn) return;
+    var W=64,H=44, ctx=cv.getContext('2d'), n=0, growth=1, busy=0;
+    function R(x,y,w,h,c){ ctx.fillStyle=c; ctx.fillRect(Math.round(x),Math.round(y),w,h); }
+    function disc(cx,cy,rad,c){ for(var y=-rad;y<=rad;y++)for(var x=-rad;x<=rad;x++) if(x*x+y*y<=rad*rad+1) R(cx+x,cy+y,1,1,c); }
+    function stage(){ return Math.min(5,n); }
+    function sky(st){
+      R(0,0,W,H,st>=5?PC.navy:PC.cream);
+      if(st<5){ disc(52,9,4,PC.orange); [[6,9],[27,5],[40,15]].forEach(function(p){ R(p[0]+1,p[1],5,1,PC.tan); R(p[0],p[1]+1,7,1,PC.tan); }); }
+      else{ disc(51,9,4,PC.cream); disc(53,8,3,PC.navy); for(var i=0;i<26;i++){ var x=Math.floor(hash(i,3)*W), y=Math.floor(hash(i,9)*20); R(x,y,1,1,hash(i,5)>.7?PC.orange:PC.cream); } }
+    }
+    function island(){
+      var cx=32, y0=28;
+      for(var y=y0;y<H;y++){
+        var hw=Math.round(25-(y-y0)*1.55); if(hw<3) break;
+        for(var x=cx-hw;x<=cx+hw;x++){
+          var col = y<y0+2?PC.cob : (y<y0+10?PC.tan : null);
+          if(!col && hash(x,y)<1-(y-(y0+9))/7) col=PC.tan2;
+          if(col) R(x,y,1,1,col);
+        }
+      }
+      for(var t=0;t<22;t++){ var gx=cx-24+Math.floor(hash(t,1)*48); if(hash(t,2)>.45) R(gx,y0-1,1,1,PC.cob); }
+    }
+    function tree(x,h,r){
+      var th=Math.max(1,Math.round(h*.4*r)), ch=Math.max(2,Math.round(h*.62*r)), cw=Math.max(2,2*Math.round(h*.3*r)+2);
+      R(x-1,28-th,2,th,PC.navy);
+      for(var dy=0;dy<ch;dy++){ var t=(dy+.5)/ch*2-1, w=Math.max(1,Math.round(cw*Math.sqrt(1-t*t))); R(x-w/2,28-th-ch+dy,w,1,PC.cob); }
+      if(ch>4) R(x-cw/4,28-th-ch+1,1,1,PC.cream);
+    }
+    function sapling(x,h,r){ var sh=Math.max(1,Math.round(h*r)); R(x,28-sh,1,sh,PC.navy); if(sh>2){ R(x-1,28-sh-1,3,2,PC.cob); R(x-2,28-sh+1,2,1,PC.cob); R(x+1,28-sh+2,2,1,PC.cob); } }
+    function flower(x,r){ var sh=Math.max(1,Math.round(3*r)); R(x,28-sh,1,sh,PC.navy); if(r>.5){ R(x-1,28-sh-1,3,1,PC.orange); R(x,28-sh-2,1,3,PC.orange); R(x,28-sh-1,1,1,PC.cream); } }
+    function deer(x,dusk){
+      var b=dusk?PC.cream:PC.navy;
+      R(x,22,8,3,b); R(x+1,25,1,3,b); R(x+3,25,1,3,b); R(x+5,25,1,3,b); R(x+7,25,1,3,b);
+      R(x+7,19,2,4,b); R(x+8,18,3,2,b); R(x+8,15,1,3,PC.orange); R(x+10,15,1,3,PC.orange); R(x+9,16,1,1,PC.orange);
+    }
+    function plants(st,r){
+      if(st===1){ R(31,27,3,1,PC.tan2); R(32,25,2,2,PC.orange); }
+      if(st===2) sapling(32,6,r);
+      if(st===3){ sapling(22,5,r); sapling(32,8,r); sapling(42,6,r); }
+      if(st>=4){ tree(18,16,r); tree(31,22,r); tree(45,14,r); [25,38,51,12].forEach(function(fx){ flower(fx,r); }); }
+      if(st>=5){ deer(36,true); [[10,20],[24,14],[40,18],[55,22],[47,10]].forEach(function(p,i){ if(hash(i,n)>.2) R(p[0],p[1],1,1,PC.orange); }); }
+    }
+    function draw(r){ var st=stage(); sky(st); island(); plants(st,r); }
+    function label(){
+      var t=n===0?'Bare soil':(n===1?'Day 1 · a seed':(n===2?'Day 2 · a sapling':(n===3?'Day 3 · a small grove':(n===4?'Day 4 · a grove in bloom':'Day '+n+' · a haven at dusk'))));
+      out.textContent=t; btn.textContent=n>=5?'Plant another honest day':'Plant an honest day';
+    }
+    function grow(){
+      if(busy) return; busy=1; n++; label();
+      cv.classList.remove('pop'); void cv.offsetWidth; if(!reduce) cv.classList.add('pop');
+      if(reduce){ draw(1); busy=0; return; }
+      var f=0,steps=[.25,.5,.75,1];
+      (function step(){ draw(steps[f++]); if(f<steps.length) setTimeout(step,90); else busy=0; })();
+    }
+    draw(1); label(); btn.addEventListener('click',grow); cv.addEventListener('click',grow);
+  }
+
+  /* SANTAI: a pixel tee that flips to a new quirky print, a nod to the 360 degree shirt on the site */
+  function mountTee(card){
+    var cv=card.querySelector('canvas'), btn=card.querySelector('[data-act]'), out=card.querySelector('.build-count'); if(!cv||!btn) return;
+    var W=48,H=44, ctx=cv.getContext('2d'), i=0, off=0, busy=0;
+    var SH=[[2,11],[11,3],[17,3],[24,7],[31,3],[37,3],[46,11],[41,17],[36,13],[36,41],[12,41],[12,13],[7,17]];
+    var LOOKS=[{body:PC.cream,ink:PC.navy,acc:PC.orange,print:'sun'},{body:PC.cob,ink:PC.cream,acc:PC.orange,print:'smile'},{body:PC.orange,ink:PC.navy,acc:PC.cream,print:'bolt'},{body:PC.navy,ink:PC.cream,acc:PC.orange,print:'shroom'},{body:PC.tan2,ink:PC.navy,acc:PC.cob,print:'star'}];
+    function R(x,y,w,h,c){ ctx.fillStyle=c; ctx.fillRect(Math.round(x),Math.round(y),w,h); }
+    function inside(x,y){ var c=false; for(var a=0,b=SH.length-1;a<SH.length;b=a++){ var xi=SH[a][0],yi=SH[a][1],xj=SH[b][0],yj=SH[b][1]; if(((yi>y)!==(yj>y)) && (x<(xj-xi)*(y-yi)/(yj-yi)+xi)) c=!c; } return c; }
+    function printSprite(kind,ox,oy,L){
+      var P=function(x,y,col,w,h){ R(ox+x,oy+y,w||1,h||1,col); };
+      if(kind==='sun'){ for(var y=-3;y<=3;y++)for(var x=-3;x<=3;x++) if(x*x+y*y<=9) P(6+x,6+y,L.acc); [[0,-5],[0,5],[-5,0],[5,0],[-4,-4],[4,-4],[-4,4],[4,4]].forEach(function(d){ P(6+d[0],6+d[1],L.ink,1,1); P(6+Math.round(d[0]*1.15),6+Math.round(d[1]*1.15),L.ink); }); }
+      if(kind==='smile'){ for(var y2=-5;y2<=5;y2++)for(var x2=-5;x2<=5;x2++) if(x2*x2+y2*y2<=25) P(6+x2,6+y2,L.acc); P(4,4,L.ink,1,2); P(8,4,L.ink,1,2); [[3,7],[4,8],[5,8],[6,8],[7,8],[8,8],[9,7]].forEach(function(d){ P(d[0],d[1],L.ink); }); }
+      if(kind==='bolt'){ [[5,0,4,2],[4,2,4,2],[3,4,6,2],[5,6,4,2],[4,8,4,2],[3,10,3,2]].forEach(function(b){ P(b[0]+1,b[1]+1,L.ink,b[2],b[3]); }); [[5,0,4,2],[4,2,4,2],[3,4,6,2],[5,6,4,2],[4,8,4,2],[3,10,3,2]].forEach(function(b){ P(b[0],b[1],L.acc,b[2],b[3]); }); }
+      if(kind==='shroom'){ [[3,1,6],[2,2,8],[1,3,10],[1,4,10],[1,5,10]].forEach(function(r){ P(r[0],r[1],L.acc,r[2],1); }); [[4,3],[7,2],[8,4],[3,5]].forEach(function(d){ P(d[0],d[1],L.ink); }); P(4,6,L.ink,4,5); P(3,10,L.ink,6,1); }
+      if(kind==='star'){ ['....##....','....##....','##########','.########.','..######..','..######..','.###..###.','.##....##.'].forEach(function(row,y3){ for(var x3=0;x3<row.length;x3++) if(row[x3]==='#') P(1+x3,2+y3,L.acc); }); }
+    }
+    function draw(scaleX){
+      var L=LOOKS[i%LOOKS.length]; ctx.clearRect(0,0,W,H); R(0,0,W,H,'#E6E0CE');
+      for(var y=0;y<H;y+=2)for(var x=(y/2)%2*2;x<W;x+=4) R(x,y,1,1,PC.tan);            /* faint pixel grid */
+      ctx.save(); ctx.translate(W/2+off,0); ctx.scale(scaleX,1); ctx.translate(-W/2,0);
+      for(var yy=0;yy<H;yy++)for(var xx=0;xx<W;xx++){
+        if(!inside(xx+.5,yy+.5)) continue;
+        var edge=!inside(xx+1.5,yy+.5)||!inside(xx-.5,yy+.5)||!inside(xx+.5,yy+1.5)||!inside(xx+.5,yy-.5);
+        R(xx,yy,1,1,edge?(L.body===PC.navy?PC.cream:PC.navy):L.body);
+      }
+      for(var cx=17;cx<=31;cx++){ var cy=cx<=24?3+Math.round((cx-17)*4/7):3+Math.round((31-cx)*4/7); R(cx,cy+1,1,2,L.acc); }   /* collar */
+      R(13,38,23,2,L.acc);                                                                   /* hem stripe */
+      printSprite(L.print,18,17,L);
+      ctx.restore();
+    }
+    function label(){ out.textContent='Tee '+pad2((i%LOOKS.length)+1)+' / '+pad2(LOOKS.length); }
+    function flip(){
+      if(busy) return; busy=1;
+      if(reduce){ i++; draw(1); label(); busy=0; return; }
+      var seq=[.7,.4,.12], k=0;
+      (function down(){ if(k<seq.length){ draw(seq[k++]); setTimeout(down,70); } else { i++; label(); k=seq.length-1; up(); } })();
+      function up(){ if(k>=0){ draw(seq[k--]); setTimeout(up,70); } else { draw(1); busy=0; } }
+    }
+    cv.addEventListener('pointermove',function(e){ if(busy||e.pointerType==='touch') return; var r=cv.getBoundingClientRect(), o=Math.round(((e.clientX-r.left)/r.width-.5)*3); if(o!==off){ off=o; draw(1); } });
+    cv.addEventListener('pointerleave',function(){ if(off){ off=0; if(!busy) draw(1); } });
+    draw(1); label(); btn.addEventListener('click',flip); cv.addEventListener('click',flip);
+  }
+  function buildHTML(it){
+    var domain=it.url?esc(stripProto(it.url).replace(/^www\./,'')):esc(it.title);
+    var art=it.art==='island'?'island':(it.art==='tee'?'tee':'plain');
+    var scene = art==='plain' ? '' :
+      '<div class="build-scene"><canvas width="'+(art==='island'?64:48)+'" height="44" role="img" aria-label="'+(art==='island'?'A pixel island that grows as you plant honest days. Click to plant.':'A pixel T-shirt that flips to a new quirky print. Click to change.')+'"></canvas></div>'
+      +'<div class="build-act"><button type="button" class="btn btn--sm" data-act="'+art+'">'+(art==='island'?'Plant an honest day':'Next tee')+'</button><span class="build-count" aria-live="polite"></span></div>';
+    return '<article class="build-card build-card--'+art+' in-step" data-art="'+art+'">'
+      +'<div class="build-bar"><span>'+domain+'</span>'+(it.status?'<span class="build-chip">'+esc(it.status)+'</span>':'')+'</div>'
+      +scene
+      +'<div class="build-text"><h4>'+esc(it.title)+'</h4>'+(it.tagline?'<p class="build-tag">'+esc(it.tagline)+'</p>':'')
+      +(it.body?'<div class="build-body">'+escParas(it.body)+'</div>':'')
+      +(art==='island'?'<p class="build-note">No streaks. No red marks. Every honest day is kept.</p>':'')
+      +'<div class="build-links">'+(it.url?'<a class="btn" href="'+esc(it.url)+'" target="_blank" rel="noopener">Visit '+domain+' &#8599;</a>':'')
+      +(it.case?'<a class="textlink" data-case="'+esc(it.case)+'" role="button" tabindex="0">Read the case study</a>':'')+'</div></div></article>';
+  }
   function renderStory(d){
     var root=document.getElementById('storyRoot'); if(!root||!d) return;
-    var tl=list(d.timeline), now=d.now||{}, hasNow=!!(now.reading||now.watching||now.listening);
+    var tl=list(d.timeline), now=d.now||{}, hasNow=!!(now.reading||now.watching||now.listening), building=list(d.building).slice(0,4);
     var shelves=[['books','Books','The books that shaped me','tall'],['movies','Films','The films that shaped me','tall'],['albums','Albums','The albums that shaped me','sq']]
       .map(function(m){ return {key:m[0],label:m[1],title:m[2],shape:m[3],items:list(d[m[0]]).slice(0,5)}; }).filter(function(m){ return m.items.length; });
-    if(!d.intro && !tl.length && !shelves.length && !hasNow) return;       /* nothing yet: keep the placeholder */
+    if(!d.intro && !tl.length && !shelves.length && !hasNow && !building.length) return;       /* nothing yet: keep the placeholder */
 
     var html='<section class="story-top" data-band="tan"><div class="wrap"><p class="kick">[ The long version ]</p><h2 class="stub-h">Story</h2>'
       +(d.intro?'<div class="intro-copy">'+escParas(d.intro)+'</div>':'');
@@ -519,6 +638,11 @@ function renderCase(w){
     var colors=['cobalt','navy','paper'], bandBg={tan:'var(--tan)',cobalt:'var(--cobalt)',navy:'var(--navy)',paper:'var(--paper)'}, bandHex={tan:'#DCD2BC',cobalt:'#2A45FF',navy:'#12172A',paper:'#F7F6F0'};
     var prev='tan';
     function edge(next){ return '<div class="band-edge" style="background:'+bandBg[prev]+'"><canvas class="edge" data-mode="up" data-cell="8" data-seed="'+(Math.random()*9).toFixed(1)+'" data-color="'+bandHex[next]+'" aria-hidden="true"></canvas></div>'; }
+    if(building.length){
+      html+=edge('paper')+'<section class="band band--paper" aria-label="Currently building"><div class="wrap"><p class="kick">[ Currently building ]</p><h3 class="shelf-h">'+(building.length===1?'One project':(building.length===2?'Two projects':building.length+' projects'))+', on my own time</h3><div class="build-grid">'
+        +building.map(buildHTML).join('')+'</div></div></section>';
+      prev='paper';
+    }
     shelves.forEach(function(m,i){
       var col=colors[i%colors.length];
       html+=edge(col)+'<section class="band band--'+col+'" aria-label="'+esc(m.title)+'"><div class="wrap"><p class="kick">[ '+pad2(i+1)+' / '+esc(m.label)+' ]</p><h3 class="shelf-h">'+esc(m.title)+'</h3>'
@@ -545,6 +669,12 @@ function renderCase(w){
       var sio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); sio.unobserve(e.target); } }); },{threshold:.12});
       steps.forEach(function(el,i){ el.style.transitionDelay=((i%5)*60)+'ms'; sio.observe(el); });
     }
+    root.querySelectorAll('.build-card--island').forEach(mountIsland);
+    root.querySelectorAll('.build-card--tee').forEach(mountTee);
+    root.querySelectorAll('[data-case]').forEach(function(el){
+      var open=function(e){ e.preventDefault(); go('work'); setTimeout(function(){ openCase(el.getAttribute('data-case')); },reduce?0:700); };
+      el.addEventListener('click',open); el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' ') open(e); });
+    });
     ditherAll(root);
     drawEdges();
   }
