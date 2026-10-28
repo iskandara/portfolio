@@ -239,6 +239,14 @@ body.has-bubble .work-link{cursor:none}
 .build-note{margin-top:16px;font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .build-links{display:flex;align-items:center;flex-wrap:wrap;gap:14px 22px;margin-top:auto;padding-top:22px}
 .band--paper .build-links .textlink{color:var(--navy)}
+.gal{position:relative;aspect-ratio:1/1;overflow:hidden;background:#F4F4EF;cursor:pointer}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.gal.crisp img,.gal.crisp .px-cover{image-rendering:pixelated}
+.gal-cap{display:flex;flex-direction:column;gap:3px;padding:14px 18px;min-height:74px;border-bottom:2px solid var(--navy);background:#fff}
+.gal-cap strong{font-weight:600;font-size:1.05rem;letter-spacing:-.03em}
+.gal-cap span{font-size:.95rem;line-height:1.4;color:var(--ink-soft)}
+.build-title{display:flex;align-items:center;gap:14px}
+.build-logo{width:48px;height:48px;flex:none;border:2px solid var(--navy);image-rendering:pixelated;display:block}
 
 /* ---------- CHAT ---------- */
 .globe{position:absolute;left:0;right:0;bottom:0;width:100%;height:42vh;z-index:1;pointer-events:none}

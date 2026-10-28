@@ -58,6 +58,22 @@ function resolveThumb(card){
   }
   if(img.complete&&img.naturalWidth) run(); else { img.addEventListener('load',run,{once:true}); img.addEventListener('error',function(){cv.remove();},{once:true}); }
 }
+/* generic pixel-resolve: blocks -> sharp over any image inside a holder (cover or contain fit) */
+function resolveOver(img,holder,bg,fit,done){
+  var w=holder.clientWidth,h=holder.clientHeight; if(!w||!h||!img.naturalWidth){ if(done) done(); return; }
+  var cv=document.createElement('canvas'); cv.className='px-cover'; cv.width=w; cv.height=h; holder.appendChild(cv);
+  var ctx=cv.getContext('2d'), off=document.createElement('canvas'), octx=off.getContext('2d');
+  var iw=img.naturalWidth, ih=img.naturalHeight, steps=[8,14,24,40,70,120,200], i=0;
+  (function step(){
+    if(i>=steps.length){ cv.remove(); if(done) done(); return; }
+    var rw=steps[i], rh=Math.max(1,Math.round(rw*h/w)); off.width=rw; off.height=rh;
+    octx.fillStyle=bg||'#fff'; octx.fillRect(0,0,rw,rh); octx.imageSmoothingEnabled=true;
+    var sc=fit==='cover'?Math.max(rw/iw,rh/ih):Math.min(rw/iw,rh/ih), dw=iw*sc, dh=ih*sc;
+    octx.drawImage(img,(rw-dw)/2,(rh-dh)/2,dw,dh);
+    ctx.imageSmoothingEnabled=false; ctx.clearRect(0,0,w,h); ctx.drawImage(off,0,0,rw,rh,0,0,w,h);
+    i++; setTimeout(step,70);
+  })();
+}
 function renderCards(){
   var list=document.getElementById('workList');
   list.innerHTML = WORKS.map(cardHTML).join('');
@@ -604,16 +620,44 @@ function renderCase(w){
     cv.addEventListener('pointerleave',function(){ if(off){ off=0; if(!busy) draw(1); } });
     draw(1); label(); btn.addEventListener('click',flip); cv.addEventListener('click',flip);
   }
+  /* a card whose button steps through real images; each one forms out of pixel blocks */
+  function mountGallery(card,images){
+    var holder=card.querySelector('.gal'), img=holder.querySelector('img'), btn=card.querySelector('[data-act]'), count=card.querySelector('.build-count');
+    var capT=card.querySelector('.gal-cap strong'), capD=card.querySelector('.gal-cap span'), n=images.length, k=0, busy=false;
+    images.forEach(function(it){ var im=new Image(); im.decoding='async'; im.src=it.src; });                  /* warm the cache */
+    function sampleBg(){
+      try{ var c=document.createElement('canvas'); c.width=c.height=1; var x=c.getContext('2d'); x.drawImage(img,0,0,Math.max(1,img.naturalWidth/50),Math.max(1,img.naturalHeight/50),0,0,1,1); var d=x.getImageData(0,0,1,1).data; return 'rgb('+d[0]+','+d[1]+','+d[2]+')'; }catch(e){ return '#F4F4EF'; }
+    }
+    function labels(){
+      count.textContent=(k+1)+' / '+n;
+      capT.textContent=images[k].title||''; capD.textContent=images[k].caption||'';
+    }
+    function show(first){
+      var go=function(){ var bg=sampleBg(); holder.style.background=bg; labels(); if(first||reduce){ busy=false; return; } resolveOver(img,holder,bg,'contain',function(){ busy=false; }); };
+      img.alt=images[k].title||'';
+      if(first){ labels(); busy=false; return; }
+      img.src=images[k].src; if(img.decode) img.decode().then(go,go); else img.onload=go;
+    }
+    function next(){ if(busy) return; busy=true; k=(k+1)%n; show(false); }
+    if(img.complete&&img.naturalWidth) holder.style.background=sampleBg(); else img.addEventListener('load',function(){ holder.style.background=sampleBg(); },{once:true});
+    labels(); btn.addEventListener('click',next); holder.addEventListener('click',next);
+  }
   function buildHTML(it){
     var domain=it.url?esc(stripProto(it.url).replace(/^www\./,'')):esc(it.title);
     var art=it.art==='island'?'island':(it.art==='tee'?'tee':'plain');
-    var scene = art==='plain' ? '' :
+    var imgs=Array.isArray(it.images)?it.images.filter(function(x){ return x&&x.src; }):[];
+    var mode=imgs.length?'gal':art;
+    var galScene = !imgs.length ? '' :
+      '<div class="gal'+(it.crisp?' crisp':'')+'"><img src="'+esc(imgs[0].src)+'" alt="'+esc(imgs[0].title||it.title)+'" decoding="async"></div>'
+      +'<div class="build-act"><button type="button" class="btn btn--sm" data-act="gal">'+esc(it.action||'Next image')+'</button><span class="build-count" aria-live="polite"></span></div>'
+      +'<div class="gal-cap"><strong></strong><span></span></div>';
+    var scene = imgs.length ? galScene : (art==='plain' ? '' :
       '<div class="build-scene"><canvas width="'+(art==='island'?64:48)+'" height="44" role="img" aria-label="'+(art==='island'?'A pixel island that grows as you plant honest days. Click to plant.':'A pixel T-shirt that flips to a new quirky print. Click to change.')+'"></canvas></div>'
-      +'<div class="build-act"><button type="button" class="btn btn--sm" data-act="'+art+'">'+(art==='island'?'Plant an honest day':'Next tee')+'</button><span class="build-count" aria-live="polite"></span></div>';
-    return '<article class="build-card build-card--'+art+' in-step" data-art="'+art+'">'
+      +'<div class="build-act"><button type="button" class="btn btn--sm" data-act="'+art+'">'+(art==='island'?'Plant an honest day':'Next tee')+'</button><span class="build-count" aria-live="polite"></span></div>');
+    return '<article class="build-card build-card--'+art+' in-step" data-mode="'+mode+'">'
       +'<div class="build-bar"><span>'+domain+'</span>'+(it.status?'<span class="build-chip">'+esc(it.status)+'</span>':'')+'</div>'
       +scene
-      +'<div class="build-text"><h4>'+esc(it.title)+'</h4>'+(it.tagline?'<p class="build-tag">'+esc(it.tagline)+'</p>':'')
+      +'<div class="build-text"><div class="build-title">'+(it.logo?'<img class="build-logo" src="'+esc(it.logo)+'" alt="" width="48" height="48">':'')+'<h4>'+esc(it.title)+'</h4></div>'+(it.tagline?'<p class="build-tag">'+esc(it.tagline)+'</p>':'')
       +(it.body?'<div class="build-body">'+escParas(it.body)+'</div>':'')
       +(art==='island'?'<p class="build-note">No streaks. No red marks. Every honest day is kept.</p>':'')
       +'<div class="build-links">'+(it.url?'<a class="btn" href="'+esc(it.url)+'" target="_blank" rel="noopener">Visit '+domain+' &#8599;</a>':'')
@@ -669,8 +713,10 @@ function renderCase(w){
       var sio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); sio.unobserve(e.target); } }); },{threshold:.12});
       steps.forEach(function(el,i){ el.style.transitionDelay=((i%5)*60)+'ms'; sio.observe(el); });
     }
-    root.querySelectorAll('.build-card--island').forEach(mountIsland);
-    root.querySelectorAll('.build-card--tee').forEach(mountTee);
+    root.querySelectorAll('.build-card[data-mode="island"]').forEach(mountIsland);
+    root.querySelectorAll('.build-card[data-mode="tee"]').forEach(mountTee);
+    var cards=root.querySelectorAll('.build-card');
+    building.forEach(function(it,i){ var card=cards[i]; if(card&&card.getAttribute('data-mode')==='gal') mountGallery(card,it.images.filter(function(x){ return x&&x.src; })); });
     root.querySelectorAll('[data-case]').forEach(function(el){
       var open=function(e){ e.preventDefault(); go('work'); setTimeout(function(){ openCase(el.getAttribute('data-case')); },reduce?0:700); };
       el.addEventListener('click',open); el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' ') open(e); });

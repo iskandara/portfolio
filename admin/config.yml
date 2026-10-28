@@ -163,7 +163,21 @@ collections:
               - { name: status, label: "Status chip", widget: string, required: false, hint: "For example: Live - still growing" }
               - { name: tagline, label: "One-line description", widget: string, required: false }
               - { name: body, label: "Story", widget: text, required: false, hint: "Leave a blank line between paragraphs." }
-              - { name: art, label: "Pixel scene", widget: select, options: [{ label: "Pixel island (grows when clicked)", value: island }, { label: "Pixel T-shirt (changes when clicked)", value: tee }, { label: "None", value: none }], default: none, required: false }
+              - { name: logo, label: "Logo", widget: image, required: false, hint: "Small square image, shown next to the name." }
+              - { name: action, label: "Button text", widget: string, required: false, hint: "For example: Plant an honest day, or Next tee. The button steps through the images below." }
+              - { name: crisp, label: "Pixel-art images (crisp edges)", widget: boolean, default: false, required: false, hint: "Turn on if the images are pixel art, so they stay sharp when enlarged." }
+              - name: images
+                label: "Images"
+                label_singular: "Image"
+                widget: list
+                required: false
+                summary: "{{fields.title}}"
+                hint: "Pictures the button steps through. Each new one appears as pixel blocks that sharpen. They replace the pixel scene."
+                fields:
+                  - { name: src, label: "Image", widget: image }
+                  - { name: title, label: "Title", widget: string, required: false }
+                  - { name: caption, label: "Caption", widget: string, required: false }
+              - { name: art, label: "Pixel scene (used only if there are no images)", widget: select, options: [{ label: "Pixel island (grows when clicked)", value: island }, { label: "Pixel T-shirt (changes when clicked)", value: tee }, { label: "None", value: none }], default: none, required: false }
               - { name: case, label: "Case study ID", widget: string, required: false, hint: "The ID of a project on the Work page, for example stillhere. Adds a Read the case study link." }
           - name: books
             label: "Books that shaped me"

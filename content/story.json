@@ -17,7 +17,32 @@
       "status": "Live · still growing",
       "tagline": "A habit app for cutting back on smoking.",
       "body": "I'm building Still Here for myself first. I smoke, and I'm cutting back.\n\nMost habit apps reset you to zero the second you slip, which is a machine for feeling like a failure. This one keeps every good day you've earned, forgives the ones you don't, and never shows a red mark. Every honest day plants something on your own little pixel island. It's free, with no ads.",
-      "case": "stillhere"
+      "case": "stillhere",
+      "logo": "content/images/stillhere-logo.png",
+      "action": "Plant an honest day",
+      "crisp": true,
+      "images": [
+        {
+          "src": "content/images/stillhere-island-1-seed.webp",
+          "title": "Seed",
+          "caption": "A first sprout breaks the soil."
+        },
+        {
+          "src": "content/images/stillhere-island-2-sapling.webp",
+          "title": "Sapling",
+          "caption": "A tree, flowering bushes, a butterfly, a rooster."
+        },
+        {
+          "src": "content/images/stillhere-island-3-grove.webp",
+          "title": "Grove",
+          "caption": "More trees, a pond, and animals moving in."
+        },
+        {
+          "src": "content/images/stillhere-island-4-haven-at-dusk.webp",
+          "title": "Haven, at dusk",
+          "caption": "A waterfall, sleeping animals, and glowing visitors."
+        }
+      ]
     },
     {
       "art": "tee",
@@ -26,7 +51,21 @@
       "status": "Live · one shirt per season",
       "tagline": "Memorabilia for my love of vintage and quirky T-shirts.",
       "body": "SANTAI is where my passion for vintage and quirky tees lives. It's my memorabilia, and a home for one exclusive shirt released each season.\n\nI designed and built the whole site myself: a full-screen shirt you can drag to rotate, and a CMS so a new drop never needs a code editor.",
-      "case": "santai"
+      "case": "santai",
+      "action": "Next tee",
+      "crisp": false,
+      "images": [
+        {
+          "src": "content/images/santai-tee-1-deer-comes-the-sun.webp",
+          "title": "Deer comes the sun",
+          "caption": ""
+        },
+        {
+          "src": "content/images/santai-tee-2-how-deer-is-your-love.webp",
+          "title": "How deer is your love?",
+          "caption": ""
+        }
+      ]
     }
   ]
 }
