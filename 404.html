@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — page not found · aradnaksi</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="This page drifted off the map.">
+<meta name="theme-color" content="#12172A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/404.css">
+</head>
+<body data-page="chat" class="nf-page">
+
+  <header class="bar">
+    <a class="logo" href="/" aria-label="aradnaksi, home">
+      <svg viewBox="0 0 28 28" aria-hidden="true" shape-rendering="crispEdges"><rect width="28" height="28" fill="#2A45FF"/><path fill="#F7F6F0" d="M9 9h9v3h-9zM18 12h3v3h-3zM9 15h12v3h-12zM6 18h3v3h-3zM9 21h12v3h-12zM18 15h3v9h-3z" transform="translate(0 -3)"/></svg>
+      <span class="logo-word">aradnaksi</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="/#about"><i>01</i>About</a>
+      <a href="/#work"><i>02</i>Work</a>
+      <a href="/#story"><i>03</i>Story</a>
+      <a href="/#chat"><i>04</i>Chat</a>
+    </nav>
+  </header>
+
+  <canvas id="trail" aria-hidden="true"></canvas>
+  <canvas id="nfCanvas" aria-hidden="true"></canvas>
+
+  <main class="nf">
+    <div class="nf-row" role="img" aria-label="404">
+      <span class="nf-four" aria-hidden="true">4</span>
+      <span class="nf-slot" id="nfSlot" aria-hidden="true"></span>
+      <span class="nf-four" aria-hidden="true">4</span>
+    </div>
+
+    <div class="nf-copy">
+      <p class="kick">[ Error 404 &middot; Page not found ]</p>
+      <h1 class="nf-h">Lost in space.</h1>
+      <p class="nf-p">Nothing lives at <code id="nfPath">this address</code>. It may have moved, or it never existed.</p>
+      <div class="ctas ctas--chat">
+        <a class="btn btn--orange" href="/">Back to the portfolio &rarr;</a>
+        <a class="btn btn--ghost" href="/#work">See the work</a>
+        <button class="btn btn--ghost" id="nfComet" type="button">Throw a comet</button>
+      </div>
+      <p class="nf-status" id="nfStatus" role="status" aria-live="polite"></p>
+    </div>
+  </main>
+
+<script src="/js/404.js" defer></script>
+</body>
+</html>
