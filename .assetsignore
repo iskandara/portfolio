@@ -4,3 +4,5 @@ wrangler.jsonc
 scripts
 README.md
 .claude
+.git
+node_modules

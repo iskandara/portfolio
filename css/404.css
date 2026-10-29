@@ -1,0 +1,24 @@
+/* 404: 4 + a breakable pixel globe + 4. The globe itself is drawn by js/404.js on #nfCanvas. */
+.nf-page{--digit:clamp(6.2rem,27vw,21rem);overflow-x:hidden;overflow-y:auto;height:auto;min-height:100%}
+html:has(.nf-page){height:auto}
+.nf{position:relative;z-index:3;min-height:100dvh;display:flex;flex-direction:column;align-items:center;padding:calc(var(--bar) + 4vh) 24px 64px;text-align:center}
+.nf-row{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;font-size:var(--digit);line-height:1;margin-top:2vh;user-select:none}
+.nf-four{font-weight:600;letter-spacing:-.07em;line-height:.8;color:var(--cream);text-shadow:.035em .035em 0 var(--cobalt)}
+.nf-slot{display:block;width:.76em;height:.76em;margin:0 .1em}
+#nfCanvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:2;pointer-events:none}
+.nf-copy{position:relative;z-index:3;margin-top:5vh;max-width:560px}
+.nf .kick{color:#8FA0FF}
+.nf-h{font-weight:600;font-size:clamp(2.4rem,6vw,4.2rem);letter-spacing:-.055em;line-height:.95;margin-top:12px}
+.nf-p{font-size:1.1rem;line-height:1.55;margin-top:16px;opacity:.86}
+.nf-p code{font:500 .9em var(--mono);color:var(--cream);background:rgba(143,160,255,.18);padding:2px 7px;overflow-wrap:anywhere}
+.nf .ctas{justify-content:center;margin-top:28px}
+.nf .btn--ghost:hover{box-shadow:4px 4px 0 var(--cobalt)}
+.nf-status{margin-top:22px;font:500 .74rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8FA0FF;min-height:1.2em}
+.nf-status::before{content:"";display:inline-block;width:8px;height:8px;margin-right:9px;background:var(--orange);vertical-align:baseline}
+@media (max-width:640px){
+  .nf-page{--digit:clamp(6.2rem,37vw,21rem)}
+  .nf{padding-left:16px;padding-right:16px}
+  .nf .ctas{gap:12px}
+  .nf .btn{padding:11px 14px}
+}
+@media (prefers-reduced-motion:reduce){ .nf #nfComet{display:none} }
