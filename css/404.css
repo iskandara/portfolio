@@ -13,7 +13,7 @@ html:has(.nf-page){height:auto}
 .nf-p code{font:500 .9em var(--mono);color:var(--cream);background:rgba(143,160,255,.18);padding:2px 7px;overflow-wrap:anywhere}
 .nf .ctas{justify-content:center;margin-top:28px}
 .nf .btn--ghost:hover{box-shadow:4px 4px 0 var(--cobalt)}
-.nf-status{margin-top:22px;font:500 .74rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8FA0FF;min-height:1.2em}
+.nf-status{margin-top:22px;font:500 .74rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8FA0FF;min-height:1.2em;max-width:34em;margin-inline:auto;text-wrap:balance}
 .nf-status::before{content:"";display:inline-block;width:8px;height:8px;margin-right:9px;background:var(--orange);vertical-align:baseline}
 @media (max-width:640px){
   .nf-page{--digit:clamp(6.2rem,37vw,21rem)}

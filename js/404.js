@@ -31,7 +31,7 @@
   var tilt=-.34, orbitA=.9;
 
   function msg(s){ statusEl.textContent=s; }
-  function intactMsg(){ if(reduce){ msg('Motion is reduced, so the globe is resting.'); return; } msg(fine?'Fragile: please do not hit the globe with your cursor.':'Fragile: please do not touch the globe.'); }
+  function intactMsg(){ if(reduce){ msg('Motion is reduced, so the globe is resting.'); return; } msg('The biosphere is fragile and our job is to collectively preserve it'); }
 
   function build(){
     var r=slot.getBoundingClientRect(); cx=r.left+r.width/2; cy=r.top+r.height/2; R=Math.max(20,r.width/2);
